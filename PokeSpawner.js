@@ -131,7 +131,6 @@ function rarity_to_string(poke_rarity){
     }
 }
 
-
 function randomize_poke (type, rarity) {
     //this function will need to find all the Pokemon with the given type and rarity and then randomly pick one
 }
