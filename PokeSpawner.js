@@ -22,8 +22,9 @@
 //THE POKEMON DATA
 
 //pokemon object constructor
-var Pokemon = function (rarity, type1, type2, type_evolved,
+var Pokemon = function (name, rarity, type1, type2, type_evolved,
                         fem_chance, abilities, egg_moves) {
+    this.name = name;
     this.rarity = rarity;
     this.type1 = type1;
     this.type2 = type2;
@@ -33,10 +34,53 @@ var Pokemon = function (rarity, type1, type2, type_evolved,
     this.egg_moves = egg_moves;
 };
 
-var Bulbasaur = new Pokemon(4, "GRASS", "POISON", "NONE",
-    0.125, ["OVERGROW", "CHLOROPHYLL"],
-    ["Amnesia", "Charm", "Curse", "Endure", "Giga Drain", "Grass Whistle"]);
-
+var Pokemon_array = [
+    //rarity 0
+    [
+        new Pokemon("Error", 0, "ERROR", "ERROR", "ERROR",
+            0.5, ["ERROR"],
+            ["Error"])
+    ],
+    //rarity 1
+    [
+        new Pokemon("Error", 1, "ERROR", "ERROR", "ERROR",
+            0.5, ["ERROR"],
+            ["Error"])
+    ],
+    //2
+    [
+        new Pokemon("Caterpie", 2, "BUG", "NONE", "FLYING",
+            0.5, ["SHIELD DUST", "RUN AWAY"],
+            ["No Egg Moves"]),
+        new Pokemon("Weedle", 2, "BUG", "POISON", "NONE",
+            0.5, ["SHIELD DUST", "RUN AWAY"],
+            ["Egg Moves Unavailable"])
+    ],
+    //3
+    [
+        new Pokemon("Uncommon Poke", 3, "N/A", "N/A", "N/A",
+        0.5, ["N/A"],
+        ["N/A"])
+    ],
+    //rarity 4
+    [
+        new Pokemon("Bulbasaur", 4, "GRASS", "POISON", "NONE",
+            0.125, ["OVERGROW", "CHLOROPHYLL"],
+            ["Amnesia", "Charm", "Curse", "Endure", "Giga Drain", "Grass Whistle"]),
+        new Pokemon("Charmander", 4, "FIRE", "NONE", "FLYING",
+            0.125, ["BLAZE", "SOLAR POWER"],
+            ["Air Cutter", "Ancient Power", "Beat Up", "Belly Drum"]),
+        new Pokemon("Squirtle", 4, "WATER", "NONE", "NONE",
+            0.125, ["TORRENT", "RAIN DASH"],
+            ["Aqua Jet", "Aqua Ring", "Aura Sphere", "Brine", "Dragon Pulse"])
+    ],
+    //5
+    [
+        new Pokemon("Endangered Poke", 5, "N/A", "N/A", "N/A",
+        0.5, ["N/A"],
+        ["N/A"])
+    ]
+];
 
 
 //RANDOMIZING THE POKEMON’S STATS//
@@ -79,7 +123,7 @@ function randomize_eggmove_number () {
     return eggmove_number;
 }
 
-//function that says “randomly pick x things from array”
+//function that says "randomly pick x things from array"
 //first make sure x is less than array.length
 //take the array, shuffle it up, then take the first x elements
 
@@ -131,14 +175,26 @@ function rarity_to_string(poke_rarity){
     }
 }
 
-function randomize_poke (type, rarity) {
+function randomize_poke (type, rarity, never_found) {
     //this function will need to find all the Pokemon with the given type and rarity and then randomly pick one
+    var possible_Pokemon = [];
+    Pokemon_array[rarity].forEach(function(element) {
+        var forbidden = false;
+        never_found.forEach(function(f_type){
+            if (f_type == element.type1 || f_type == element.type2 || f_type == element.type_evolved){
+                forbidden = true;
+            }
+        });
+        if ((element.type1 == type || element.type2 == type || element.type_evolved == type)
+            && forbidden == false){
+            possible_Pokemon.push(element);
+        }
+    });
+    return possible_Pokemon[0];
+
 }
 
 
-
-//first need to ask user for location
-//set their input to a new var location?
 
 //location/season constructor
 var location_season = function (name, common_types, uncommon_types, rare_types, never_found){
@@ -493,7 +549,8 @@ function randomize_general (location) {
 
     var poke_rarity = randomize_rarity();
     var rarity_string = rarity_to_string(poke_rarity);
-    console.log("You should spawn a " + poke_type + " with " + rarity_string + " spawn rate.")
+    console.log("You should spawn a " + poke_type + " with " + rarity_string + " spawn rate.");
+    return [poke_type, poke_rarity];
 }
 
 function go(){
@@ -505,8 +562,11 @@ function go(){
     console.log("User input: " + time);
     var time_int = parseInt(time, 10);
 
+    var info = randomize_general(location_array[place_int][time_int]);
 
+    var rand_poke = randomize_poke(info[0], info[1], location_array[place_int][time_int].never_found);
 
-    randomize_general(location_array[place_int][time_int]);
+    console.log(rand_poke.name);
+
 }
 
