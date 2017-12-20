@@ -4,6 +4,12 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <script type="text/javascript" src="PokeSpawner.js"></script>
+
+    <style>
+    p {
+    text-align: center;
+    }
+    </style>
 </head>
 <body>
 
@@ -11,9 +17,19 @@
 <select id = "select_place">
     <option value = "0">Western Great Forest</option>
     <option value = "1">Crying Plateau</option>
+    <option value = "2">Eastern Great Forest</option>
+    <option value = "3">Dragon's Plateau</option>
+    <option value = "4">Lion's Plains</option>
+    <option value = "5">Cloven Volcano</option>
+    <option value = "6">Subterranean River</option>
+    <option value = "7">Rolling Mountains</option>
+    <option value = "8">Onix Peak</option>
+    <option value = "9">Chilling Cliffs</option>
+    <option value = "10">Desert Strip</option>
+    <option value = "11">Fairy Island</option>
+    <option value = "12">Paradise Island</option>
+    <option value = "13">Mud Baths</option>
 </select>
-
-
 
 <select id = "select_season">
     <option value = "0">Spring</option>
@@ -23,6 +39,21 @@
 </select>
 
 <button onclick="go()">Enter</button>
+
+<br>
+
+<span id = "displayed_text">
+
+</span>
+
+<p>
+    You should spawn a (TYPE) with (RARITY_STRING) spawn rate.
+
+    <br>
+
+    For example: (SPECIFIC POKEMON NAME)
+
+</p>
 
 </body>
 </html>

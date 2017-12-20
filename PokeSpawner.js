@@ -54,13 +54,25 @@ var Pokemon_array = [
             ["No Egg Moves"]),
         new Pokemon("Weedle", 2, "BUG", "POISON", "NONE",
             0.5, ["SHIELD DUST", "RUN AWAY"],
+            ["Egg Moves Unavailable"]),
+        new Pokemon("Test3", 2, "DARK", "GRASS", "FAIRY",
+            0.5, ["SHIELD DUST", "RUN AWAY"],
+            ["Egg Moves Unavailable"]),
+        new Pokemon("Test4", 2, "PSYCHIC", "GRASS", "NONE",
+            0.5, ["SHIELD DUST", "RUN AWAY"],
             ["Egg Moves Unavailable"])
     ],
     //3
     [
-        new Pokemon("Uncommon Poke", 3, "N/A", "N/A", "N/A",
+        new Pokemon("Uncommon Poke1", 3, "BUG", "FAIRY", "FIRE",
         0.5, ["N/A"],
-        ["N/A"])
+        ["N/A"]),
+        new Pokemon("Uncommon Poke2", 3, "WATER", "DARK", "POISON",
+            0.5, ["N/A"],
+            ["N/A"]),
+        new Pokemon("Uncommon Poke2", 3, "PSYCHIC", "FLYING", "POISON",
+            0.5, ["N/A"],
+            ["N/A"])
     ],
     //rarity 4
     [
@@ -123,17 +135,34 @@ function randomize_eggmove_number () {
     return eggmove_number;
 }
 
-//function that says "randomly pick x things from array"
-//first make sure x is less than array.length
-//take the array, shuffle it up, then take the first x elements
+
+function randomize_x_from_array(x, array){
+    if (x > array.length){
+        console.log("There are not enough arguments in the array to pick " + x + " of them.");
+        return -1;
+    }
+    var currentIndex = array.length;
+    var temporaryValue;
+    var randomIndex;
+    //while there remain elements to shuffle...
+    while (0 !== currentIndex){
+        //pick a remaining element
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex -= 1;
+        // and swap it with the current element
+        temporaryValue = array[currentIndex];
+        array[currentIndex] = array[randomIndex];
+        array[randomIndex] = temporaryValue;
+    }
+    return array.slice(0, x);
+}
+
 
 //later, will need to add a bit in so that the function will pick x based on result from randomize_eggmove_number
 
-
-
-
-
-
+function randomize_eggmoves(eggmove_array){
+    randomize_x_from_array(randomize_eggmove_number(), eggmove_array);
+}
 
 
 
@@ -190,8 +219,14 @@ function randomize_poke (type, rarity, never_found) {
             possible_Pokemon.push(element);
         }
     });
-    return possible_Pokemon[0];
 
+    //need to make sure at least one Pokemon made it into possible_Pokemon.
+    if (possible_Pokemon.length < 1){
+        console.log("No suitable Pokemon exist with the randomized type and rarity.");
+        return -1;
+    }
+
+    return possible_Pokemon[Math.floor(Math.random()*possible_Pokemon.length)];
 }
 
 
@@ -526,19 +561,19 @@ function randomize_general (location) {
     var type_rarity = Math.random();
     var poke_type;
     if (type_rarity < 0.6) {
-        console.log("Continue with one of the " + location.common_types.length + " COMMON types");
+        //console.log("Continue with one of the " + location.common_types.length + " COMMON types");
         var common_type = Math.floor(Math.random() * location.common_types.length);
         poke_type = location.common_types[common_type];
 
     }
     else if (type_rarity >= 0.6 && type_rarity < 0.85) {
-        console.log("Continue with one of the " + location.uncommon_types.length + " UNCOMMON types");
+        //console.log("Continue with one of the " + location.uncommon_types.length + " UNCOMMON types");
         var uncommon_type = Math.floor(Math.random() * location.uncommon_types.length);
         poke_type = location.uncommon_types[uncommon_type];
 
     }
     else if (type_rarity >= 0.85 && type_rarity < 1) {
-        console.log("Continue with one of the " + location.rare_types.length + " RARE types");
+        //console.log("Continue with one of the " + location.rare_types.length + " RARE types");
         var rare_type = Math.floor(Math.random() * location.rare_types.length);
         poke_type = location.rare_types[rare_type];
 
@@ -562,11 +597,43 @@ function go(){
     console.log("User input: " + time);
     var time_int = parseInt(time, 10);
 
-    var info = randomize_general(location_array[place_int][time_int]);
+    var poke_info = randomize_general(location_array[place_int][time_int]);
 
-    var rand_poke = randomize_poke(info[0], info[1], location_array[place_int][time_int].never_found);
+    var rand_poke = randomize_poke(poke_info[0], poke_info[1], location_array[place_int][time_int].never_found);
 
     console.log(rand_poke.name);
+
+    //now to randomize some stats for the Pokemon
+    var sex = randomize_sex(rand_poke.fem_chance);
+    var abil = randomize_x_from_array(1, rand_poke.abilities);
+    var eggmoves = randomize_eggmoves(rand_poke.egg_moves);
+
+    console.log(sex + abil);
+    console.log(eggmoves);
+
+}
+
+
+function test() {
+    var place = document.getElementById("select_place").value;
+    console.log("User input: " + place);
+    var place_int = parseInt(place, 10);
+
+    var time = document.getElementById("select_season").value;
+    console.log("User input: " + time);
+    var time_int = parseInt(time, 10);
+
+    var myArray = new Array;
+    for(var i = 0; i < 10 ; i++){
+        myArray.push(0);
+    }
+    for (var i = 0; i < 10000; i++){
+        var info = randomize_general(location_array[place_int][time_int]);
+        myArray[info[1]]++;
+    }
+    myArray.forEach(function(element){
+        console.log(element + " " + (element/10000));
+    });
 
 }
 
