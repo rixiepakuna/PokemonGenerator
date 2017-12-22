@@ -48,19 +48,270 @@ var Pokemon_array = [
             ["Error"])
     ],
     //2
-    [
+    [ //overpopulated
+        new Pokemon("Burmy", 2, "BUG", "NONE", "FLYING",
+            0.5, ["SHED SKIN", "OVERCOAT"],
+            ["No Egg Moves"]),
+        new Pokemon("Durant", 2, "BUG", "STEEL", "NONE",
+            0.5, ["SWARM", "HUSTLE", "TRUANT"],
+            ["Baton Pass", "Endure", "Feint Attack", "Rock Climb", "Screech", "Thunder Fang"]),
+        new Pokemon("Kricketot", 2, "BUG", "NONE", "FLYING",
+            0.5, ["SHED SKIN", "RUN AWAY"],
+            ["No Egg Moves"]),
+        new Pokemon("Ledyba", 2, "BUG", "FLYING", "NONE",
+            0.5, ["SWARM", "EARLY BIRD", "RATTLED"],
+            ["Bide", "Bug Bite", "Bug Buzz", "Counter", "Dizzy Punch", 
+             "Drain Punch", "Encore", "Endure", "Focus Punch", 
+             "Knock Off", "Psybeam", "Screech", "Silver Wind", "Tailwind"]),
+        new Pokemon("Scatterbug", 2, "BUG", "NONE", "FLYING",
+            0.5, ["SHIELD DUST", "COMPOUND EYES", "FRIEND GUARD"],
+            ["Poison Powder", "Rage Powder", "Stun Spore"]),
+        new Pokemon("Wurmple", 2, "BUG", "FLYING", "POISON",
+            0.5, ["SHIELD DUST", "RUN AWAY"],
+            ["No Egg Moves"]),
+      //#FIXME: Wurmple should technically have Flying and Poison both be type_evolved, not type_2...
+     
+        new Pokemon("Hoppip", 2, "GRASS", "FLYING", "NONE",
+            0.5, ["CHLOROPHYLL", "LEAF GUARD", "INFILTRATOR"],
+            ["Egg Moves Unavailable"]),
+        new Pokemon("Pidove", 2, "NORMAL", "FLYING", "NONE",
+            0.5, ["BIG PECKS", "SUPER LUCK", "RIVALRY"],
+            ["Egg Moves Unavailable"]),
+        new Pokemon("Pikipek", 2, "NORMAL", "FLYING", "NONE",
+            0.5, ["KEEN EYE", "SKILL LINK", "PICKUP"],
+            ["Egg Moves Unavailable"]),
+        new Pokemon("Starly", 2, "NORMAL", "FLYING", "NONE",
+            0.5, ["KEEN EYE", "RECKLESS"],
+            ["Egg Moves Unavailable"]),
+        new Pokemon("Wingull", 2, "WATER", "FLYING", "NONE",
+            0.5, ["KEEN EYE", "HYDATION", "RAIN DISH"],
+            ["Egg Moves Unavailable"]),
+        new Pokemon("Zubat", 2, "POISON", "FLYING", "NONE",
+            0.5, ["INNER FOCUS", "INFILTRATOR"],
+            ["Egg Moves Unavailable"]),
+        new Pokemon("Foongus", 2, "GRASS", "POISON", "NONE",
+            0.5, ["EFFECT SPORE", "REGENERATOR"],
+            ["Egg Moves Unavailable"]),
+      
+        new Pokemon("Bidoof", 2, "NORMAL", "NONE", "WATER",
+            0.5, ["SIMPLE", "UNAWARE", "MOODY"],
+            ["Egg Moves Unavailable"])
+        new Pokemon("Buneary", 2, "NORMAL", "NONE", "NONE",
+            0.5, ["RUN AWAY", "KLUTZ", "LIMBER"],
+            ["Egg Moves Unavailable"]),
+        new Pokemon("Bunnelby", 2, "NORMAL", "NONE", "GROUND",
+            0.5, ["PICKUP", "CHEEK POUCH", "HUGE POWER"],
+            ["Egg Moves Unavailable"]),
+        new Pokemon("Dunsparce", 2, "NORMAL", "NONE", "NONE",
+            0.5, ["SERENE GRACE", "RUN AWAY", "RATTLED"],
+            ["Egg Moves Unavailable"]),
+        new Pokemon("Rattata", 2, "NORMAL", "NONE", "NONE",
+            0.5, ["RUN AWAY", "GUTS", "HUSTLE"],
+            ["Egg Moves Unavailable"]),
+        new Pokemon("Sentret", 2, "NORMAL", "NONE", "NONE",
+            0.5, ["RUN AWAY", "KEEN EYE", "FRISK"],
+            ["Egg Moves Unavailable"]),
+        new Pokemon("Zigzagoon", 2, "NORMAL", "NONE", "NONE",
+            0.5, ["PICK UP", "GLUTTONY", "QUICK FEET"],
+            ["Egg Moves Unavailable"]),
+          
+        new Pokemon("Binacle", 2, "ROCK", "WATER", "NONE",
+            0.5, ["SNIPER", "TOUGH CLAWS", "PICKPOCKET"],
+            ["Egg Moves Unavailable"]),
+        new Pokemon("Wishiwashi", 2, "WATER", "NONE", "NONE",
+            0.5, ["SCHOOLING"],
+            ["Egg Moves Unavailable"]),   
+      
+      //common
         new Pokemon("Caterpie", 2, "BUG", "NONE", "FLYING",
             0.5, ["SHIELD DUST", "RUN AWAY"],
             ["No Egg Moves"]),
+        new Pokemon("Combee", 2, "BUG", "FLYING", "NONE",
+            0.125, ["HONEY GATHER", "HUSTLE"],
+            ["No Egg Moves"]),
+        new Pokemon("Dewpider", 2, "WATER", "BUG", "NONE",
+            0.5, ["WATER BUBBLE", "WATER ABSORB"],
+            ["Egg Moves Unavailable"]),
+        new Pokemon("Illumise", 2, "BUG", "NONE", "NONE",
+            1.0, ["OBLIVIOUS", "TINTED LENS", "PRANKSTER"],
+            ["Egg Moves Unavailable"]),
+        new Pokemon("Nincada", 2, "BUG", "GROUND", "FLYING",
+            0.5, ["COMPOUND EYES", "RUN AWAY"],
+            ["Egg Moves Unavailable"]),
+        new Pokemon("Surskit", 2, "BUG", "WATER", "NONE",
+            0.5, ["SWIFT SWIM", "RAIN DISH"],
+            ["Egg Moves Unavailable"]),
+        new Pokemon("Volbeat", 2, "BUG", "NONE", "NONE",
+            0.0, ["ILLUMINATE", "SWARM", "PRANKSTER"],
+            ["Egg Moves Unavailable"]),          
         new Pokemon("Weedle", 2, "BUG", "POISON", "NONE",
             0.5, ["SHIELD DUST", "RUN AWAY"],
             ["Egg Moves Unavailable"]),
-        new Pokemon("Test3", 2, "DARK", "GRASS", "FAIRY",
-            0.5, ["SHIELD DUST", "RUN AWAY"],
+          
+        new Pokemon("Poochyena", 2, "DARK", "NONE", "NONE",
+            0.5, ["RUN AWAY", "QUICK FEET", "RATTLED"],
             ["Egg Moves Unavailable"]),
+        new Pokemon("Purrloin", 2, "DARK", "NONE", "NONE",
+            0.5, ["LIMBER", "UNBURDEN", "PRANKSTER"],
+            ["Egg Moves Unavailable"]),
+        new Pokemon("Rattata (Alolan)", 2, "DARK", "NORMAL", "NONE",
+            0.5, ["GLUTTONY", "HUSTLE", "THICK FAT"],
+            ["Egg Moves Unavailable"]),
+        new Pokemon("Stunky", 2, "POISON", "DARK", "NONE",
+            0.5, ["STENCH", "AFTERMATH", "KEEN EYE"],
+            ["Egg Moves Unavailable"]),
+
+        new Pokemon("Emolga", 2, "ELECTRIC", "FLYING", "NONE",
+            0.5, ["STATIC", "MOTOR DRIVE"],
+            ["Egg Moves Unavailable"]),
+        new Pokemon("Mareep", 2, "ELECTRIC", "NONE", "NONE",
+            0.5, ["STATIC", "PLUS"],
+            ["Egg Moves Unavailable"]),
+        new Pokemon("Minun", 2, "ELECTRIC", "NONE", "NONE",
+            0.5, ["MINUS", "VOLT ABSORB"],
+            ["Egg Moves Unavailable"]),
+        new Pokemon("Pachirisu", 2, "ELECTRIC", "NONE", "NONE",
+            0.5, ["RUN AWAY", "PICKUP", "VOLT ABSORB"],
+            ["Egg Moves Unavailable"]),
+        new Pokemon("Plusle", 2, "ELECTRIC", "NONE", "NONE",
+            0.5, ["PLUS", "LIGHTNING ROD"],
+            ["Egg Moves Unavailable"]),
+        new Pokemon("Stunfisk", 2, "GROUND", "ELECTRIC", "NONE",
+            0.5, ["STATIC", "LIMBER", "SAND VEIL"],
+            ["Egg Moves Unavailable"]),
+                   
+        new Pokemon("Azurill", 2, "NORMAL", "FAIRY", "WATER",
+            0.5, ["THICK FAT", "HUGE POWER", "SAP SIPPER"],
+            ["Egg Moves Unavailable"]),
+        new Pokemon("Cottonee", 2, "GRASS", "FAIRY", "NONE",
+            0.5, ["PRANKSTER", "INFILTRATOR", "CHLOROPHYLL"],
+            ["Egg Moves Unavailable"]),
+        new Pokemon("Snubbull", 2, "FAIRY", "NONE", "NONE",
+            0.75, ["INTIMIDATE", "RUN AWAY", "RATTLED"],
+            ["Egg Moves Unavailable"]),
+         
+        new Pokemon("Crabrawler", 2, "FIGHTING", "NONE", "ICE",
+            0.5, ["HYPER CUTTER", "IRON FIST", "ANGER POINT"],
+            ["Egg Moves Unavailable"]),
+          
+          
+          
+        new Pokemon("Croagunk", 2, "NONE", "NONE", "NONE",
+            0.5, ["ABILITY", "ABILITY2"],
+            ["Egg Moves Unavailable"]),
+          
+        new Pokemon("Mankey", 2, "NONE", "NONE", "NONE",
+            0.5, ["ABILITY", "ABILITY2"],
+            ["Egg Moves Unavailable"]),
+          
+        new Pokemon("Mienfoo", 2, "NONE", "NONE", "NONE",
+            0.5, ["ABILITY", "ABILITY2"],
+            ["Egg Moves Unavailable"]),
+          
+        new Pokemon("Timburr", 2, "NONE", "NONE", "NONE",
+            0.5, ["ABILITY", "ABILITY2"],
+            ["Egg Moves Unavailable"]),
+          
+
+          
+          
+          
+        new Pokemon("Litleo", 2, "NONE", "NONE", "NONE",
+            0.5, ["ABILITY", "ABILITY2"],
+            ["Egg Moves Unavailable"]),
+          
+        new Pokemon("Numel", 2, "NONE", "NONE", "NONE",
+            0.5, ["ABILITY", "ABILITY2"],
+            ["Egg Moves Unavailable"]),
+          
+        new Pokemon("Pansear", 2, "NONE", "NONE", "NONE",
+            0.5, ["ABILITY", "ABILITY2"],
+            ["Egg Moves Unavailable"]),
+          
+
+          
+          
+          
+          
+        new Pokemon("Ducklett", 2, "NONE", "NONE", "NONE",
+            0.5, ["ABILITY", "ABILITY2"],
+            ["Egg Moves Unavailable"]),
+          
+        new Pokemon("Fletchling", 2, "NONE", "NONE", "NONE",
+            0.5, ["ABILITY", "ABILITY2"],
+            ["Egg Moves Unavailable"]),
+         
+        new Pokemon("Pidgey", 2, "NORMAL", "FLYING", "NONE",
+            0.5, ["KEEN EYE", "TANGLED FEET", "BIG PECKS"],
+            ["Air Cutter", "Air Slash", "Brave Bird", "Defog", "Feint Attack", 
+             "Foresight", "Pursuit", "Steel Wing", "Uproar"]),
+          
+        new Pokemon("Spearow", 2, "NORMAL", "FLYING", "NONE",
+            0.5, ["KEEN EYE", "TANGLED FEET", "BIG PECKS"],
+            ["Air Cutter", "Air Slash", "Brave Bird", "Defog", "Feint Attack", 
+             "Foresight", "Pursuit", "Steel Wing", "Uproar"]),
+          
+        new Pokemon("Taillow", 2, "NORMAL", "FLYING", "NONE",
+            0.5, ["KEEN EYE", "TANGLED FEET", "BIG PECKS"],
+            ["Air Cutter", "Air Slash", "Brave Bird", "Defog", "Feint Attack", 
+             "Foresight", "Pursuit", "Steel Wing", "Uproar"]),
+          
+          
+          
+          
         new Pokemon("Test4", 2, "PSYCHIC", "GRASS", "NONE",
             0.5, ["SHIELD DUST", "RUN AWAY"],
-            ["Egg Moves Unavailable"])
+            ["Egg Moves Unavailable"]),
+                  new Pokemon("", 2, "NONE", "NONE", "NONE",
+            0.5, ["ABILITY", "ABILITY2"],
+            ["Egg Moves Unavailable"]),
+      
+      
+        new Pokemon("", 2, "NONE", "NONE", "NONE",
+            0.5, ["ABILITY", "ABILITY2"],
+            ["Egg Moves Unavailable"]),
+      
+        new Pokemon("", 2, "NONE", "NONE", "NONE",
+            0.5, ["ABILITY", "ABILITY2"],
+            ["Egg Moves Unavailable"]),
+      
+        new Pokemon("", 2, "NONE", "NONE", "NONE",
+            0.5, ["ABILITY", "ABILITY2"],
+            ["Egg Moves Unavailable"]),
+      
+        new Pokemon("", 2, "NONE", "NONE", "NONE",
+            0.5, ["ABILITY", "ABILITY2"],
+            ["Egg Moves Unavailable"]),
+      
+        new Pokemon("", 2, "NONE", "NONE", "NONE",
+            0.5, ["ABILITY", "ABILITY2"],
+            ["Egg Moves Unavailable"]),
+      
+        new Pokemon("", 2, "NONE", "NONE", "NONE",
+            0.5, ["ABILITY", "ABILITY2"],
+            ["Egg Moves Unavailable"]),
+      
+        new Pokemon("", 2, "NONE", "NONE", "NONE",
+            0.5, ["ABILITY", "ABILITY2"],
+            ["Egg Moves Unavailable"]),
+      
+        new Pokemon("", 2, "NONE", "NONE", "NONE",
+            0.5, ["ABILITY", "ABILITY2"],
+            ["Egg Moves Unavailable"]),
+      
+        new Pokemon("", 2, "NONE", "NONE", "NONE",
+            0.5, ["ABILITY", "ABILITY2"],
+            ["Egg Moves Unavailable"]),
+      
+        new Pokemon("", 2, "NONE", "NONE", "NONE",
+            0.5, ["ABILITY", "ABILITY2"],
+            ["Egg Moves Unavailable"]),
+
+
+      
+ 
+      
+      
     ],
     //3
     [
@@ -78,13 +329,19 @@ var Pokemon_array = [
     [
         new Pokemon("Bulbasaur", 4, "GRASS", "POISON", "NONE",
             0.125, ["OVERGROW", "CHLOROPHYLL"],
-            ["Amnesia", "Charm", "Curse", "Endure", "Giga Drain", "Grass Whistle"]),
+            ["Amnesia", "Charm", "Curse", "Endure", "Giga Drain", "Grass Whistle",
+             “Grassy Terrain”, “Ingrain”, “Leaf Storm”, “Magical Leaf”, 
+             “Nature Power”, “Petal Dance”, “Power Whip”, “Skull Bash”, “Sludge”]),
         new Pokemon("Charmander", 4, "FIRE", "NONE", "FLYING",
             0.125, ["BLAZE", "SOLAR POWER"],
-            ["Air Cutter", "Ancient Power", "Beat Up", "Belly Drum"]),
+            ["Air Cutter", "Ancient Power", "Beat Up", "Belly Drum", 
+             “Bite”, “Counter”, “Crunch”, “Dragon Dance”, “Dragon Pulse”, 
+             “Dragon Rush”, “Flare Blitz”, “Focus Punch”, “Metal Claw”, “Outrage”]),
         new Pokemon("Squirtle", 4, "WATER", "NONE", "NONE",
             0.125, ["TORRENT", "RAIN DASH"],
-            ["Aqua Jet", "Aqua Ring", "Aura Sphere", "Brine", "Dragon Pulse"])
+            ["Aqua Jet", "Aqua Ring", "Aura Sphere", "Brine", "Dragon Pulse", 
+             “Fake Out”, “Flail”, “Foresight”, “Haze”, “Mirror Coat”, “Mist”, 
+             “Mud Sport”, “Muddy Water”, “Refresh”, “Water Spout”, “Yawn”])
     ],
     //5
     [
