@@ -441,8 +441,6 @@ var Pokemon_array = [
             1.0, ["BIG PECKS", "OVERCOAT", "WEAK ARMOR"],
             ["Egg Moves Unavailable"]),
       
-      
-      
         new Pokemon("Blitzle", 3, "ELECTRIC", "NONE", "NONE",
             0.5, ["LIGHTNING ROD", "MOTOR DRIVE", "SAP SIPPER"],
             ["Egg Moves Unavailable"]),
@@ -536,7 +534,7 @@ var Pokemon_array = [
         new Pokemon("Drifloon", 3, "GHOST", "FLYING", "NONE",
             0.5, ["AFTERMATH", "UNBURDEN", "FLARE BOOST"],
             ["Egg Moves Unavailable"]),
-        new Pokemon("Farfetch'd", 3, "NORMAL", "FLYING", "NONE",
+        new Pokemon("Farfetchd", 3, "NORMAL", "FLYING", "NONE",
             0.5, ["KEEN EYE", "INNER FOCUS", "DEFIANT"],
             ["Egg Moves Unavailable"]),
         new Pokemon("Gligar", 3, "GROUND", "FLYING", "NONE",
@@ -675,11 +673,13 @@ var Pokemon_array = [
             0.5, ["IMMUNITY", "TOXIC BOOST"],
             ["Egg Moves Unavailable"]),
       
-        new Pokemon("Nidoran", 3, "POISON", "NONE", "GROUND",
-            0.5, ["POISON POINT", "RIVALRY", "HUSTLE"],
+        new Pokemon("Nidoran m", 3, "POISON", "NONE", "GROUND",
+            0.0, ["POISON POINT", "RIVALRY", "HUSTLE"],
             ["Egg Moves Unavailable"]),
-      //#FIXME: Male and Female have different egg moves... but it would make Nidoran more likely to be appear if I made them separate species....
-      
+      //#FIXME: Male and Female have different egg moves... make sure to add that to the thread
+        new Pokemon("Nidoran f", 3, "POISON", "NONE", "GROUND",
+            1.0, ["POISON POINT", "RIVALRY", "HUSTLE"],
+            ["Egg Moves Unavailable"]),
         new Pokemon("Qwilfish", 3, "WATER", "POISON", "NONE",
             0.5, ["POISON POINT", "SWIFT SWIM", "INTIMIDATE"],
             ["Egg Moves Unavailable"]),
