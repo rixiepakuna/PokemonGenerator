@@ -750,8 +750,8 @@ var Pokemon_array = [
         new Pokemon("Squirtle", 3, "WATER", "NONE", "NONE",
             0.125, ["TORRENT", "RAIN DASH"],
             ["Aqua Jet", "Aqua Ring", "Aura Sphere", "Brine", "Dragon Pulse", 
-             "Fake Out”, “Flail”, “Foresight”, “Haze”, “Mirror Coat”, “Mist”, 
-             "Mud Sport", “Muddy Water”, “Refresh”, “Water Spout”, "Yawn"]),
+             "Fake Out", "Flail", "Foresight", "Haze", "Mirror Coat", "Mist", 
+             "Mud Sport", "Muddy Water", "Refresh", "Water Spout", "Yawn"]),
         new Pokemon("Staryu", 3, "NONE", "NONE", "NONE",
             0.5, ["ABIL"],
             ["Egg Moves Unavailable"]),
@@ -764,13 +764,13 @@ var Pokemon_array = [
         new Pokemon("Bulbasaur", 4, "GRASS", "POISON", "NONE",
             0.125, ["OVERGROW", "CHLOROPHYLL"],
             ["Amnesia", "Charm", "Curse", "Endure", "Giga Drain", "Grass Whistle",
-             “Grassy Terrain”, “Ingrain”, “Leaf Storm”, “Magical Leaf”, 
-             “Nature Power”, “Petal Dance”, “Power Whip”, “Skull Bash”, “Sludge”]),
+             "Grassy Terrain", "Ingrain", "Leaf Storm", "Magical Leaf", 
+             "Nature Power", "Petal Dance", "Power Whip", "Skull Bash", "Sludge"]),
         new Pokemon("Charmander", 4, "FIRE", "NONE", "FLYING",
             0.125, ["BLAZE", "SOLAR POWER"],
             ["Air Cutter", "Ancient Power", "Beat Up", "Belly Drum", 
-             “Bite”, “Counter”, “Crunch”, “Dragon Dance”, “Dragon Pulse”, 
-             “Dragon Rush”, “Flare Blitz”, “Focus Punch”, “Metal Claw”, “Outrage”])
+             "Bite", "Counter", "Crunch", "Dragon Dance", "Dragon Pulse", 
+             "Dragon Rush", "Flare Blitz", "Focus Punch", "Metal Claw", "Outrage"])
     ],
     //5
     [
