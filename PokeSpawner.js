@@ -54,7 +54,7 @@ var Pokemon_array = [
             0.5, ["CHLOROPHYLL", "LEAF GUARD", "INFILTRATOR"],
             ["Amnesia", "Aromatherapy", "Confusion", "Cotton Guard", "Double-Edge", 
              "Encore", "Endure", "Grassy Terrain", "Helping Hand", "Seed Bomb", 
-             "Strength Sap", "Worry Seed""]),
+             "Strength Sap", "Worry Seed"]),
         new Pokemon("Pidove", 2, "NORMAL", "FLYING", "NONE",
             0.5, ["BIG PECKS", "SUPER LUCK", "RIVALRY"],
             ["Bestow", "Hypnosis", "Lucky Chant", "Morning Sun", "Night Slash", 
