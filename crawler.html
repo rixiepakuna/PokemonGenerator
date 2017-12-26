@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        console.log("Test");
+
+        var getJSON = function(url, callback) {
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', url, true);
+            xhr.responseType = 'json';
+            xhr.onload = function() {
+              var status = xhr.status;
+              if (status === 200) {
+                callback(null, xhr.response);
+              } else {
+                callback(status, xhr.response);
+              }
+            };
+            xhr.send();
+        };
+
+        //TODO use Notepad++ to turn the list of Pokemon into 5 arrays by RegExp replace newline with ","
+        //then run get_data() and print_data(), copy paste those strings into javascript file
+        var pokemon_array = [["Burmy", "Durant", "Kricketot", "Ledyba", "Scatterbug", "Wurmple"],
+            ["Caterpie","Combee","Dewpider","Illumise","Nincada"],
+            ["Squirtle", "Cutiefly","Dwebble","Grubbin","Joltik","Karrablast"],
+            ["Bulbasaur", "Charmander", "Heracross","Larvesta","Pinsir","Scyther","Venipede"],
+            ["Anorith"]];
+        var poke_data_array = [[],[],[],[],[]];
+
+        String.prototype.capitalize = function(){
+         return this.replace( /(^|\s|-)([a-z])/g ,
+         function(m,p1,p2) {
+           if (p1 == '-'){
+             return " " + p2.toUpperCase();
+           }
+           return p1+p2.toUpperCase(); });
+        };
+
+
+
+        function get_data(start=0, end=5) {
+          for (var f = start; f < end; f++){
+              getJSON('https://pokeapi.co/api/v2/pokemon/' + f + '/',
+                  function(err, data) {
+                      if (err !== null) {
+                        alert('Something went wrong: ' + err);
+                      } else {
+                          console.log("Request succeeded");
+                          for (var g = 0; g < pokemon_array.length; g++){
+                              for (var h = 0; h < pokemon_array[g].length; h++){
+                                  if (pokemon_array[g][h].toLowerCase() == data.species.name.toLowerCase()){
+                                      poke_data_array[g].push(data);
+                                  }
+                              }
+                          }
+                      }
+                  });
+          }
+        }
+        
+        function return_move(data){
+          var move_array = [];
+          for (var i = 0; i < data.moves.length; i++){
+              for (var j = 0; j < data.moves[i].version_group_details.length; j++){
+                  if (data.moves[i].version_group_details[j].version_group.name == "sun-moon"
+                   && data.moves[i].version_group_details[j].move_learn_method.name == "egg"){
+                      move_array.push(data.moves[i].move.name.toLowerCase().capitalize());
+                  }
+              }
+          }
+          return move_array;
+        }
+        
+        function return_abil(data){
+          var abil_array = [];
+          for (var k = 0; k < data.abilities.length; k++){
+              abil_array.push(data.abilities[k].ability.name.toUpperCase());
+          }
+          return abil_array;
+        }
+        
+        function print_data(){
+          var outputString = "";
+          for(var i = 0; i < poke_data_array.length; i++){
+            for (var j = 0; j < poke_data_array[i].length; j++){
+              var move_array = return_move(poke_data_array[i][j]);
+              var abil_array = return_abil(poke_data_array[i][j]);
+
+              outputString += "new Pokemon(" + poke_data_array[i][j].species.name.capitalize() + ", #, 0.5,\"" + poke_data_array[i][j].types[0].type.name.toUpperCase();
+              if (poke_data_array[i][j].types[1] != undefined){
+                outputString += "\",\"" + poke_data_array[i][j].types[1].type.name.toUpperCase() + "\",";
+              } else {
+                  outputString += "\",\"NONE\",";
+              }
+              outputString += "\"NONE\" \n[" + abil_array + "], \n[" + move_array + "]),\n";
+            }
+          }
+          //TODO Output in a better format
+          console.log(outputString);
+        }
+        </script>
+</head>
+<body>
+</body>
+</html>
