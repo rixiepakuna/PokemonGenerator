@@ -1,4 +1,4 @@
-//THE POKEMON DATA
+//THE DATA
 
 //pokemon object constructor
 var Pokemon = function (name, rarity, fem_chance, type1, type2, type_evolved,
@@ -19,7 +19,6 @@ var Pokemon_array = [
         new Pokemon("Error", 0, 0.5, "ERROR", "ERROR", "ERROR",
             ["ERROR"],
             ["Error"]),
-
 
 
         new Pokemon("Rattata (Alolan)", 2, 0.5, "DARK", "NORMAL", "NONE",
@@ -62,14 +61,12 @@ var Pokemon_array = [
             ["EARLY BIRD", "SCRAPPY", "INNER FOCUS"],
             ["Egg Moves NA"])
     ],
-
     //rarity 1
     [
         new Pokemon("Error", 1, 0.5, "ERROR", "ERROR", "ERROR",
             ["ERROR"],
             ["Error"])
     ],
-
     //rarity 2
     [
         //overpopulated
@@ -103,7 +100,7 @@ var Pokemon_array = [
         new Pokemon("Starly", 2, 0.5,"FLYING","NORMAL","NONE",
             ["RECKLESS","KEEN EYE"],
             ["Sand Attack","Fury Attack","Double Edge","Mirror Move","Foresight","Detect","Steel Wing","Pursuit","Uproar","Revenge","Feather Dance","Astonish","Roost"]),
-        new Pokemon("Bidoof", 2, 0.5,"NORMAL","NONE","NONE",
+        new Pokemon("Bidoof", 2, 0.5,"NORMAL","NONE","WATER",
             ["MOODY","UNAWARE","SIMPLE"],
             ["Double Edge","Quick Attack","Defense Curl","Skull Bash","Fury Swipes","Endure","Rollout","Sleep Talk","Odor Sleuth","Water Sport","Aqua Tail","Rock Climb"]),
         new Pokemon("Kricketot", 2, 0.5,"BUG","NONE","NONE",
@@ -124,10 +121,10 @@ var Pokemon_array = [
         new Pokemon("Durant", 2, 0.5,"STEEL","BUG","NONE",
             ["TRUANT","HUSTLE","SWARM"],
             ["Screech","Feint Attack","Endure","Baton Pass","Thunder Fang","Rock Climb"]),
-        new Pokemon("Bunnelby", 2, 0.5,"NORMAL","NONE","NONE",
+        new Pokemon("Bunnelby", 2, 0.5,"NORMAL","NONE","GROUND",
             ["HUGE POWER","CHEEK POUCH","PICKUP"],
             ["Defense Curl","Spikes","Rollout"]),
-        new Pokemon("Scatterbug", 2, 0.5,"BUG","NONE","NONE",
+        new Pokemon("Scatterbug", 2, 0.5,"BUG","NONE","FLYING",
             ["FRIEND GUARD","COMPOUND EYES","SHIELD DUST"],
             ["Poison Powder","Stun Spore","Rage Powder"]),
         new Pokemon("Binacle", 2, 0.5,"WATER","ROCK","NONE",
@@ -141,7 +138,7 @@ var Pokemon_array = [
             ["Mist","Muddy Water","Water Sport","Water Pulse"]),
 
         //common
-        new Pokemon("Caterpie", 2, 0.5,"BUG","NONE","NONE",
+        new Pokemon("Caterpie", 2, 0.5,"BUG","NONE","FLYING",
             ["RUN AWAY","SHIELD DUST"],
             ["No Egg Moves"]),
         new Pokemon("Weedle", 2, 0.5,"POISON","BUG","NONE",
@@ -168,7 +165,7 @@ var Pokemon_array = [
         new Pokemon("Mankey", 2, 0.5,"FIGHTING","NONE","NONE",
             ["DEFIANT","ANGER POINT","VITAL SPIRIT"],
             ["Counter","Meditate","Reversal","Foresight","Sleep Talk","Encore","Beat Up","Focus Punch","Smelling Salts","Revenge","Close Combat","Night Slash","Power Trip"]),
-        new Pokemon("Poliwag", 2, 0.5,"WATER","NONE","NONE",
+        new Pokemon("Poliwag", 2, 0.5,"WATER","NONE","FIGHTING",
             ["SWIFT SWIM","DAMP","WATER ABSORB"],
             ["Mist","Bubble Beam","Haze","Splash","Mind Reader","Endure","Encore","Endeavor","Refresh","Ice Ball","Mud Shot","Water Sport","Water Pulse"]),
         new Pokemon("Bellsprout", 2, 0.5,"POISON","GRASS","NONE",
@@ -177,7 +174,7 @@ var Pokemon_array = [
         new Pokemon("Geodude", 2, 0.5,"GROUND","ROCK","NONE",
             ["SAND VEIL","STURDY","ROCK HEAD"],
             ["Mega Punch","Curse","Flail","Endure","Focus Punch","Block","Hammer Arm","Rock Climb","Wide Guard","Autotomize"]),
-        new Pokemon("Shellder", 2, 0.5,"WATER","NONE","NONE",
+        new Pokemon("Shellder", 2, 0.5,"WATER","NONE","ICE",
             ["OVERCOAT","SKILL LINK","SHELL ARMOR"],
             ["Take Down","Twineedle","Bubble Beam","Screech","Barrier","Rapid Spin","Icicle Spear","Mud Shot","Rock Blast","Water Pulse","Aqua Ring","Avalanche"]),
         new Pokemon("Krabby", 2, 0.5,"WATER","NONE","NONE",
@@ -219,19 +216,19 @@ var Pokemon_array = [
         new Pokemon("Surskit", 2, 0.5,"WATER","BUG","NONE",
             ["RAIN DISH","SWIFT SWIM"],
             ["Hydro Pump","Psybeam","Mind Reader","Foresight","Endure","Signal Beam","Mud Shot","Bug Bite","Aqua Jet","Power Split","Fell Stinger","Lunge"]),
-        new Pokemon("Shroomish", 2, 0.5,"GRASS","NONE","NONE",
+        new Pokemon("Shroomish", 2, 0.5,"GRASS","NONE","FIGHTING",
             ["QUICK FEET","POISON HEAL","EFFECT SPORE"],
             ["Charm","Focus Punch","Helping Hand","Fake Tears","Bullet Seed","Wake Up Slap","Natural Gift","Worry Seed","Seed Bomb","Drain Punch"]),
         new Pokemon("Slakoth", 2, 0.5,"NORMAL","NONE","NONE",
             ["TRUANT"],
             ["Body Slam","Slash","Snore","Curse","Sleep Talk","Pursuit","Crush Claw","Tickle","Hammer Arm","Night Slash","After You"]),
-        new Pokemon("Nincada", 2, 0.5,"GROUND","BUG","NONE",
+        new Pokemon("Nincada", 2, 0.5,"GROUND","BUG","FLYING",
             ["RUN AWAY","COMPOUND EYES"],
             ["Gust","Feint Attack","Endure","Silver Wind","Night Slash","Bug Buzz","Bug Bite","Final Gambit"]),
         new Pokemon("Whismur", 2, 0.5,"NORMAL","NONE","NONE",
             ["RATTLED","SOUNDPROOF"],
             ["Take Down","Smokescreen","Snore","Smelling Salts","Endeavor","Fake Tears","Extrasensory","Hammer Arm","Circle Throw","Disarming Voice"]),
-        new Pokemon("Azurill", 2, 0.75,"FAIRY","NORMAL","NONE",
+        new Pokemon("Azurill", 2, 0.75,"FAIRY","NORMAL","WATER",
             ["SAP SIPPER","HUGE POWER","THICK FAT"],
             ["Slam","Body Slam","Sing","Encore","Refresh","Camouflage","Fake Tears","Tickle","Muddy Water","Water Sport","Copycat","Soak"]),
         new Pokemon("Skitty", 2, 0.75,"NORMAL","NONE","NONE",
@@ -273,7 +270,7 @@ var Pokemon_array = [
         new Pokemon("Cherubi", 2, 0.5,"GRASS","NONE","NONE",
             ["CHLOROPHYLL"],
             ["Razor Leaf","Defense Curl","Rollout","Sweet Scent","Nature Power","Weather Ball","Aromatherapy","Grass Whistle","Tickle","Healing Wish","Natural Gift","Seed Bomb","Heal Pulse","Flower Shield"]),
-        new Pokemon("Shellos", 2, 0.5,"WATER","NONE","NONE",
+        new Pokemon("Shellos", 2, 0.5,"WATER","NONE","GROUND",
             ["SAND FORCE","STORM DRAIN","STICKY HOLD"],
             ["Mist","Counter","Fissure","Sludge","Amnesia","Acid Armor","Curse","Mirror Coat","Stockpile","Spit Up","Swallow","Memento","Yawn","Brine","Trump Card","Clear Smog"]),
         new Pokemon("Glameow", 2, 0.75,"NORMAL","NONE","NONE",
@@ -306,10 +303,13 @@ var Pokemon_array = [
         new Pokemon("Panpour", 2, 0.125,"WATER","NONE","NONE",
             ["TORRENT","GLUTTONY"],
             ["Hydro Pump","Low Kick","Role Play","Mud Sport","Astonish","Tickle","Covet","Aqua Ring","Aqua Tail","Nasty Plot","Disarming Voice"]),
+        new Pokemon("Drilbur", 2, 0.5, "GROUND", "NONE", "STEEL",
+            ["SAND RUSH", "SAND FORCE", "MOLD BREAKER"],
+            ["Crush Claw", "Earth Power", "Iron Defense", "Metal Sound", "Rapid Spin", "Rock Climb", "Skull Bash", "Submission"]),
         new Pokemon("Timburr", 2, 0.25,"FIGHTING","NONE","NONE",
             ["IRON FIST","SHEER FORCE","GUTS"],
             ["Comet Punch","Counter","Reversal","Mach Punch","Foresight","Detect","Endure","Smelling Salts","Force Palm","Drain Punch","Wide Guard"]),
-        new Pokemon("Tympole", 2, 0.5,"WATER","NONE","NONE",
+        new Pokemon("Tympole", 2, 0.5,"WATER","NONE","GROUND",
             ["WATER ABSORB","HYDRATION","SWIFT SWIM"],
             ["Mist","Snore","Sleep Talk","Refresh","Mud Sport","Water Pulse","Earth Power","Mud Bomb","After You"]),
         new Pokemon("Cottonee", 2, 0.5,"FAIRY","GRASS","NONE",
@@ -342,7 +342,7 @@ var Pokemon_array = [
         new Pokemon("Mienfoo", 2, 0.5,"FIGHTING","NONE","NONE",
             ["RECKLESS","REGENERATOR","INNER FOCUS"],
             ["Low Kick","Endure","Baton Pass","Vital Throw","Smelling Salts","Knock Off","Feint","Me First","Ally Switch"]),
-        new Pokemon("Fletchling", 2, 0.5,"FLYING","NORMAL","NONE",
+        new Pokemon("Fletchling", 2, 0.5,"FLYING","NORMAL","FIRE",
             ["GALE WINGS","BIG PECKS"],
             ["Snatch","Tailwind","Quick Guard"]),
         new Pokemon("Litleo", 2, 0.875,"NORMAL","FIRE","NONE",
@@ -360,7 +360,7 @@ var Pokemon_array = [
         new Pokemon("Yungoos", 2, 0.5,"NORMAL","NONE","NONE",
             ["ADAPTABILITY","STRONG JAW","STAKEOUT"],
             ["Revenge","Last Resort"]),
-        new Pokemon("Crabrawler", 2, 0.5,"FIGHTING","NONE","NONE",
+        new Pokemon("Crabrawler", 2, 0.5,"FIGHTING","NONE","ICE",
             ["ANGER POINT","IRON FIST","HYPER CUTTER"],
             ["Amnesia","Superpower","Endeavor","Wide Guard"]),
         new Pokemon("Mareanie", 2, 0.5,"WATER","POISON","NONE",
@@ -402,7 +402,7 @@ var Pokemon_array = [
         new Pokemon("Slowpoke", 3, 0.5,"PSYCHIC","WATER","NONE",
             ["REGENERATOR","OWN TEMPO","OBLIVIOUS"],
             ["Stomp","Snore","Belly Drum","Sleep Talk","Future Sight","Mud Sport","Block","Me First","Zen Headbutt","Wonder Room","Belch"]),
-        new Pokemon("Seel", 3, 0.5,"WATER","NONE","NONE",
+        new Pokemon("Seel", 3, 0.5,"WATER","NONE","ICE",
             ["ICE BODY","HYDRATION","THICK FAT"],
             ["Slam","Horn Drill","Disable","Lick","Perish Song","Sleep Talk","Encore","Iron Tail","Fake Out","Stockpile","Spit Up","Swallow","Signal Beam","Icicle Spear","Water Pulse","Entrainment","Belch"]),
         new Pokemon("Gastly", 3, 0.5,"POISON","GHOST","NONE",
@@ -420,7 +420,7 @@ var Pokemon_array = [
         new Pokemon("Tangela", 3, 0.5,"GRASS","NONE","NONE",
             ["REGENERATOR","LEAF GUARD","CHLOROPHYLL"],
             ["Mega Drain","Leech Seed","Confusion","Amnesia","Flail","Giga Drain","Nature Power","Endeavor","Natural Gift","Power Swap","Leaf Storm","Rage Powder"]),
-        new Pokemon("Staryu", 3, 0.5,"WATER","NONE","NONE",
+        new Pokemon("Staryu", 3, 0.5,"WATER","NONE","PSYCHIC",
             ["ANALYTIC","NATURAL CURE","ILLUMINATE"],
             ["No Egg Moves"]),
         new Pokemon("Magikarp", 3, 0.5,"WATER","NONE","NONE",
@@ -450,7 +450,7 @@ var Pokemon_array = [
         new Pokemon("Murkrow", 3, 0.5,"FLYING","DARK","NONE",
             ["PRANKSTER","SUPER LUCK","INSOMNIA"],
             ["Wing Attack","Whirlwind","Drill Peck","Screech","Confuse Ray","Mirror Move","Sky Attack","Feint Attack","Perish Song","Flatter","Feather Dance","Roost","Assurance","Psycho Shift","Brave Bird"]),
-        new Pokemon("Pineco", 3, 0.5,"BUG","NONE","NONE",
+        new Pokemon("Pineco", 3, 0.5,"BUG","NONE","STEEL",
             ["OVERCOAT","STURDY"],
             ["Double Edge","Pin Missile","Counter","Swift","Flail","Endure","Revenge","Sand Tomb","Power Trick","Toxic Spikes","Stealth Rock"]),
         new Pokemon("Gligar", 3, 0.5,"FLYING","GROUND","NONE",
@@ -468,7 +468,7 @@ var Pokemon_array = [
         new Pokemon("Teddiursa", 3, 0.5,"NORMAL","NONE","NONE",
             ["HONEY GATHER","QUICK FEET","PICKUP"],
             ["Take Down","Double Edge","Counter","Seismic Toss","Belly Drum","Sleep Talk","Metal Claw","Cross Chop","Crunch","Yawn","Fake Tears","Close Combat","Night Slash","Chip Away","Play Rough"]),
-        new Pokemon("Slugma", 3, 0.5,"FIRE","NONE","NONE",
+        new Pokemon("Slugma", 3, 0.5,"FIRE","NONE","ROCK",
             ["WEAK ARMOR","FLAME BODY","MAGMA ARMOR"],
             ["Smokescreen","Acid Armor","Curse","Rollout","Stockpile","Spit Up","Swallow","Heat Wave","Memento","Guard Swap","Earth Power","Inferno"]),
         new Pokemon("Remoraid", 3, 0.5,"WATER","NONE","NONE",
@@ -489,19 +489,19 @@ var Pokemon_array = [
         new Pokemon("Magby", 3, 0.25,"FIRE","NONE","NONE",
             ["VITAL SPIRIT","FLAME BODY"],
             ["Karate Chop","Mega Punch","Thunder Punch","Screech","Barrier","Focus Energy","Mach Punch","Belly Drum","Dynamic Punch","Iron Tail","Cross Chop","Power Swap","Flare Blitz","Belch"]),
-        new Pokemon("Torchic", 3, 0.125,"FIRE","NONE","NONE",
+        new Pokemon("Torchic", 3, 0.125,"FIRE","NONE","FIGHTING",
             ["SPEED BOOST","BLAZE"],
             ["Low Kick","Counter","Agility","Curse","Reversal","Endure","Baton Pass","Smelling Salts","Feather Dance","Crush Claw","Feint","Last Resort","Night Slash","Flame Burst"]),
-        new Pokemon("Mudkip", 3, 0.125,"WATER","NONE","NONE",
+        new Pokemon("Mudkip", 3, 0.125,"WATER","NONE","GROUND",
             ["DAMP","TORRENT"],
             ["Stomp","Double Edge","Bite","Counter","Barrier","Sludge","Curse","Mirror Coat","Ancient Power","Whirlpool","Uproar","Yawn","Refresh","Ice Ball","Avalanche","Mud Bomb","Wide Guard"]),
-        new Pokemon("Seedot", 3, 0.5,"GRASS","NONE","NONE",
+        new Pokemon("Seedot", 3, 0.5,"GRASS","NONE","DARK",
             ["PICKPOCKET","EARLY BIRD","CHLOROPHYLL"],
             ["Razor Wind","Take Down","Leech Seed","Quick Attack","Amnesia","Beat Up","Bullet Seed","Power Swap","Worry Seed","Nasty Plot","Defog","Foul Play","Grassy Terrain"]),
         new Pokemon("Makuhita", 3, 0.25,"FIGHTING","NONE","NONE",
             ["SHEER FORCE","GUTS","THICK FAT"],
             ["Counter","Feint Attack","Foresight","Detect","Dynamic Punch","Cross Chop","Focus Punch","Helping Hand","Revenge","Wake Up Slap","Feint","Bullet Punch","Wide Guard","Chip Away"]),
-        new Pokemon("Nosepass", 3, 0.5,"ROCK","NONE","NONE",
+        new Pokemon("Nosepass", 3, 0.5,"ROCK","NONE","STEEL",
             ["SAND FORCE","MAGNET PULL","STURDY"],
             ["Double Edge","Endure","Rollout","Magnitude","Block","Stealth Rock","Wide Guard"]),
         new Pokemon("Sableye", 3, 0.5,"GHOST","DARK","NONE",
@@ -522,7 +522,7 @@ var Pokemon_array = [
         new Pokemon("Spinda", 3, 0.5,"NORMAL","NONE","NONE",
             ["CONTRARY","TANGLED FEET","OWN TEMPO"],
             ["Disable","Icy Wind","Baton Pass","Encore","Rapid Spin","Fake Out","Smelling Salts","Trick","Role Play","Wish","Assist","Fake Tears","Water Pulse","Psycho Shift","Psycho Cut","Guard Split","Spotlight"]),
-        new Pokemon("Cacnea", 3, 0.5,"GRASS","NONE","NONE",
+        new Pokemon("Cacnea", 3, 0.5,"GRASS","NONE","DARK",
             ["WATER ABSORB","SAND VEIL"],
             ["Disable","Acid","Low Kick","Counter","Dynamic Punch","Smelling Salts","Teeter Dance","Grass Whistle","Block","Magical Leaf","Worry Seed","Seed Bomb","Switcheroo","Nasty Plot","Belch","Rototiller","Fell Stinger"]),
         new Pokemon("Zangoose", 3, 0.5,"NORMAL","NONE","NONE",
@@ -534,7 +534,7 @@ var Pokemon_array = [
         new Pokemon("Barboach", 3, 0.5,"GROUND","WATER","NONE",
             ["HYDRATION","ANTICIPATION","OBLIVIOUS"],
             ["Take Down","Thrash","Hydro Pump","Flail","Spark","Whirlpool","Muddy Water","Mud Shot","Dragon Dance","Earth Power"]),
-        new Pokemon("Corphish", 3, 0.5,"WATER","NONE","NONE",
+        new Pokemon("Corphish", 3, 0.5,"WATER","NONE","DARK",
             ["ADAPTABILITY","SHELL ARMOR","HYPER CUTTER"],
             ["Body Slam","Double Edge","Metal Claw","Ancient Power","Superpower","Knock Off","Endeavor","Mud Sport","Dragon Dance","Trump Card","Switcheroo","Aqua Jet","Chip Away"]),
         new Pokemon("Feebas", 3, 0.5,"WATER","NONE","NONE",
@@ -552,7 +552,7 @@ var Pokemon_array = [
         new Pokemon("Wynaut", 3, 0.5,"PSYCHIC","NONE","NONE",
             ["TELEPATHY","SHADOW TAG"],
             ["No Egg Moves"]),
-        new Pokemon("Snorunt", 3, 0.5,"ICE","NONE","NONE",
+        new Pokemon("Snorunt", 3, 0.5,"ICE","NONE","GHOST",
             ["MOODY","ICE BODY","INNER FOCUS"],
             ["Disable","Bide","Spikes","Rollout","Weather Ball","Fake Tears","Block","Switcheroo","Avalanche","Hex"]),
         new Pokemon("Spheal", 3, 0.5,"WATER","ICE","NONE",
@@ -561,7 +561,7 @@ var Pokemon_array = [
         new Pokemon("Clamperl", 3, 0.5,"WATER","NONE","NONE",
             ["RATTLED","SHELL ARMOR"],
             ["Body Slam","Supersonic","Confuse Ray","Barrier","Endure","Refresh","Mud Sport","Muddy Water","Water Pulse","Brine","Aqua Ring"]),
-        new Pokemon("Chimchar", 3, 0.125,"FIRE","NONE","NONE",
+        new Pokemon("Chimchar", 3, 0.125,"FIRE","NONE","FIGHTING",
             ["IRON FIST","BLAZE"],
             ["Fire Punch","Thunder Punch","Double Kick","Submission","Counter","Focus Energy","Encore","Fake Out","Heat Wave","Focus Punch","Helping Hand","Assist","Blaze Kick","Quick Guard"]),
         new Pokemon("Shinx", 3, 0.5,"ELECTRIC","NONE","NONE",
@@ -582,7 +582,7 @@ var Pokemon_array = [
         new Pokemon("Hippopotas", 3, 0.5,"GROUND","NONE","NONE",
             ["SAND FORCE","SAND STREAM"],
             ["Whirlwind","Body Slam","Curse","Sleep Talk","Stockpile","Spit Up","Swallow","Revenge","Slack Off","Sand Tomb"]),
-        new Pokemon("Skorupi", 3, 0.5,"BUG","POISON","NONE",
+        new Pokemon("Skorupi", 3, 0.5,"BUG","POISON","DARK",
             ["KEEN EYE","SNIPER","BATTLE ARMOR"],
             ["Whirlwind","Sand Attack","Twineedle","Agility","Screech","Confuse Ray","Slash","Feint Attack","Pursuit","Iron Tail","Poison Tail","Night Slash"]),
         new Pokemon("Carnivine", 3, 0.5,"GRASS","NONE","NONE",
@@ -591,7 +591,7 @@ var Pokemon_array = [
         new Pokemon("Snivy", 3, 0.125,"GRASS","NONE","NONE",
             ["CONTRARY","OVERGROW"],
             ["Glare","Mean Look","Pursuit","Sweet Scent","Iron Tail","Twister","Mirror Coat","Magical Leaf","Natural Gift","Captivate","Grassy Terrain"]),
-        new Pokemon("Tepig", 3, 0.125,"FIRE","NONE","NONE",
+        new Pokemon("Tepig", 3, 0.125,"FIRE","NONE","FIGHTING",
             ["THICK FAT","BLAZE"],
             ["Body Slam","Thrash","Curse","Sleep Talk","Magnitude","Superpower","Yawn","Endeavor","Covet","Sucker Punch","Heavy Slam"]),
         new Pokemon("Blitzle", 3, 0.5,"ELECTRIC","NONE","NONE",
@@ -636,7 +636,7 @@ var Pokemon_array = [
         new Pokemon("Scraggy", 3, 0.5,"FIGHTING","DARK","NONE",
             ["INTIMIDATE","MOXIE","SHED SKIN"],
             ["Fire Punch","Ice Punch","Thunder Punch","Counter","Amnesia","Feint Attack","Detect","Fake Out","Dragon Dance","Drain Punch","Zen Headbutt","Quick Guard"]),
-        new Pokemon("Karrablast", 3, 0.5,"BUG","NONE","NONE",
+        new Pokemon("Karrablast", 3, 0.5,"BUG","NONE","STEEL",
             ["NO GUARD","SHED SKIN","SWARM"],
             ["Horn Attack","Counter","Screech","Feint Attack","Megahorn","Pursuit","Knock Off","Bug Bite","Drill Run"]),
         new Pokemon("Joltik", 3, 0.5,"ELECTRIC","BUG","NONE",
@@ -654,16 +654,16 @@ var Pokemon_array = [
         new Pokemon("Heatmor", 3, 0.5,"FIRE","NONE","NONE",
             ["WHITE SMOKE","FLASH FIRE","GLUTTONY"],
             ["Body Slam","Wrap","Curse","Feint Attack","Sleep Talk","Pursuit","Heat Wave","Tickle","Sucker Punch","Night Slash","Belch"]),
-        new Pokemon("Chespin", 3, 0.125,"GRASS","NONE","NONE",
+        new Pokemon("Chespin", 3, 0.125,"GRASS","NONE","FIGHTING",
             ["BULLETPROOF","OVERGROW"],
             ["Defense Curl","Curse","Belly Drum","Spikes","Rollout","Synthesis","Quick Guard"]),
-        new Pokemon("Froakie", 3, 0.125,"WATER","NONE","NONE",
+        new Pokemon("Froakie", 3, 0.125,"WATER","NONE","DARK",
             ["PROTEAN","TORRENT"],
             ["Mind Reader","Camouflage","Mud Sport","Water Sport","Toxic Spikes","Bestow"]),
         new Pokemon("Flabebe", 3, 1.0,"FAIRY","NONE","NONE",
             ["SYMBIOSIS","FLOWER VEIL"],
             ["Camouflage","Copycat","Captivate"]),
-        new Pokemon("Pancham", 3, 0.5,"FIGHTING","NONE","NONE",
+        new Pokemon("Pancham", 3, 0.5,"FIGHTING","NONE","DARK",
             ["SCRAPPY","MOLD BREAKER","IRON FIST"],
             ["Me First","Storm Throw","Foul Play","Quick Guard","Quash","Power Trip"]),
         new Pokemon("Furfrou", 3, 0.5,"NORMAL","NONE","NONE",
@@ -681,7 +681,7 @@ var Pokemon_array = [
         new Pokemon("Dedenne", 3, 0.5,"FAIRY","ELECTRIC","NONE",
             ["PLUS","PICKUP","CHEEK POUCH"],
             ["Helping Hand","Covet","Natural Gift","Eerie Impulse"]),
-        new Pokemon("Grubbin", 3, 0.5,"BUG","NONE","NONE",
+        new Pokemon("Grubbin", 3, 0.5,"BUG","NONE","ELECTRIC",
             ["SWARM"],
             ["Harden","Endure","Mud Shot","Electroweb"]),
         new Pokemon("Oricorio", 3, 0.75,"FLYING","FIRE","NONE",
@@ -724,7 +724,6 @@ var Pokemon_array = [
             ["WONDER SKIN","STRONG JAW","DAZZLING"],
             ["Rage","Poison Fang","Water Pulse","Ice Fang"])
     ],
-
 //rarity 4: rare
     [
         new Pokemon("Bulbasaur", 4, 0.125,"POISON","GRASS","NONE",
@@ -754,7 +753,7 @@ var Pokemon_array = [
         new Pokemon("Grimer", 4, 0.5,"POISON","NONE","NONE",
             ["POISON TOUCH","STICKY HOLD","STENCH"],
             ["Haze","Lick","Curse","Scary Face","Mean Look","Stockpile","Spit Up","Swallow","Imprison","Shadow Punch","Shadow Sneak","Acid Spray"]),
-        new Pokemon("Onix", 4, 0.5,"GROUND","ROCK","NONE",
+        new Pokemon("Onix", 4, 0.5,"GROUND","ROCK","STEEL",
             ["WEAK ARMOR","STURDY","ROCK HEAD"],
             ["Defense Curl","Flail","Rollout","Block","Rock Blast","Rock Climb","Stealth Rock","Heavy Slam","Rototiller"]),
         new Pokemon("Drowzee", 4, 0.5,"PSYCHIC","NONE","NONE",
@@ -769,10 +768,10 @@ var Pokemon_array = [
         new Pokemon("Koffing", 4, 0.5,"POISON","NONE","NONE",
             ["LEVITATE"],
             ["Psybeam","Screech","Psywave","Curse","Spite","Destiny Bond","Pain Split","Stockpile","Spit Up","Swallow","Grudge","Toxic Spikes"]),
-        new Pokemon("Horsea", 4, 0.5,"WATER","NONE","NONE",
+        new Pokemon("Horsea", 4, 0.5,"WATER","NONE","DRAGON",
             ["DAMP","SNIPER","SWIFT SWIM"],
             ["Razor Wind","Disable","Aurora Beam","Dragon Rage","Splash","Flail","Octazooka","Outrage","Dragon Breath","Signal Beam","Muddy Water","Water Pulse","Clear Smog"]),
-        new Pokemon("Scyther", 4, 0.5,"FLYING","BUG","NONE",
+        new Pokemon("Scyther", 4, 0.5,"FLYING","BUG","STEEL",
             ["STEADFAST","TECHNICIAN","SWARM"],
             ["Razor Wind","Counter","Reversal","Endure","Steel Wing","Baton Pass","Silver Wind","Night Slash","Bug Buzz","Defog","Quick Guard"]),
         new Pokemon("Pinsir", 4, 0.5,"BUG","NONE","NONE",
@@ -868,16 +867,16 @@ var Pokemon_array = [
         new Pokemon("Absol", 4, 0.5,"DARK","NONE","NONE",
             ["JUSTIFIED","SUPER LUCK","PRESSURE"],
             ["Double Edge","Curse","Feint Attack","Perish Song","Mean Look","Megahorn","Baton Pass","Magic Coat","Assurance","Me First","Punishment","Sucker Punch","Zen Headbutt","Hex","Play Rough"]),
-        new Pokemon("Turtwig", 4, 0.125,"GRASS","NONE","NONE",
+        new Pokemon("Turtwig", 4, 0.125,"GRASS","NONE","GROUND",
             ["SHELL ARMOR","OVERGROW"],
             ["Body Slam","Thrash","Double Edge","Growth","Amnesia","Stockpile","Spit Up","Swallow","Superpower","Tickle","Sand Tomb","Worry Seed","Seed Bomb","Earth Power","Wide Guard","Grassy Terrain"]),
-        new Pokemon("Piplup", 4, 0.125,"WATER","NONE","NONE",
+        new Pokemon("Piplup", 4, 0.125,"WATER","NONE","STEEL",
             ["DEFIANT","TORRENT"],
             ["Supersonic","Hydro Pump","Agility","Bide","Snore","Flail","Mud Slap","Icy Wind","Yawn","Feather Dance","Mud Sport","Aqua Ring","Double Hit"]),
         new Pokemon("Chingling", 4, 0.5,"PSYCHIC","NONE","NONE",
             ["LEVITATE"],
             ["Disable","Hypnosis","Recover","Curse","Future Sight","Wish","Skill Swap","Cosmic Power","Stored Power"]),
-        new Pokemon("Riolu", 4, 0.125,"FIGHTING","NONE","NONE",
+        new Pokemon("Riolu", 4, 0.125,"FIGHTING","NONE","STEEL",
             ["PRANKSTER","INNER FOCUS","STEADFAST"],
             ["Bite","Low Kick","Agility","High Jump Kick","Mind Reader","Detect","Cross Chop","Crunch","Follow Me","Blaze Kick","Sky Uppercut","Iron Defense","Vacuum Wave","Bullet Punch","Circle Throw"]),
         new Pokemon("Mantyke", 4, 0.5,"FLYING","WATER","NONE",
@@ -937,7 +936,7 @@ var Pokemon_array = [
         new Pokemon("Larvesta", 4, 0.5,"FIRE","BUG","NONE",
             ["SWARM","FLAME BODY"],
             ["String Shot","Harden","Foresight","Endure","Morning Sun","Magnet Rise","Zen Headbutt"]),
-        new Pokemon("Fennekin", 4, 0.125,"FIRE","NONE","NONE",
+        new Pokemon("Fennekin", 4, 0.125,"FIRE","NONE","PSYCHIC",
             ["MAGICIAN","BLAZE"],
             ["Hypnosis","Heat Wave","Wish","Magic Coat"]),
         new Pokemon("Espurr", 4, 0.5,"PSYCHIC","NONE","NONE",
@@ -952,7 +951,7 @@ var Pokemon_array = [
         new Pokemon("Swirlix", 4, 0.5,"FAIRY","NONE","NONE",
             ["UNBURDEN","SWEET VEIL"],
             ["Belly Drum","Yawn","Copycat","After You"]),
-        new Pokemon("Skrelp", 4, 0.5,"WATER","POISON","NONE",
+        new Pokemon("Skrelp", 4, 0.5,"WATER","POISON","DRAGON",
             ["ADAPTABILITY","POISON TOUCH","POISON POINT"],
             ["Haze","Acid Armor","Toxic Spikes","Play Rough","Venom Drench"]),
         new Pokemon("Sylveon", 4, 0.125,"FAIRY","NONE","NONE",
@@ -961,13 +960,13 @@ var Pokemon_array = [
         new Pokemon("Klefki", 4, 0.5,"FAIRY","STEEL","NONE",
             ["MAGICIAN","PRANKSTER"],
             ["Thief","Lock On","Iron Defense","Switcheroo"]),
-        new Pokemon("Rowlet", 4, 0.125,"FLYING","GRASS","NONE",
+        new Pokemon("Rowlet", 4, 0.125,"FLYING","GRASS","GHOST",
             ["LONG REACH","OVERGROW"],
             ["Confuse Ray","Haze","Curse","Baton Pass","Defog","Ominous Wind"]),
-        new Pokemon("Litten", 4, 0.125,"FIRE","NONE","NONE",
+        new Pokemon("Litten", 4, 0.125,"FIRE","NONE","DARK",
             ["INTIMIDATE","BLAZE"],
             ["Body Slam","Crunch","Fake Out","Heat Wave","Revenge","Nasty Plot"]),
-        new Pokemon("Popplio", 4, 0.125,"WATER","NONE","NONE",
+        new Pokemon("Popplio", 4, 0.125,"WATER","NONE","FAIRY",
             ["LIQUID VOICE","TORRENT"],
             ["Amnesia","Perish Song","Charm","Aqua Ring","Wonder Room","Aromatic Mist"]),
         new Pokemon("Stufful", 4, 0.5,"FIGHTING","NORMAL","NONE",
@@ -986,7 +985,6 @@ var Pokemon_array = [
             ["DISGUISE"],
             ["Nightmare","Curse","Destiny Bond","Grudge"])
     ],
-
     //rarity 5: endangered
     [
         new Pokemon("Lapras", 5, 0.5,"ICE","WATER","NONE",
@@ -1007,22 +1005,22 @@ var Pokemon_array = [
         new Pokemon("Dratini", 5, 0.5,"DRAGON","NONE","NONE",
             ["MARVEL SCALE","SHED SKIN"],
             ["Supersonic","Mist","Haze","Dragon Breath","Iron Tail","Extreme Speed","Dragon Dance","Water Pulse","Dragon Pulse","Dragon Rush","Aqua Jet"]),
-        new Pokemon("Togepi", 5, 0.125,"FAIRY","NONE","NONE",
+        new Pokemon("Togepi", 5, 0.125,"FAIRY","NONE","FLYING",
             ["SUPER LUCK","SERENE GRACE","HUSTLE"],
             ["Peck","Mirror Move","Foresight","Present","Morning Sun","Future Sight","Secret Power","Extrasensory","Psycho Shift","Lucky Chant","Nasty Plot","Stored Power"]),
         new Pokemon("Natu", 5, 0.5,"FLYING","PSYCHIC","NONE",
             ["MAGIC BOUNCE","EARLY BIRD","SYNCHRONIZE"],
             ["Drill Peck","Quick Attack","Haze","Feint Attack","Steel Wing","Skill Swap","Refresh","Feather Dance","Roost","Sucker Punch","Zen Headbutt","Synchronoise","Simple Beam","Ally Switch"]),
-        new Pokemon("Larvitar", 5, 0.5,"GROUND","ROCK","NONE",
+        new Pokemon("Larvitar", 5, 0.5,"GROUND","ROCK","DARK",
             ["SAND VEIL","GUTS"],
             ["Stomp","Focus Energy","Curse","Outrage","Pursuit","Iron Tail","Ancient Power","Iron Defense","Dragon Dance","Assurance","Iron Head","Stealth Rock"]),
-        new Pokemon("Ralts", 5, 0.5,"FAIRY","PSYCHIC","NONE",
+        new Pokemon("Ralts", 5, 0.5,"FAIRY","PSYCHIC","FIGHTING",
             ["TELEPATHY","TRACE","SYNCHRONIZE"],
             ["Disable","Confuse Ray","Destiny Bond","Mean Look","Encore","Memento","Skill Swap","Grudge","Shadow Sneak","Synchronoise","Ally Switch","Misty Terrain"]),
-        new Pokemon("Trapinch", 5, 0.5,"GROUND","NONE","NONE",
+        new Pokemon("Trapinch", 5, 0.5,"GROUND","NONE","DRAGON",
             ["SHEER FORCE","ARENA TRAP","HYPER CUTTER"],
             ["Gust","Quick Attack","Focus Energy","Flail","Endure","Fury Cutter","Signal Beam","Mud Shot","Earth Power","Bug Bite"]),
-        new Pokemon("Swablu", 5, 0.5,"FLYING","NORMAL","NONE",
+        new Pokemon("Swablu", 5, 0.5,"FLYING","NORMAL","DRAGON",
             ["CLOUD NINE","NATURAL CURE"],
             ["Agility","Rage","Haze","Steel Wing","Pursuit","Feather Dance","Hyper Voice","Roost","Power Swap","Dragon Rush"]),
         new Pokemon("Lileep", 5, 0.125,"GRASS","ROCK","NONE",
@@ -1034,7 +1032,7 @@ var Pokemon_array = [
         new Pokemon("Tropius", 5, 0.5,"FLYING","GRASS","NONE",
             ["HARVEST","SOLAR POWER","CHLOROPHYLL"],
             ["Razor Wind","Slam","Headbutt","Leech Seed","Curse","Synthesis","Nature Power","Bullet Seed","Leaf Blade","Dragon Dance","Natural Gift","Leaf Storm"]),
-        new Pokemon("Bagon", 5, 0.5,"DRAGON","NONE","NONE",
+        new Pokemon("Bagon", 5, 0.5,"DRAGON","NONE","FLYING",
             ["SHEER FORCE","ROCK HEAD"],
             ["Thrash","Hydro Pump","Dragon Rage","Defense Curl","Endure","Twister","Dragon Dance","Dragon Pulse","Dragon Rush","Fire Fang"]),
         new Pokemon("Beldum", 5, 0.5,"PSYCHIC","STEEL","NONE",
@@ -1109,149 +1107,11 @@ var Pokemon_array = [
         new Pokemon("Dhelmise", 5, 0.5,"GRASS","GHOST","NONE",
             ["STEELWORKER"],
             ["No Egg Moves"]),
-        new Pokemon("Jangmo-o", 5, 0.5,"DRAGON","NONE","NONE",
+        new Pokemon("Jangmo-o", 5, 0.5,"DRAGON","NONE","FIGHTING",
             ["OVERCOAT","SOUNDPROOF","BULLETPROOF"],
             ["Counter","Reversal","Dragon Breath"])
     ]
-
 ];
-
-
-//RANDOMIZING THE POKEMON’S STATS//
-
-function randomize_sex (poke_fem_chance) {
-    var rand_sex = Math.random();
-    var sex;
-    if (rand_sex < poke_fem_chance){
-        sex = "FEMALE";
-    }
-    else if (rand_sex >= poke_fem_chance && rand_sex < 1){
-        sex = "MALE";
-    }
-    else {
-        console.log("Something went wrong with choosing the sex.");
-        return -1; //error
-    }
-    return sex;
-}
-
-function randomize_eggmove_number () {
-    var rand_number = Math.floor(Math.random() * 9) + 1;
-    var eggmove_number;
-    if (rand_number <= 3){
-        eggmove_number = 0;
-    }
-    else if (rand_number >= 4 && rand_number <= 6){
-        eggmove_number = 1;
-    }
-    else if (rand_number >= 7 && rand_number <= 8){
-        eggmove_number = 2;
-    }
-    else if (rand_number == 9) {
-        eggmove_number = 3;
-    }
-    else {
-        console.log("Something went wrong with choosing how many egg moves.");
-        return -1; //error
-    }
-    return eggmove_number;
-}
-
-
-function randomize_x_from_array(x, array){
-    if (x > array.length){
-        console.log("There are not enough arguments in the array to pick " + x + " of them.");
-        return -1;
-    }
-    var currentIndex = array.length;
-    var temporaryValue;
-    var randomIndex;
-    //while there remain elements to shuffle...
-    while (0 !== currentIndex){
-        //pick a remaining element
-        randomIndex = Math.floor(Math.random() * currentIndex);
-        currentIndex -= 1;
-        // and swap it with the current element
-        temporaryValue = array[currentIndex];
-        array[currentIndex] = array[randomIndex];
-        array[randomIndex] = temporaryValue;
-    }
-    return array.slice(0, x);
-}
-
-
-//later, will need to add a bit in so that the function will pick x based on result from randomize_eggmove_number
-
-function randomize_eggmoves(eggmove_array){
-    randomize_x_from_array(randomize_eggmove_number(), eggmove_array);
-}
-
-
-
-
-
-
-
-//RANDOMIZING A POKEMON SPECIES
-
-function randomize_rarity () {
-    var rand_rarity = Math.random();
-    var poke_rarity;
-    if (rand_rarity < 0.6){
-        poke_rarity = 2; //overpopulated/common
-    }
-    else if (rand_rarity >= 0.6 && rand_rarity < 0.85){
-        poke_rarity = 3; //uncommon
-    }
-    else if (rand_rarity >= 0.85 && rand_rarity < 0.9775){
-        poke_rarity = 4; //rare
-    }
-    else if (rand_rarity >= 0.9775 && rand_rarity < 1) {
-        poke_rarity = 5; //endangered
-    }
-    else {
-        console.log("Something went wrong with choosing the rarity.");
-        return -1; //error
-    }
-    return poke_rarity;
-}
-
-function rarity_to_string(poke_rarity){
-    switch (poke_rarity){
-        case 2: return "OVERPOPULATED/COMMON";
-        case 3: return "UNCOMMON";
-        case 4: return "RARE";
-        case 5: return "ENDANGERED";
-        default: return "Cannot change rarity to string.";
-    }
-}
-
-function randomize_poke (type, rarity, never_found) {
-    //this function will need to find all the Pokemon with the given type and rarity and then randomly pick one
-    var possible_Pokemon = [];
-    Pokemon_array[rarity].forEach(function(element) {
-        var forbidden = false;
-        never_found.forEach(function(f_type){
-            if (f_type == element.type1 || f_type == element.type2 || f_type == element.type_evolved){
-                forbidden = true;
-            }
-        });
-        if ((element.type1 == type || element.type2 == type || element.type_evolved == type)
-            && forbidden == false){
-            possible_Pokemon.push(element);
-        }
-    });
-
-    //need to make sure at least one Pokemon made it into possible_Pokemon.
-    if (possible_Pokemon.length < 1){
-        console.log("No suitable Pokemon exist with the randomized type and rarity.");
-        return -1;
-    }
-
-    return possible_Pokemon[Math.floor(Math.random()*possible_Pokemon.length)];
-}
-
-
 
 //location/season constructor
 var location_season = function (name, common_types, uncommon_types, rare_types, never_found){
@@ -1574,10 +1434,134 @@ var location_array = [
 ];
 
 
+//RANDOMIZING THE POKEMON’S STATS//
+
+function randomize_sex (poke_fem_chance) {
+    var rand_sex = Math.random();
+    var sex;
+    if (rand_sex < poke_fem_chance){
+        sex = "FEMALE";
+    }
+    else if (rand_sex >= poke_fem_chance && rand_sex < 1){
+        sex = "MALE";
+    }
+    else {
+        console.log("Something went wrong with choosing the sex.");
+        return -1; //error
+    }
+    return sex;
+}
+
+function randomize_x_from_array(x, array){
+    if (x > array.length){
+        console.log("There are not enough arguments in the array to pick " + x + " of them.");
+        return -1;
+    }
+    var currentIndex = array.length;
+    var temporaryValue;
+    var randomIndex;
+    //while there remain elements to shuffle...
+    while (0 !== currentIndex){
+        //pick a remaining element
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex -= 1;
+        // and swap it with the current element
+        temporaryValue = array[currentIndex];
+        array[currentIndex] = array[randomIndex];
+        array[randomIndex] = temporaryValue;
+    }
+    return array.slice(0, x);
+}
+
+function randomize_eggmove_number () {
+    var rand_number = Math.floor(Math.random() * 9) + 1;
+    var eggmove_number;
+    if (rand_number <= 3){
+        eggmove_number = 0;
+    }
+    else if (rand_number >= 4 && rand_number <= 6){
+        eggmove_number = 1;
+    }
+    else if (rand_number >= 7 && rand_number <= 8){
+        eggmove_number = 2;
+    }
+    else if (rand_number == 9) {
+        eggmove_number = 3;
+    }
+    else {
+        console.log("Something went wrong with choosing how many egg moves.");
+        return -1; //error
+    }
+    return eggmove_number;
+}
+
+function randomize_eggmoves(eggmove_array){
+    var eggmoves = randomize_x_from_array(randomize_eggmove_number(), eggmove_array);
+    console.log("Randomizing eggmoves from " + eggmove_array);
+    return eggmoves;
+}
 
 
-//need to make a function that takes a location/season object. Randomizes a number for which array to pull from (common type or uncommon type, etc)...
-//then it needs to generate a random number based on how long the array is… and then … is it okay if a case is impossible to get? And then the array value will also be impossible?
+//RANDOMIZING POKEMON SPECIES
+
+function randomize_poke (type, rarity, never_found) {
+    //this function will need to find all the Pokemon with the given type and rarity and then randomly pick one
+    var possible_Pokemon = [];
+    Pokemon_array[rarity].forEach(function(element) {
+        var forbidden = false;
+        never_found.forEach(function(f_type){
+            if (f_type == element.type1 || f_type == element.type2 || f_type == element.type_evolved){
+                forbidden = true;
+            }
+        });
+        if ((element.type1 == type || element.type2 == type || element.type_evolved == type)
+            && forbidden == false){
+            possible_Pokemon.push(element);
+        }
+    });
+
+    //need to make sure at least one Pokemon made it into possible_Pokemon.
+    if (possible_Pokemon.length < 1){
+        console.log("No suitable Pokemon exist with the randomized type and rarity.");
+        return -1;
+    }
+    return possible_Pokemon[Math.floor(Math.random()*possible_Pokemon.length)];
+}
+
+
+//RANDOMIZING GENERAL INFO (RARITY AND TYPE)
+
+function randomize_rarity () {
+    var rand_rarity = Math.random();
+    var poke_rarity;
+    if (rand_rarity < 0.6){
+        poke_rarity = 2; //overpopulated/common
+    }
+    else if (rand_rarity >= 0.6 && rand_rarity < 0.85){
+        poke_rarity = 3; //uncommon
+    }
+    else if (rand_rarity >= 0.85 && rand_rarity < 0.9775){
+        poke_rarity = 4; //rare
+    }
+    else if (rand_rarity >= 0.9775 && rand_rarity < 1) {
+        poke_rarity = 5; //endangered
+    }
+    else {
+        console.log("Something went wrong with choosing the rarity.");
+        return -1; //error
+    }
+    return poke_rarity;
+}
+
+function rarity_to_string(poke_rarity){
+    switch (poke_rarity){
+        case 2: return "OVERPOPULATED/COMMON";
+        case 3: return "UNCOMMON";
+        case 4: return "RARE";
+        case 5: return "ENDANGERED";
+        default: return "Cannot change rarity to string.";
+    }
+}
 
 function randomize_general (location) {
     var type_rarity = Math.random();
@@ -1610,6 +1594,9 @@ function randomize_general (location) {
     return [poke_type, poke_rarity];
 }
 
+
+//PUTTING IT TOGETHER
+
 function go(){
     var place = document.getElementById("select_place").value;
     console.log("User input: " + place);
@@ -1630,9 +1617,8 @@ function go(){
     var abil = randomize_x_from_array(1, rand_poke.abilities);
     var eggmoves = randomize_eggmoves(rand_poke.egg_moves);
 
-    console.log(sex + abil);
-    console.log(eggmoves);
-
+    console.log("Sex: "+ sex +", Ability: "+ abil);
+    console.log("Eggmoves: " +eggmoves);
 }
 
 
@@ -1658,4 +1644,3 @@ function test() {
     });
 
 }
-
