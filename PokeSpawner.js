@@ -21,10 +21,6 @@ var Pokemon_array = [
             ["Error"]),
 
 
-        new Pokemon("Rattata (Alolan)", 2, 0.5, "DARK", "NORMAL", "NONE",
-            ["GLUTTONY", "HUSTLE", "THICK FAT"],
-            ["Egg Moves Unavailable"]),
-
         new Pokemon("Nidoran (M)", 3, 0.0, "POISON", "NONE", "GROUND",
             ["POISON POINT", "RIVALRY", "HUSTLE"],
             ["Egg Moves Unavailable"]),
@@ -42,24 +38,8 @@ var Pokemon_array = [
             ["Egg Moves Unavailable"]),
         new Pokemon("Farfetchd", 3, 0.5, "NORMAL", "FLYING", "NONE",
             ["KEEN EYE", "INNER FOCUS", "DEFIANT"],
-            ["Egg Moves Unavailable"]),
+            ["Egg Moves Unavailable"])
 
-        new Pokemon("Vulpix (Alolan)", 4, 0.75, "ICE", "NONE", "FAIRY",
-            ["SNOW CLOAK", "SNOW WARNING"],
-            ["Egg Moves NA"]),
-        new Pokemon("Meowth (Alolan)", 4, 0.5, "DARK", "NONE", "NONE",
-            ["PICKUP", "TECHNICIAN", "RATTLED"],
-            ["Egg Moves NA"]),
-        new Pokemon("Grimer (Alolan)", 4, 0.5, "POISON", "DARK", "NONE",
-            ["POISON TOUCH", "GLUTTONY", "POWER OF ALCHEMY"],
-            ["Egg Moves NA"]),
-        new Pokemon("Mime Jr.", 4, 0.5, "PSYCHIC", "FAIRY", "NONE",
-            ["SOUNDPROOF", "FILTER", "TECHNICIAN"],
-            ["Egg Moves NA"]),
-
-        new Pokemon("Kangaskhan", 5, 1.0, "NORMAL", "NONE", "NONE",
-            ["EARLY BIRD", "SCRAPPY", "INNER FOCUS"],
-            ["Egg Moves NA"])
     ],
     //rarity 1
     [
@@ -91,7 +71,7 @@ var Pokemon_array = [
         new Pokemon("Zigzagoon", 2, 0.5,"NORMAL","NONE","NONE",
             ["QUICK FEET","GLUTTONY","PICKUP"],
             ["Mud Slap","Charm","Sleep Talk","Pursuit","Helping Hand","Trick","Tickle","Rock Climb","Simple Beam"]),
-        new Pokemon("Wurmple", 2, 0.5,"BUG","NONE","NONE",
+        new Pokemon("Wurmple", 2, 0.5,"BUG","NONE","FLYING",
             ["RUN AWAY","SHIELD DUST"],
             ["No Egg Moves"]),
         new Pokemon("Wingull", 2, 0.5,"FLYING","WATER","NONE",
@@ -138,7 +118,11 @@ var Pokemon_array = [
             ["Mist","Muddy Water","Water Sport","Water Pulse"]),
 
         //common
-        new Pokemon("Caterpie", 2, 0.5,"BUG","NONE","FLYING",
+        new Pokemon("Rattata (Alolan)", 2, 0.5, "DARK", "NORMAL", "NONE",
+            ["GLUTTONY", "HUSTLE", "THICK FAT"],
+            ["Counter","Final Gambit","Fury Swipes","Me First","Revenge","Reversal","Snatch","Stockpile","Swallow","Switcheroo","Uproar"]),
+
+      new Pokemon("Caterpie", 2, 0.5,"BUG","NONE","FLYING",
             ["RUN AWAY","SHIELD DUST"],
             ["No Egg Moves"]),
         new Pokemon("Weedle", 2, 0.5,"POISON","BUG","NONE",
@@ -423,7 +407,7 @@ var Pokemon_array = [
         new Pokemon("Staryu", 3, 0.5,"WATER","NONE","PSYCHIC",
             ["ANALYTIC","NATURAL CURE","ILLUMINATE"],
             ["No Egg Moves"]),
-        new Pokemon("Magikarp", 3, 0.5,"WATER","NONE","NONE",
+        new Pokemon("Magikarp", 3, 0.5,"WATER","NONE","FLYING",
             ["RATTLED","SWIFT SWIM"],
             ["No Egg Moves"]),
         new Pokemon("Eevee", 3, 0.125,"NORMAL","NONE","NONE",
@@ -684,7 +668,7 @@ var Pokemon_array = [
         new Pokemon("Grubbin", 3, 0.5,"BUG","NONE","ELECTRIC",
             ["SWARM"],
             ["Harden","Endure","Mud Shot","Electroweb"]),
-        new Pokemon("Oricorio", 3, 0.75,"FLYING","FIRE","NONE",
+        new Pokemon("Oricorio", 3, 0.75,"FLYING","NONE","NONE",
             ["DANCER"],
             ["Safeguard","Pluck","Tailwind","Captivate"]),
         new Pokemon("Cutiefly", 3, 0.5,"FAIRY","BUG","NONE",
@@ -726,10 +710,26 @@ var Pokemon_array = [
     ],
 //rarity 4: rare
     [
+        new Pokemon("Vulpix (Alolan)", 4, 0.75, "ICE", "NONE", "FAIRY",
+            ["SNOW CLOAK", "SNOW WARNING"],
+            ["Agility","Charm","Disable","Encore","Extrasensory","Flail","Freeze-Dry","Howl","Hypnosis","Moonblast","Power Swap","Spite","Secret Power","Tail Slap"]),
+        new Pokemon("Meowth (Alolan)", 4, 0.5, "DARK", "NONE", "NONE",
+            ["PICKUP", "TECHNICIAN", "RATTLED"],
+            ["Amnesia","Assist","Charm","Covet","Flail","Flatter","Foul Play","Hypnosis","Parting Shot","Punishment","Snatch","Spite"]),
+        new Pokemon("Grimer (Alolan)", 4, 0.5, "POISON", "DARK", "NONE",
+            ["POISON TOUCH", "GLUTTONY", "POWER OF ALCHEMY"],
+            ["Assurance","Clear Smog","Curse","Imprison","Mean Look","Power-Up Punch","Pursuit","Scary Face","Shadow Sneak","Spite","Spit Up", "Stockpile", "Swallow"]),
+        new Pokemon("Relicanth", 4, 0.5, "WATER", "ROCK", "NONE",
+            ["SWIFT SWIM", "ROCK HEAD", "STURDY"],
+            ["Amnesia","Aqua Tail","Brine","Magnitude","Mud Shot","Mud-Slap","Muddy Water","Skull Bash","Sleep Talk","Snore","Water Sport","Zen Headbutt"]),
+        new Pokemon("Mime Jr.", 4, 0.5, "PSYCHIC", "FAIRY", "NONE",
+            ["SOUNDPROOF", "FILTER", "TECHNICIAN"],
+            ["Charm","Confuse Ray","Fake Out","Future Sight","Healing Wish","Hypnosis","Icy Wind","Magic Room","Mimic","Nasty Plot","Power Split","Teeter Dance","Trick","Psychic Terrain","Wake-Up Slap"]),
+      
         new Pokemon("Bulbasaur", 4, 0.125,"POISON","GRASS","NONE",
             ["CHLOROPHYLL","OVERGROW"],
             ["Petal Dance","Sludge","Skull Bash","Amnesia","Curse","Giga Drain","Endure","Charm","Nature Power","Ingrain","Grass Whistle","Magical Leaf","Leaf Storm","Power Whip","Grassy Terrain"]),
-        new Pokemon("Charmander", 4, 0.125,"FIRE","NONE","NONE",
+        new Pokemon("Charmander", 4, 0.125,"FIRE","NONE","FLYING",
             ["SOLAR POWER","BLAZE"],
             ["Bite","Counter","Belly Drum","Outrage","Metal Claw","Crunch","Ancient Power","Beat Up","Focus Punch","Air Cutter","Dragon Dance","Flare Blitz","Dragon Pulse","Dragon Rush"]),
         new Pokemon("Vulpix", 4, 0.75,"FIRE","NONE","NONE",
@@ -960,7 +960,7 @@ var Pokemon_array = [
         new Pokemon("Klefki", 4, 0.5,"FAIRY","STEEL","NONE",
             ["MAGICIAN","PRANKSTER"],
             ["Thief","Lock On","Iron Defense","Switcheroo"]),
-        new Pokemon("Rowlet", 4, 0.125,"FLYING","GRASS","GHOST",
+        new Pokemon("Rowlet", 4, 0.125,"FLYING","GRASS","NONE",
             ["LONG REACH","OVERGROW"],
             ["Confuse Ray","Haze","Curse","Baton Pass","Defog","Ominous Wind"]),
         new Pokemon("Litten", 4, 0.125,"FIRE","NONE","DARK",
@@ -987,6 +987,10 @@ var Pokemon_array = [
     ],
     //rarity 5: endangered
     [
+        new Pokemon("Kangaskhan", 5, 1.0, "NORMAL", "NONE", "NONE",
+            ["EARLY BIRD", "SCRAPPY", "INNER FOCUS"],
+            ["Circle Throw","Counter","Crush Claw","Disable","Double-Edge","Endeavor","Focus Energy","Focus Punch","Foresight","Hammer Arm","Stomp","Trump Card","Uproar"]),
+        
         new Pokemon("Lapras", 5, 0.5,"ICE","WATER","NONE",
             ["HYDRATION","SHELL ARMOR","WATER ABSORB"],
             ["Horn Drill","Fissure","Curse","Foresight","Sleep Talk","Ancient Power","Future Sight","Whirlpool","Refresh","Tickle","Dragon Dance","Dragon Pulse","Avalanche","Freeze Dry"]),
@@ -1014,7 +1018,7 @@ var Pokemon_array = [
         new Pokemon("Larvitar", 5, 0.5,"GROUND","ROCK","DARK",
             ["SAND VEIL","GUTS"],
             ["Stomp","Focus Energy","Curse","Outrage","Pursuit","Iron Tail","Ancient Power","Iron Defense","Dragon Dance","Assurance","Iron Head","Stealth Rock"]),
-        new Pokemon("Ralts", 5, 0.5,"FAIRY","PSYCHIC","FIGHTING",
+        new Pokemon("Ralts", 5, 0.5,"FAIRY","PSYCHIC","NONE",
             ["TELEPATHY","TRACE","SYNCHRONIZE"],
             ["Disable","Confuse Ray","Destiny Bond","Mean Look","Encore","Memento","Skill Swap","Grudge","Shadow Sneak","Synchronoise","Ally Switch","Misty Terrain"]),
         new Pokemon("Trapinch", 5, 0.5,"GROUND","NONE","DRAGON",
@@ -1525,6 +1529,7 @@ function randomize_poke (type, rarity, never_found) {
         console.log("No suitable Pokemon exist with the randomized type and rarity.");
         return -1;
     }
+    console.log("Possible Pokemon for selected type and rarity: " + Pokemon_array);
     return possible_Pokemon[Math.floor(Math.random()*possible_Pokemon.length)];
 }
 
