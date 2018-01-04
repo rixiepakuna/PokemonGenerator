@@ -18,28 +18,7 @@ var Pokemon_array = [
     [
         new Pokemon("Error", 0, 0.5, "ERROR", "ERROR", "ERROR",
             ["ERROR"],
-            ["Error"]),
-
-
-        new Pokemon("Nidoran (M)", 3, 0.0, "POISON", "NONE", "GROUND",
-            ["POISON POINT", "RIVALRY", "HUSTLE"],
-            ["Egg Moves Unavailable"]),
-        new Pokemon("Nidoran (F)", 3, 1.0, "POISON", "NONE", "GROUND",
-            ["POISON POINT", "RIVALRY", "HUSTLE"],
-            ["Egg Moves Unavailable"]),
-        new Pokemon("Sandshrew (Alolan)", 3, 0.5, "ICE", "STEEL", "NONE",
-            ["SNOW CLOAK", "SLUSH RUSH"],
-            ["Egg Moves Unavailable"]),
-        new Pokemon("Diglett (Alolan)", 3, 0.5, "GROUND", "STEEL", "NONE",
-            ["SAND VEIL", "TANGLING HAIR", "SAND FORCE"],
-            ["Egg Moves Unavailable"]),
-        new Pokemon("Geodude (Alolan)", 3, 0.5, "ROCK", "ELECTRIC", "NONE",
-            ["MAGNET PULL", "STURDY", "GALVANIZE"],
-            ["Egg Moves Unavailable"]),
-        new Pokemon("Farfetchd", 3, 0.5, "NORMAL", "FLYING", "NONE",
-            ["KEEN EYE", "INNER FOCUS", "DEFIANT"],
-            ["Egg Moves Unavailable"])
-
+            ["Error"])
     ],
     //rarity 1
     [
@@ -362,7 +341,26 @@ var Pokemon_array = [
     ],
     //rarity 3: uncommon
     [
-        new Pokemon("Squirtle", 3, 0.125,"WATER","NONE","NONE",
+        new Pokemon("Nidoran (M)", 3, 0.0, "POISON", "NONE", "GROUND",
+            ["POISON POINT", "RIVALRY", "HUSTLE"],
+            ["Unavailable"]),
+        new Pokemon("Nidoran (F)", 3, 1.0, "POISON", "NONE", "GROUND",
+            ["POISON POINT", "RIVALRY", "HUSTLE"],
+            ["Unavailable"]),
+        new Pokemon("Sandshrew (Alolan)", 3, 0.5, "ICE", "STEEL", "NONE",
+            ["SNOW CLOAK", "SLUSH RUSH"],
+            ["Unavailable"]),
+        new Pokemon("Diglett (Alolan)", 3, 0.5, "GROUND", "STEEL", "NONE",
+            ["SAND VEIL", "TANGLING HAIR", "SAND FORCE"],
+            ["Unavailable"]),
+        new Pokemon("Geodude (Alolan)", 3, 0.5, "ROCK", "ELECTRIC", "NONE",
+            ["MAGNET PULL", "STURDY", "GALVANIZE"],
+            ["Unavailable"]),
+        new Pokemon("Farfetchd", 3, 0.5, "NORMAL", "FLYING", "NONE",
+            ["KEEN EYE", "INNER FOCUS", "DEFIANT"],
+            ["Unavailable"]),
+
+      new Pokemon("Squirtle", 3, 0.125,"WATER","NONE","NONE",
             ["RAIN DISH","TORRENT"],
             ["Mist","Haze","Flail","Foresight","Mirror Coat","Fake Out","Yawn","Refresh","Mud Sport","Water Spout","Muddy Water","Brine","Aqua Ring","Aura Sphere","Dragon Pulse","Aqua Jet"]),
         new Pokemon("Paras", 3, 0.5,"GRASS","BUG","NONE",
