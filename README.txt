@@ -1,3 +1,17 @@
+To use:
+1. Make sure index.html and PokeSpawner.js are working and together.
+      crawler.html is unnecessary; it is simply the machine that autofilled out the eggmoves for me. You can delete it if you desire. 
+2. Open the index.html in a web browser.
+3. Select approprite location/time of year.
+4. Press the button.
+5. Read the instructions that show up explaining how to see your results.
+Remember!
+- You can always spawn an Overpopulated Pokemon instead of rolling.
+- Temp mods are not allowed to spawn Endangered Pokemon. If you are a temp mod and you get one of those, I'm afraid you'll need to roll again.
+- Grass types showing up in the desert must be desert-y ones. Like Cacnea.
+
+
+
 Known issues:
 1. Genderless Pokemon are not genderless.
       Just ignore whatever gender it gives you, if the Pokemon is supposed to be Genderless.
