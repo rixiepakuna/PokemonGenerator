@@ -20,83 +20,77 @@ var Pokemon_array = [
             ["ERROR"],
             ["Error"])
     ],
-    //rarity 1
+    //rarity 1 overpopulated
     [
-        new Pokemon("Error", 1, 0.5, "ERROR", "ERROR", "ERROR",
-            ["ERROR"],
-            ["Error"])
-    ],
-    //rarity 2
-    [
-        //overpopulated
-        new Pokemon("Rattata", 2, 0.5,"NORMAL","NONE","NONE",
+        new Pokemon("Rattata", 1, 0.5,"NORMAL","NONE","NONE",
             ["HUSTLE","GUTS","RUN AWAY"],
             ["Bite","Counter","Screech","Fury Swipes","Flame Wheel","Reversal","Uproar","Revenge","Me First","Last Resort","Final Gambit"]),
-        new Pokemon("Zubat", 2, 0.5,"FLYING","POISON","NONE",
+        new Pokemon("Zubat", 1, 0.5,"FLYING","POISON","NONE",
             ["INFILTRATOR","INNER FOCUS"],
             ["Gust","Whirlwind","Hypnosis","Quick Attack","Curse","Feint Attack","Giga Drain","Steel Wing","Pursuit","Brave Bird","Nasty Plot","Zen Headbutt","Defog","Venom Drench"]),
-        new Pokemon("Sentret", 2, 0.5,"NORMAL","NONE","NONE",
+        new Pokemon("Sentret", 1, 0.5,"NORMAL","NONE","NONE",
             ["FRISK","KEEN EYE","RUN AWAY"],
             ["Double Edge","Focus Energy","Slash","Reversal","Charm","Pursuit","Iron Tail","Trick","Assist","Covet","Natural Gift","Last Resort","Captivate"]),
-        new Pokemon("Ledyba", 2, 0.5,"FLYING","BUG","NONE",
+        new Pokemon("Ledyba", 1, 0.5,"FLYING","BUG","NONE",
             ["RATTLED","EARLY BIRD","SWARM"],
             ["Psybeam","Screech","Bide","Dizzy Punch","Encore","Focus Punch","Knock Off","Silver Wind","Tailwind","Bug Buzz","Drain Punch","Bug Bite"]),
-        new Pokemon("Hoppip", 2, 0.5,"FLYING","GRASS","NONE",
+        new Pokemon("Hoppip", 1, 0.5,"FLYING","GRASS","NONE",
             ["INFILTRATOR","LEAF GUARD","CHLOROPHYLL"],
             ["Double Edge","Confusion","Amnesia","Endure","Encore","Helping Hand","Aromatherapy","Worry Seed","Seed Bomb","Cotton Guard","Grassy Terrain"]),
-        new Pokemon("Dunsparce", 2, 0.5,"NORMAL","NONE","NONE",
+        new Pokemon("Dunsparce", 1, 0.5,"NORMAL","NONE","NONE",
             ["RATTLED","RUN AWAY","SERENE GRACE"],
             ["Headbutt","Bite","Agility","Bide","Snore","Curse","Sleep Talk","Ancient Power","Magic Coat","Secret Power","Astonish","Trump Card","Hex"]),
-        new Pokemon("Zigzagoon", 2, 0.5,"NORMAL","NONE","NONE",
+        new Pokemon("Zigzagoon", 1, 0.5,"NORMAL","NONE","NONE",
             ["QUICK FEET","GLUTTONY","PICKUP"],
             ["Mud Slap","Charm","Sleep Talk","Pursuit","Helping Hand","Trick","Tickle","Rock Climb","Simple Beam"]),
-        new Pokemon("Wurmple", 2, 0.5,"BUG","NONE","FLYING",
+        new Pokemon("Wurmple", 1, 0.5,"BUG","NONE","FLYING",
             ["RUN AWAY","SHIELD DUST"],
             ["No Egg Moves"]),
-        new Pokemon("Wingull", 2, 0.5,"FLYING","WATER","NONE",
+        new Pokemon("Wingull", 1, 0.5,"FLYING","WATER","NONE",
             ["RAIN DISH","HYDRATION","KEEN EYE"],
             ["Gust","Mist","Agility","Twister","Knock Off","Water Sport","Roost","Brine","Aqua Ring","Wide Guard","Soak"]),
-        new Pokemon("Starly", 2, 0.5,"FLYING","NORMAL","NONE",
+        new Pokemon("Starly", 1, 0.5,"FLYING","NORMAL","NONE",
             ["RECKLESS","KEEN EYE"],
             ["Sand Attack","Fury Attack","Double Edge","Mirror Move","Foresight","Detect","Steel Wing","Pursuit","Uproar","Revenge","Feather Dance","Astonish","Roost"]),
-        new Pokemon("Bidoof", 2, 0.5,"NORMAL","NONE","WATER",
+        new Pokemon("Bidoof", 1, 0.5,"NORMAL","NONE","WATER",
             ["MOODY","UNAWARE","SIMPLE"],
             ["Double Edge","Quick Attack","Defense Curl","Skull Bash","Fury Swipes","Endure","Rollout","Sleep Talk","Odor Sleuth","Water Sport","Aqua Tail","Rock Climb"]),
-        new Pokemon("Kricketot", 2, 0.5,"BUG","NONE","NONE",
+        new Pokemon("Kricketot", 1, 0.5,"BUG","NONE","NONE",
             ["RUN AWAY","SHED SKIN"],
             ["No Egg Moves"]),
-        new Pokemon("Burmy", 2, 0.5,"BUG","NONE","NONE",
+        new Pokemon("Burmy", 1, 0.5,"BUG","NONE","NONE",
             ["OVERCOAT","SHED SKIN"],
             ["No Egg Moves"]),
-        new Pokemon("Buneary", 2, 0.5,"NORMAL","NONE","NONE",
+        new Pokemon("Buneary", 1, 0.5,"NORMAL","NONE","NONE",
             ["LIMBER","KLUTZ","RUN AWAY"],
             ["Fire Punch","Ice Punch","Thunder Punch","Low Kick","Flail","Sweet Kiss","Encore","Fake Out","Focus Punch","Teeter Dance","Mud Sport","Fake Tears","Cosmic Power","Sky Uppercut","Copycat","Switcheroo","Double Hit","Circle Throw"]),
-        new Pokemon("Pidove", 2, 0.5,"FLYING","NORMAL","NONE",
+        new Pokemon("Pidove", 1, 0.5,"FLYING","NORMAL","NONE",
             ["RIVALRY","SUPER LUCK","BIG PECKS"],
             ["Hypnosis","Steel Wing","Morning Sun","Uproar","Wish","Lucky Chant","Night Slash","Bestow"]),
-        new Pokemon("Foongus", 2, 0.5,"POISON","GRASS","NONE",
+        new Pokemon("Foongus", 1, 0.5,"POISON","GRASS","NONE",
             ["REGENERATOR","EFFECT SPORE"],
             ["Body Slam","Growth","Poison Powder","Stun Spore","Defense Curl","Endure","Rollout","Gastro Acid"]),
-        new Pokemon("Durant", 2, 0.5,"STEEL","BUG","NONE",
+        new Pokemon("Durant", 1, 0.5,"STEEL","BUG","NONE",
             ["TRUANT","HUSTLE","SWARM"],
             ["Screech","Feint Attack","Endure","Baton Pass","Thunder Fang","Rock Climb"]),
-        new Pokemon("Bunnelby", 2, 0.5,"NORMAL","NONE","GROUND",
+        new Pokemon("Bunnelby", 1, 0.5,"NORMAL","NONE","GROUND",
             ["HUGE POWER","CHEEK POUCH","PICKUP"],
             ["Defense Curl","Spikes","Rollout"]),
-        new Pokemon("Scatterbug", 2, 0.5,"BUG","NONE","FLYING",
+        new Pokemon("Scatterbug", 1, 0.5,"BUG","NONE","FLYING",
             ["FRIEND GUARD","COMPOUND EYES","SHIELD DUST"],
             ["Poison Powder","Stun Spore","Rage Powder"]),
-        new Pokemon("Binacle", 2, 0.5,"WATER","ROCK","NONE",
+        new Pokemon("Binacle", 1, 0.5,"WATER","ROCK","NONE",
             ["PICKPOCKET","SNIPER","TOUGH CLAWS"],
             ["Helping Hand","Tickle","Water Sport","Switcheroo"]),
-        new Pokemon("Pikipek", 2, 0.5,"FLYING","NORMAL","NONE",
+        new Pokemon("Pikipek", 1, 0.5,"FLYING","NORMAL","NONE",
             ["PICKUP","SKILL LINK","KEEN EYE"],
             ["Mirror Move","Uproar","Tailwind","Brave Bird","Boomburst"]),
-        new Pokemon("Wishiwashi", 2, 0.5,"WATER","NONE","NONE",
+        new Pokemon("Wishiwashi", 1, 0.5,"WATER","NONE","NONE",
             ["SCHOOLING"],
-            ["Mist","Muddy Water","Water Sport","Water Pulse"]),
-
-        //common
+            ["Mist","Muddy Water","Water Sport","Water Pulse"])
+    ],
+    //rarity 2 common
+    [
         new Pokemon("Rattata (Alolan)", 2, 0.5, "DARK", "NORMAL", "NONE",
             ["GLUTTONY", "HUSTLE", "THICK FAT"],
             ["Counter","Final Gambit","Fury Swipes","Me First","Revenge","Reversal","Snatch","Stockpile","Swallow","Switcheroo","Uproar"]),
@@ -1480,6 +1474,7 @@ function randomize_eggmove_number () {
     var eggmove_number;
     if (rand_number <= 3){
         eggmove_number = 0;
+        console.log("Pokemon was born with no egg moves.");
     }
     else if (rand_number >= 4 && rand_number <= 6){
         eggmove_number = 1;
@@ -1537,16 +1532,19 @@ function randomize_poke (type, rarity, never_found) {
 function randomize_rarity () {
     var rand_rarity = Math.random();
     var poke_rarity;
-    if (rand_rarity < 0.6){
-        poke_rarity = 2; //overpopulated/common
+    if (rand_rarity < 0.29){
+        poke_rarity = 1; //overpopulated
     }
-    else if (rand_rarity >= 0.6 && rand_rarity < 0.85){
+    else if (rand_rarity >= 0.29 && rand_rarity < 0.58){
+        poke_rarity = 2; //common
+    }
+    else if (rand_rarity >= 0.58 && rand_rarity < 0.8){
         poke_rarity = 3; //uncommon
     }
-    else if (rand_rarity >= 0.85 && rand_rarity < 0.9775){
+    else if (rand_rarity >= 0.8 && rand_rarity < 0.96){
         poke_rarity = 4; //rare
     }
-    else if (rand_rarity >= 0.9775 && rand_rarity < 1) {
+    else if (rand_rarity >= 0.96 && rand_rarity < 1) {
         poke_rarity = 5; //endangered
     }
     else {
@@ -1558,7 +1556,8 @@ function randomize_rarity () {
 
 function rarity_to_string(poke_rarity){
     switch (poke_rarity){
-        case 2: return "OVERPOPULATED/COMMON";
+        case 1: return "OVERPOPULATED"
+        case 2: return "COMMON";
         case 3: return "UNCOMMON";
         case 4: return "RARE";
         case 5: return "ENDANGERED";
