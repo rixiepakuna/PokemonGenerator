@@ -798,7 +798,7 @@ var Pokemon_array = [
             ["No Egg Moves"]),
         new Pokemon("Umbreon", 4, 0.125,"DARK","NONE","NONE",
             ["INNER FOCUS","SYNCHRONIZE"],
-            ["No Egg Moves"]),
+            ["Captivate","Charm","Covet","Curse","Detect","Endure","Fake Tears","Flail","Natural Gift","Stored Power","Synchronoise","Tickle","Wish","Yawn"]),
         new Pokemon("Unown", 4, 0.5,"PSYCHIC","NONE","NONE",
             ["LEVITATE"],
             ["No Egg Moves"]),
@@ -1523,7 +1523,13 @@ function randomize_poke (type, rarity, never_found) {
         console.log("No suitable Pokemon exist with the randomized type and rarity.");
         return -1;
     }
-    console.log("Possible Pokemon for selected type and rarity: " + Pokemon_array);
+
+    //print the results, so that we can make sure the program is working as intended
+    var poss_pokemon_names = "";
+    for (i = 0; i < possible_Pokemon.length; i++){
+        poss_pokemon_names += possible_Pokemon[i].name + ". ";
+    }
+    console.log("Possible Pokemon for selected type and rarity: " + poss_pokemon_names);
     return possible_Pokemon[Math.floor(Math.random()*possible_Pokemon.length)];
 }
 
@@ -1557,7 +1563,7 @@ function randomize_rarity () {
 
 function rarity_to_string(poke_rarity){
     switch (poke_rarity){
-        case 1: return "OVERPOPULATED"
+        case 1: return "OVERPOPULATED";
         case 2: return "COMMON";
         case 3: return "UNCOMMON";
         case 4: return "RARE";
@@ -1612,8 +1618,11 @@ function go(){
     var poke_info = randomize_general(location_array[place_int][time_int]);
 
     var rand_poke = randomize_poke(poke_info[0], poke_info[1], location_array[place_int][time_int].never_found);
+    if (rand_poke == -1){
+        return -1;
+    }
 
-    console.log(rand_poke.name);
+    console.log("You should spawn a: " + rand_poke.name);
 
     //now to randomize some stats for the Pokemon
     var sex = randomize_sex(rand_poke.fem_chance);
@@ -1621,7 +1630,7 @@ function go(){
     var eggmoves = randomize_eggmoves(rand_poke.egg_moves);
 
     console.log("Sex: "+ sex +", Ability: "+ abil);
-    console.log("Eggmoves: " +eggmoves);
+    console.log("Egg moves: " +eggmoves);
 }
 
 
