@@ -1474,7 +1474,6 @@ function randomize_eggmove_number () {
     var eggmove_number;
     if (rand_number <= 3){
         eggmove_number = 0;
-        console.log("Pokemon was born with no egg moves.");
     }
     else if (rand_number >= 4 && rand_number <= 6){
         eggmove_number = 1;
@@ -1493,8 +1492,10 @@ function randomize_eggmove_number () {
 }
 
 function randomize_eggmoves(eggmove_array){
-    var eggmoves = randomize_x_from_array(randomize_eggmove_number(), eggmove_array);
-    console.log("Randomizing eggmoves from " + eggmove_array);
+    var eggmove_number = randomize_eggmove_number();
+    var eggmoves = randomize_x_from_array(eggmove_number, eggmove_array);
+    console.log("Pokemon should have " + eggmove_number + " egg moves.");
+    console.log("Randomizing egg moves from " + eggmove_array);
     return eggmoves;
 }
 
