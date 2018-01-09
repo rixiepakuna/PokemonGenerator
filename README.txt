@@ -23,6 +23,9 @@ Known issues:
       I may attempt to find a fix for this. Not sure what to do yet.
  4. Bad things happen if the program randomizes that the Pokemon should have 3 egg moves,
       but the Pokemon only has 1 or 2 possible egg moves. A fix is in the works.
+ 5. Some things, particularly egg moves, are missing or wrong.
+      Please help out and let Rixie or an admin know if you see things you believe to be errors.
+      It is difficult to double-check hundreds of Pokemon and all their egg moves.
       
  My suggestion is generally just re-roll until you get something that works.
 
