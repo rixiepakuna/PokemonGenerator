@@ -1,4 +1,4 @@
-To use:
+Tutorial:
 1. Make sure index.html and PokeSpawner.js are working and together.
       crawler.html is unnecessary; it is simply the machine that autofilled out the eggmoves for me. You can delete it if you desire. 
 2. Open the index.html in a web browser.
