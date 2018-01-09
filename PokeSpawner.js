@@ -1429,6 +1429,28 @@ var location_array = [
     ]
 ];
 
+//DISPLAYING RESULTS
+
+function print(string){
+    var br = document.createElement("br");
+
+    var list_element = document.getElementById("results");
+    var node = document.createTextNode(string);
+
+    list_element.appendChild(node);
+    list_element.appendChild(br);
+}
+
+function print_bold(string){
+    var br = document.createElement("br");
+    var b = document.createElement("b");
+    var list_element = document.getElementById("results");
+    var node = document.createTextNode(string);
+
+    b.appendChild(node);
+    list_element.appendChild(b);
+    list_element.appendChild(br);
+}
 
 //RANDOMIZING THE POKEMON’S STATS//
 
@@ -1442,7 +1464,7 @@ function randomize_sex (poke_fem_chance) {
         sex = "MALE";
     }
     else {
-        console.log("Something went wrong with choosing the sex.");
+        print("Something went wrong with choosing the sex.");
         return -1; //error
     }
     return sex;
@@ -1450,7 +1472,7 @@ function randomize_sex (poke_fem_chance) {
 
 function randomize_x_from_array(x, array){
     if (x > array.length){
-        console.log("There are not enough arguments in the array to pick " + x + " of them.");
+        print("There are not enough arguments in the array to pick " + x + " of them.");
         return -1;
     }
     var currentIndex = array.length;
@@ -1485,7 +1507,7 @@ function randomize_eggmove_number () {
         eggmove_number = 3;
     }
     else {
-        console.log("Something went wrong with choosing how many egg moves.");
+        print("Something went wrong with choosing how many egg moves.");
         return -1; //error
     }
     return eggmove_number;
@@ -1494,8 +1516,8 @@ function randomize_eggmove_number () {
 function randomize_eggmoves(eggmove_array){
     var eggmove_number = randomize_eggmove_number();
     var eggmoves = randomize_x_from_array(eggmove_number, eggmove_array);
-    console.log("Pokemon should have " + eggmove_number + " egg moves.");
-    console.log("Randomizing egg moves from " + eggmove_array);
+    print("Pokemon should have " + eggmove_number + " egg moves.");
+    print("Randomizing egg moves from " + eggmove_array);
     return eggmoves;
 }
 
@@ -1520,7 +1542,8 @@ function randomize_poke (type, rarity, never_found) {
 
     //need to make sure at least one Pokemon made it into possible_Pokemon.
     if (possible_Pokemon.length < 1){
-        console.log("No suitable Pokemon exist with the randomized type and rarity.");
+        print("No suitable Pokemon exist with the randomized type and rarity.");
+        print("\n");
         return -1;
     }
 
@@ -1529,7 +1552,7 @@ function randomize_poke (type, rarity, never_found) {
     for (i = 0; i < possible_Pokemon.length; i++){
         poss_pokemon_names += possible_Pokemon[i].name + ". ";
     }
-    console.log("Possible Pokemon for selected type and rarity: " + poss_pokemon_names);
+    print("Possible Pokemon for selected type and rarity: " + poss_pokemon_names);
     return possible_Pokemon[Math.floor(Math.random()*possible_Pokemon.length)];
 }
 
@@ -1555,7 +1578,7 @@ function randomize_rarity () {
         poke_rarity = 5; //endangered
     }
     else {
-        console.log("Something went wrong with choosing the rarity.");
+        print("Something went wrong with choosing the rarity.");
         return -1; //error
     }
     return poke_rarity;
@@ -1576,30 +1599,30 @@ function randomize_general (location) {
     var type_rarity = Math.random();
     var poke_type;
     if (type_rarity < 0.6) {
-        //console.log("Continue with one of the " + location.common_types.length + " COMMON types");
+        //print("Continue with one of the " + location.common_types.length + " COMMON types");
         var common_type = Math.floor(Math.random() * location.common_types.length);
         poke_type = location.common_types[common_type];
 
     }
     else if (type_rarity >= 0.6 && type_rarity < 0.85) {
-        //console.log("Continue with one of the " + location.uncommon_types.length + " UNCOMMON types");
+        //print("Continue with one of the " + location.uncommon_types.length + " UNCOMMON types");
         var uncommon_type = Math.floor(Math.random() * location.uncommon_types.length);
         poke_type = location.uncommon_types[uncommon_type];
 
     }
     else if (type_rarity >= 0.85 && type_rarity < 1) {
-        //console.log("Continue with one of the " + location.rare_types.length + " RARE types");
+        //print("Continue with one of the " + location.rare_types.length + " RARE types");
         var rare_type = Math.floor(Math.random() * location.rare_types.length);
         poke_type = location.rare_types[rare_type];
 
     }
     else {
-        console.log("Something went wrong with choosing the rarity of the type.");
+        print("Something went wrong with choosing the rarity of the type.");
     }
 
     var poke_rarity = randomize_rarity();
     var rarity_string = rarity_to_string(poke_rarity);
-    console.log("You should spawn a " + poke_type + " with " + rarity_string + " spawn rate.");
+    print_bold("You should spawn a " + poke_type + " with " + rarity_string + " spawn rate.");
     return [poke_type, poke_rarity];
 }
 
@@ -1622,25 +1645,26 @@ function go(){
         return -1;
     }
 
-    console.log("You should spawn a: " + rand_poke.name);
+    print_bold("You should spawn a: " + rand_poke.name);
 
     //now to randomize some stats for the Pokemon
     var sex = randomize_sex(rand_poke.fem_chance);
     var abil = randomize_x_from_array(1, rand_poke.abilities);
     var eggmoves = randomize_eggmoves(rand_poke.egg_moves);
 
-    console.log("Sex: "+ sex +", Ability: "+ abil);
-    console.log("Egg moves: " +eggmoves);
+    print_bold("Sex: "+ sex +", Ability: "+ abil);
+    print_bold("Egg moves: " +eggmoves);
+    print("\n");
 }
 
 
 function test() {
     var place = document.getElementById("select_place").value;
-    console.log("User input: " + place);
+    print("User input: " + place);
     var place_int = parseInt(place, 10);
 
     var time = document.getElementById("select_season").value;
-    console.log("User input: " + time);
+    print("User input: " + time);
     var time_int = parseInt(time, 10);
 
     var myArray = new Array;
@@ -1652,7 +1676,7 @@ function test() {
         myArray[info[1]]++;
     }
     myArray.forEach(function(element){
-        console.log(element + " " + (element/10000));
+        print(element + " " + (element/10000));
     });
 
 }
