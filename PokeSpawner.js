@@ -193,10 +193,10 @@ var Pokemon_array = [
             ["Baton Pass","Fake Out","Uproar","Helping Hand","Wish","Fake Tears","Tickle","Cosmic Power","Last Resort","Sucker Punch","Mud Bomb","Zen Headbutt","Captivate","Simple Beam"]),
         new Pokemon("Plusle", 2, 0.5,"ELECTRIC","NONE","NONE",
             ["LIGHTNING ROD","PLUS"],
-            ["Sing","Sweet Kiss","Charm","Wish","Fake Tears","Lucky Chant","Discharge"]),
+            ["Sing","Sweet Kiss","Charm","Wish","Fake Tears","Lucky Chant","Discharge","Tearful Look"]),
         new Pokemon("Minun", 2, 0.5,"ELECTRIC","NONE","NONE",
             ["VOLT ABSORB","MINUS"],
-            ["Sing","Sweet Kiss","Charm","Wish","Fake Tears","Lucky Chant","Discharge"]),
+            ["Sing","Sweet Kiss","Charm","Wish","Fake Tears","Lucky Chant","Discharge","Tearful Look"]),
         new Pokemon("Volbeat", 2, 0.0,"BUG","NONE","NONE",
             ["PRANKSTER","SWARM","ILLUMINATE"],
             ["Seismic Toss","Dizzy Punch","Baton Pass","Encore","Trick","Silver Wind","Bug Buzz"]),
@@ -337,24 +337,27 @@ var Pokemon_array = [
     [
         new Pokemon("Nidoran (M)", 3, 0.0, "POISON", "NONE", "GROUND",
             ["POISON POINT", "RIVALRY", "HUSTLE"],
-            ["Unavailable"]),
+            ["Amnesia","Beat Up","Chip Away","Confusion","Counter","Disable","Endure","Head Smash","Iron Tail","Poison Tail","Sucker Punch","Supersonic","Take Down","Venom Drench"]),
         new Pokemon("Nidoran (F)", 3, 1.0, "POISON", "NONE", "GROUND",
             ["POISON POINT", "RIVALRY", "HUSTLE"],
-            ["Unavailable"]),
+            ["Beat Up", "Charm", "Chip Away", "Counter", "Disable", "Endure", "Focus Energy","Iron Tail","Poison Tail","Pursuit","Skull Bash","Supersonic","Take Down","Venom Drench"]),
         new Pokemon("Sandshrew (Alolan)", 3, 0.5, "ICE", "STEEL", "NONE",
             ["SNOW CLOAK", "SLUSH RUSH"],
-            ["Unavailable"]),
+            ["Amnesia","Chip Away","Counter","Crush Claw","Curse","Endure","Flail","Hone Claws","Icicle Crash","Icicle Spear","Metal Claw","Night Slash"]),
         new Pokemon("Diglett (Alolan)", 3, 0.5, "GROUND", "STEEL", "NONE",
             ["SAND VEIL", "TANGLING HAIR", "SAND FORCE"],
-            ["Unavailable"]),
+            ["Ancient Power","Beat Up","Endure","Feint Attack","Final Gambit","Headbutt","Memento","Metal Sound","Pursuit","Reversal","Thrash"]),
         new Pokemon("Geodude (Alolan)", 3, 0.5, "ROCK", "ELECTRIC", "NONE",
             ["MAGNET PULL", "STURDY", "GALVANIZE"],
-            ["Unavailable"]),
+            ["Autotomize","Block","Counter","Curse","Endure","Flail","Magnet Rise","Rock Climb","Screech","Wide Guard"]),
         new Pokemon("Farfetchd", 3, 0.5, "NORMAL", "FLYING", "NONE",
             ["KEEN EYE", "INNER FOCUS", "DEFIANT"],
-            ["Unavailable"]),
+            ["Covet", "Curse", "Feather Dance","Final Gambit","First Impression","Flail","Foresight","Gust","Leaf Blade","Mirror Move","Mud-Slap","Night Slash","Quick Attack","Revenge","Roost","Simple Beam","Steel Wing","Trump Card"]),
+        new Pokemon("Misdreavus", 3, 0.5, "GHOST", "NONE", "NONE",
+            ["LEVITATE"],
+            ["Curse", "Destiny Bond","Imprison","Me First","Memento","Nasty Plot","Ominous Wind","Screech","Shadow Sneak","Skill Swap","Spite","Sucker Punch","Wonder Room"]),
 
-      new Pokemon("Squirtle", 3, 0.125,"WATER","NONE","NONE",
+        new Pokemon("Squirtle", 3, 0.125,"WATER","NONE","NONE",
             ["RAIN DISH","TORRENT"],
             ["Mist","Haze","Flail","Foresight","Mirror Coat","Fake Out","Yawn","Refresh","Mud Sport","Water Spout","Muddy Water","Brine","Aqua Ring","Aura Sphere","Dragon Pulse","Aqua Jet"]),
         new Pokemon("Paras", 3, 0.5,"GRASS","BUG","NONE",
@@ -606,9 +609,6 @@ var Pokemon_array = [
         new Pokemon("Dwebble", 3, 0.5,"ROCK","BUG","NONE",
             ["WEAK ARMOR","SHELL ARMOR","STURDY"],
             ["Counter","Curse","Spikes","Endure","Sand Tomb","Iron Defense","Block","Night Slash","Wide Guard","Rototiller"]),
-        new Pokemon("Dwebble", 3, 0.5,"ROCK","BUG","NONE",
-            ["WEAK ARMOR","SHELL ARMOR","STURDY"],
-            ["Counter","Curse","Spikes","Endure","Sand Tomb","Iron Defense","Block","Night Slash","Wide Guard","Rototiller"]),
         new Pokemon("Scraggy", 3, 0.5,"FIGHTING","DARK","NONE",
             ["INTIMIDATE","MOXIE","SHED SKIN"],
             ["Fire Punch","Ice Punch","Thunder Punch","Counter","Amnesia","Feint Attack","Detect","Fake Out","Dragon Dance","Drain Punch","Zen Headbutt","Quick Guard"]),
@@ -717,7 +717,13 @@ var Pokemon_array = [
         new Pokemon("Mime Jr.", 4, 0.5, "PSYCHIC", "FAIRY", "NONE",
             ["SOUNDPROOF", "FILTER", "TECHNICIAN"],
             ["Charm","Confuse Ray","Fake Out","Future Sight","Healing Wish","Hypnosis","Icy Wind","Magic Room","Mimic","Nasty Plot","Power Split","Teeter Dance","Trick","Psychic Terrain","Wake-Up Slap"]),
-      
+        new Pokemon("Bouffalant", 4, 0.5, "NORMAL", "NONE", "NONE",
+            ["RECKLESS", "SAP SIPPER", "SOUNDPROOF"],
+            ["Amnesia","Belch","Cotton Guard","Headbutt","Iron Head","Mud Shot","Mud-Slap","Rock Climb","Skull Bash","Stomp"]),
+        new Pokemon("Bergmite", 4, 0.5, "ICE", "NONE", "NONE",
+            ["OWN TEMPO", "ICE BODY", "STURDY"],
+            ["Barrier","Mirror Coat","Mist","Recover"]),
+
         new Pokemon("Bulbasaur", 4, 0.125,"POISON","GRASS","NONE",
             ["CHLOROPHYLL","OVERGROW"],
             ["Petal Dance","Sludge","Skull Bash","Amnesia","Curse","Giga Drain","Endure","Charm","Nature Power","Ingrain","Grass Whistle","Magical Leaf","Leaf Storm","Power Whip","Grassy Terrain"]),
@@ -774,13 +780,13 @@ var Pokemon_array = [
             ["No Egg Moves"]),
         new Pokemon("Vaporeon", 4, 0.125,"WATER","NONE","NONE",
             ["HYDRATION","WATER ABSORB"],
-            ["No Egg Moves"]),
+            ["Captivate","Charm","Covet","Curse","Detect","Endure","Fake Tears","Flail","Natural Gift","Stored Power","Synchronoise","Tickle","Wish","Yawn"]),
         new Pokemon("Jolteon", 4, 0.125,"ELECTRIC","NONE","NONE",
             ["QUICK FEET","VOLT ABSORB"],
-            ["No Egg Moves"]),
+            ["Captivate","Charm","Covet","Curse","Detect","Endure","Fake Tears","Flail","Natural Gift","Stored Power","Synchronoise","Tickle","Wish","Yawn"]),
         new Pokemon("Flareon", 4, 0.125,"FIRE","NONE","NONE",
             ["GUTS","FLASH FIRE"],
-            ["No Egg Moves"]),
+            ["Captivate","Charm","Covet","Curse","Detect","Endure","Fake Tears","Flail","Natural Gift","Stored Power","Synchronoise","Tickle","Wish","Yawn"]),
         new Pokemon("Chikorita", 4, 0.125,"GRASS","NONE","NONE",
             ["LEAF GUARD","OVERGROW"],
             ["Vine Whip","Body Slam","Counter","Leech Seed","Flail","Ancient Power","Nature Power","Ingrain","Refresh","Aromatherapy","Grass Whistle","Wring Out","Leaf Storm","Heal Pulse","Grassy Terrain"]),
@@ -795,7 +801,7 @@ var Pokemon_array = [
             ["Mimic","Metronome","Amnesia","Splash","Belly Drum","Present","Wish","Aromatherapy","Fake Tears","Tickle","Covet","Stored Power","Heal Pulse","Misty Terrain"]),
         new Pokemon("Espeon", 4, 0.125,"PSYCHIC","NONE","NONE",
             ["MAGIC BOUNCE","SYNCHRONIZE"],
-            ["No Egg Moves"]),
+            ["Captivate","Charm","Covet","Curse","Detect","Endure","Fake Tears","Flail","Natural Gift","Stored Power","Synchronoise","Tickle","Wish","Yawn"]),
         new Pokemon("Umbreon", 4, 0.125,"DARK","NONE","NONE",
             ["INNER FOCUS","SYNCHRONIZE"],
             ["Captivate","Charm","Covet","Curse","Detect","Endure","Fake Tears","Flail","Natural Gift","Stored Power","Synchronoise","Tickle","Wish","Yawn"]),
@@ -808,9 +814,6 @@ var Pokemon_array = [
         new Pokemon("Heracross", 4, 0.5,"FIGHTING","BUG","NONE",
             ["MOXIE","GUTS","SWARM"],
             ["Double Edge","Seismic Toss","Harden","Bide","Flail","Megahorn","Pursuit","Focus Punch","Revenge","Rock Blast"]),
-        new Pokemon("Swinub", 4, 0.5,"GROUND","ICE","NONE",
-            ["THICK FAT","SNOW CLOAK","OBLIVIOUS"],
-            ["Body Slam","Take Down","Double Edge","Bite","Fissure","Curse","Ancient Power","Icicle Spear","Mud Shot","Avalanche","Stealth Rock","Icicle Crash","Freeze Dry"]),
         new Pokemon("Swinub", 4, 0.5,"GROUND","ICE","NONE",
             ["THICK FAT","SNOW CLOAK","OBLIVIOUS"],
             ["Body Slam","Take Down","Double Edge","Bite","Fissure","Curse","Ancient Power","Icicle Spear","Mud Shot","Avalanche","Stealth Rock","Icicle Crash","Freeze Dry"]),
@@ -876,10 +879,10 @@ var Pokemon_array = [
             ["Slam","Hydro Pump","Haze","Amnesia","Splash","Twister","Mirror Coat","Mud Sport","Signal Beam","Water Sport","Tailwind","Wide Guard"]),
         new Pokemon("Leafeon", 4, 0.125,"GRASS","NONE","NONE",
             ["CHLOROPHYLL","LEAF GUARD"],
-            ["No Egg Moves"]),
+            ["Captivate","Charm","Covet","Curse","Detect","Endure","Fake Tears","Flail","Natural Gift","Stored Power","Synchronoise","Tickle","Wish","Yawn"]),
         new Pokemon("Glaceon", 4, 0.125,"ICE","NONE","NONE",
             ["ICE BODY","SNOW CLOAK"],
-            ["No Egg Moves"]),
+            ["Captivate","Charm","Covet","Curse","Detect","Endure","Fake Tears","Flail","Natural Gift","Stored Power","Synchronoise","Tickle","Wish","Yawn"]),
         new Pokemon("Oshawott", 4, 0.125,"WATER","NONE","NONE",
             ["SHELL ARMOR","TORRENT"],
             ["Screech","Detect","Brine","Assurance","Trump Card","Copycat","Night Slash","Air Slash"]),
@@ -948,7 +951,7 @@ var Pokemon_array = [
             ["Haze","Acid Armor","Toxic Spikes","Play Rough","Venom Drench"]),
         new Pokemon("Sylveon", 4, 0.125,"FAIRY","NONE","NONE",
             ["PIXILATE","CUTE CHARM"],
-            ["No Egg Moves"]),
+            ["Captivate","Charm","Covet","Curse","Detect","Endure","Fake Tears","Flail","Natural Gift","Stored Power","Synchronoise","Tickle","Wish","Yawn"]),
         new Pokemon("Klefki", 4, 0.5,"FAIRY","STEEL","NONE",
             ["MAGICIAN","PRANKSTER"],
             ["Thief","Lock On","Iron Defense","Switcheroo"]),
@@ -1178,12 +1181,12 @@ var location_array = [
             ["BUG", "ELECTRIC", "FLYING", "GRASS", "NORMAL", "POISON", "PSYCHIC", "GHOST"],
             ["DRAGON", "FAIRY", "FIRE", "GROUND", "WATER"],
             ["DARK", "FIGHTING", "ROCK", "STEEL", "ICE"],
-            ["NONE"]),
+            [""]),
         new location_season("Eastern Great Forest in Winter",
             ["ELECTRIC", "NORMAL", "POISON", "PSYCHIC"],
             ["DRAGON", "FAIRY", "FLYING", "GHOST", "GROUND", "WATER", "DARK", "ICE", "GRASS", "BUG"],
             ["FIRE", "FIGHTING", "ROCK", "STEEL"],
-            ["NONE"])
+            [""])
     ],
     [
         new location_season("Dragon's Peninsula in Spring",
@@ -1354,12 +1357,12 @@ var location_array = [
             ["GROUND", "ROCK", "GRASS", "GHOST"],
             ["BUG", "FAIRY", "FIGHTING", "FLYING", "NORMAL", "POISON", "PSYCHIC", "STEEL", "DARK"],
             ["ICE", "ELECTRIC", "FIRE", "WATER", "DRAGON"],
-            ["NONE"]),
+            [""]),
         new location_season("Desert Strip in Winter",
             ["GROUND", "ROCK", "DARK"],
             ["GRASS", "FAIRY", "FIGHTING", "NORMAL", "POISON", "PSYCHIC", "STEEL", "ICE", "GHOST"],
             ["BUG", "ELECTRIC", "FIRE", "WATER", "DRAGON", "FLYING"],
-            ["NONE"])
+            [""])
     ],
     [
         new location_season("Fairy Island in Spring",
@@ -1388,7 +1391,7 @@ var location_array = [
             ["BUG", "ELECTRIC", "FAIRY", "FIRE", "FLYING", "GRASS", "GROUND", "POISON", "WATER", "FAIRY", "GRASS"],
             ["DARK", "DRAGON", "NORMAL", "ROCK", "PSYCHIC", "STEEL"],
             ["FIGHTING", "ICE", "GHOST"],
-            ["NONE"]),
+            [""]),
         new location_season("Paradise Island in Summer",
             ["BUG", "BUG", "ELECTRIC", "ELECTRIC", "FAIRY", "FIRE", "FIRE", "FLYING", "GRASS", "GROUND", "POISON", "WATER"],
             ["DARK", "DRAGON", "GHOST", "NORMAL", "ROCK", "PSYCHIC", "STEEL"],
@@ -1398,12 +1401,12 @@ var location_array = [
             ["BUG", "ELECTRIC", "FAIRY", "FIRE", "FLYING", "GRASS", "GROUND", "POISON", "WATER", "GHOST"],
             ["DARK", "DRAGON", "NORMAL", "ROCK", "PSYCHIC", "STEEL"],
             ["FIGHTING", "ICE"],
-            ["NONE"]),
+            [""]),
         new location_season("Paradise Island in Winter",
             ["ELECTRIC", "FAIRY", "GROUND", "POISON", "WATER", "DARK"],
             ["BUG", "DRAGON", "GHOST", "NORMAL", "ROCK", "PSYCHIC", "STEEL", "FIRE", "FLYING", "GRASS", "ICE"],
             ["FIGHTING"],
-            ["NONE"])
+            [""])
     ],
     [
         new location_season("Mud Baths in Spring",
@@ -1425,7 +1428,7 @@ var location_array = [
             ["GROUND", "POISON", "WATER", "DARK"],
             ["BUG", "DRAGON", "ELECTRIC", "NORMAL", "ROCK", "FIRE", "ICE"],
             ["FAIRY", "FIGHTING", "PSYCHIC", "STEEL", "FLYING", "GRASS"],
-            ["NONE"])
+            ["GHOST"])
     ]
 ];
 
@@ -1473,7 +1476,7 @@ function randomize_sex (poke_fem_chance) {
 function randomize_x_from_array(x, array){
     if (x > array.length){
         print("There are not enough arguments in the array to pick " + x + " of them.");
-        return -1;
+        return "No Egg Moves";
     }
     var currentIndex = array.length;
     var temporaryValue;
@@ -1517,6 +1520,9 @@ function randomize_eggmoves(eggmove_array){
     var eggmove_number = randomize_eggmove_number();
     var eggmoves = randomize_x_from_array(eggmove_number, eggmove_array);
     print("Pokemon should have " + eggmove_number + " egg moves.");
+    if (eggmove_number == 0){
+        return "None this time";
+    }
     print("Randomizing egg moves from " + eggmove_array);
     return eggmoves;
 }
@@ -1534,7 +1540,7 @@ function randomize_poke (type, rarity, never_found) {
                 forbidden = true;
             }
         });
-        if ((element.type1 == type || element.type2 == type || element.type_evolved == type)
+        if ((element.type1 == type || element.type2 == type)
             && forbidden == false){
             possible_Pokemon.push(element);
         }
