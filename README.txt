@@ -29,11 +29,16 @@ Known issues:
 
 
 
-Features I'd like to add/fix:
- 1. Depending on how difficult it is, I will probably add genderless Pokemon in. This is low priority though.
- 2. I'd like to be able to use the same type/rarity that was rolled and get more Pokemon of that type/rarity.
- 3. I'd also like to be able to roll the stats (gender, ability, egg moves) of a particular species of Pokemon.
- 4. I need to figure out how to use <span> so that I can have the log be ascending instead of descending.
+In the Works
+
+Slated for the next update
+1. Be able to use the same type/rarity that was rolled and get more Pokemon of that type/rarity.
+2. Figure out how to use <span> so that I can have the log be ascending instead of descending.
+3. Possibly a button that randomizes breeding? We'll see. That may be a longer-term goal.
+
+Long-term or low priority stuff
+1. Depending on how difficult it is, I will probably add genderless Pokemon in. This is low priority though.
+2. Someday maybe I can double-check all the egg moves in the data... I'm not sure about this though. PM or hit me up in the cbox if you'd like to partake in mind-numbing cross-checking lists and websites.
 
 
 
