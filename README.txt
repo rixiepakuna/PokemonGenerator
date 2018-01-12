@@ -33,12 +33,13 @@ Features I'd like to add/fix:
  1. Depending on how difficult it is, I will probably add genderless Pokemon in. This is low priority though.
  2. I'd like to be able to use the same type/rarity that was rolled and get more Pokemon of that type/rarity.
  3. I'd also like to be able to roll the stats (gender, ability, egg moves) of a particular species of Pokemon.
- 4. Fix for Known Issue #4.
+ 4. I need to figure out how to use <span> so that I can have the log be ascending instead of descending.
 
 
 
  Version History
  1.0.1 First Offical Release January 9, 2018
+
 
  1.0.2 Bug Fixes! January 10, 2018
  Fixes:
@@ -74,3 +75,15 @@ Features I'd like to add/fix:
 
  New Features:
  1. Not totally a new feature, but I made it easier to generate a lot of Pokemon without reloading the webpage. Basically I moved the "Enter" button to the bottom of the page instead of the type, so you can just keep scrolling down as you generate more stuff.
+ 
+
+1.1.0 Randomizing Specific Pokemon! January 12, 2018
+
+New Features:
+    1. There's a new button that allows you to randomize the stats of a specific Pokemon.
+
+Developer Notes:
+    1. I moved some functions around and made new functions!
+    Basically this allows all the randomization of stats to occur with the call of a single function.
+    Then I made a text field, and an associated new button.
+    Entering words into the text field and then clicking the button "Stats" calls, among other things, the function that randomizes stats of the Pokemon whose name was entered into the text field.
