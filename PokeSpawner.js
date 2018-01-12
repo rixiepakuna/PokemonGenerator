@@ -1527,6 +1527,16 @@ function randomize_eggmoves(eggmove_array){
     return eggmoves;
 }
 
+function randomize_stats(pokemon){
+    var sex = randomize_sex(pokemon.fem_chance);
+    var abil = randomize_x_from_array(1, pokemon.abilities);
+    var eggmoves = randomize_eggmoves(pokemon.egg_moves);
+
+    print_bold("Sex: "+ sex +", Ability: "+ abil);
+    print_bold("Egg moves: " +eggmoves);
+    print("\n");
+}
+
 
 //RANDOMIZING POKEMON SPECIES
 
@@ -1654,15 +1664,30 @@ function go(){
     print_bold("You should spawn a: " + rand_poke.name);
 
     //now to randomize some stats for the Pokemon
-    var sex = randomize_sex(rand_poke.fem_chance);
-    var abil = randomize_x_from_array(1, rand_poke.abilities);
-    var eggmoves = randomize_eggmoves(rand_poke.egg_moves);
-
-    print_bold("Sex: "+ sex +", Ability: "+ abil);
-    print_bold("Egg moves: " +eggmoves);
-    print("\n");
+    randomize_stats(rand_poke);
 }
 
+function compare_str_obj(string, object){
+    return string == object.name;
+}
+
+function stats_go(string){
+    string = document.getElementById("spec_poke").value;
+    var user_string = compare_str_obj.bind(null, string);
+    var poke_object;
+    for (var i = 0; i < Pokemon_array.length; i++){
+        poke_object = Pokemon_array[i].find(user_string);
+        if (poke_object != undefined){
+            break;
+        }
+    }
+    if (poke_object == undefined){
+        print("Please enter a valid Pokemon name");
+        print("\n");
+    }
+    print_bold("Randomizing stats for: " + poke_object.name);
+    randomize_stats(poke_object);
+}
 
 function test() {
     var place = document.getElementById("select_place").value;

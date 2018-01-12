@@ -24,7 +24,9 @@
     <div id = results>
     </div>
 </q>
-<br>
+
+<p>Click the button that says Pokemon, and the program will randomize a Pokemon for you from selected location and season.</p>
+
 <select id = "select_place">
     <option value = "0">Western Great Forest</option>
     <option value = "1">Crying Plateau</option>
@@ -49,12 +51,17 @@
     <option value = "3">Winter</option>
 </select>
 
-<button onclick="go()">Enter</button>
-
+<button onclick="go()">Pokemon</button>
 <br>
+<br>
+<br>
+<p>Or generate the stats of a specific species of Pokemon by typing its name in (e.g. Eevee) and then clicking Stats
+<br>It must be spelled correctly and have correct capitals/punctuation (except for "Farfetchd").</p>
+
+<input id = "spec_poke" type="text">
+<button onclick="stats_go()">Stats</button>
 
 <p>
-    Click the button that says Enter, and the program will randomize a Pokemon for you.<br>
     <br>
     Remember!<br>
     - You can always spawn an Overpopulated Pokemon instead of rolling.<br>
