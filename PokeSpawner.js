@@ -1697,6 +1697,7 @@ function go(){
 }
 
 function spec_go(){
+    console.log("Smallchange");
     var rarity = document.getElementById("select_rarity").value;
     var rarity_data = (parseInt(rarity, 10) + 1);
 
