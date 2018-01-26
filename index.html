@@ -55,11 +55,47 @@
 <br>
 <br>
 <br>
+
 <p>Or generate the stats of a specific species of Pokemon by typing its name in (e.g. Eevee) and then clicking Stats
 <br>It must be spelled correctly and have correct capitals/punctuation (except for "Farfetchd").</p>
-
 <input id = "spec_poke" type="text">
 <button onclick="stats_go()">Stats</button>
+<br>
+<br>
+<br>
+
+<p>Now you can also click the button "Spec. Pokemon", and the program will randomize a Pokemon for you from selected rarity and type.</p>
+<select id = "select_rarity">
+    <option value = "0">Overpopulated</option>
+    <option value = "1">Common</option>
+    <option value = "2">Uncommon</option>
+    <option value = "3">Rare</option>
+    <option value = "4">Endangered</option>
+</select>
+
+<select id = "select_type">
+    <option value = "0">Normal</option>
+    <option value = "1">Fighting</option>
+    <option value = "2">Flying</option>
+    <option value = "3">Poison</option>
+    <option value = "4">Ground</option>
+    <option value = "5">Rock</option>
+    <option value = "6">Bug</option>
+    <option value = "7">Ghost</option>
+    <option value = "8">Steel</option>
+    <option value = "9">Fire</option>
+    <option value = "10">Water</option>
+    <option value = "11">Grass</option>
+    <option value = "12">Electric</option>
+    <option value = "13">Psychic</option>
+    <option value = "14">Ice</option>
+    <option value = "15">Dragon</option>
+    <option value = "16">Dark</option>
+    <option value = "17">Fairy</option>
+
+</select>
+
+<button onclick="spec_go()">Spec. Pokemon</button>
 
 <p>
     <br>
