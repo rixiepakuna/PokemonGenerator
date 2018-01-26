@@ -104,4 +104,3 @@ New Features:
 Developer Notes:
 1. I moved some functions around and made new functions... again? I think this is going to become rather typical. New functions include spec_go(), type_int_to_string()...
 2. I made more drop-down menus, with their associated new button, so now the user can select type and rarity, and skip the first function which usually randomizes type and rarity for the user based on location and season. Honestly, spec_go() is quite similar to normal go(), just skipping that first step as I mentioned.
--Smallchange

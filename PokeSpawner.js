@@ -1731,7 +1731,7 @@ function stats_go(string){
         }
     }
     if (poke_object == undefined){
-        print("Please enter a valid Pokemon name");
+        print("Please enter a Pokemon name");
         print("\n");
     }
     print_bold("Randomizing stats for: " + poke_object.name);
