@@ -2,8 +2,6 @@ Tutorial:
 1. Make sure index.html and PokeSpawner.js are in the same file.
       Note: crawler.html is unnecessary; it is simply the machine that autofilled out the eggmoves for me. You can delete it if you desire.
 2. Open index.html with a web browser (I recommend Chrome).
-3. Select approprite location/time of year from the drop-down menus.
-4. Press the button that says "Enter".
 
 Remember!
  - You can always spawn an Overpopulated Pokemon instead of rolling.
@@ -16,7 +14,7 @@ Known issues:
  1. Genderless Pokemon are not genderless.
       Just ignore whatever gender it gives you, if the Pokemon is supposed to be Genderless.
  2. Some logic is required.
-      (For example, Skrelp is part Poison type, so it comes up in the Western Great Forest, 
+      (For example, Skrelp is part Poison type, so it comes up in the Western Great Forest,
       even though there isn't a big body of water there.)
  3. Grass types show up in the desert, which is intended.
       ALL Grass types, not just desert plant ones, show up, which is not intended.
@@ -24,21 +22,29 @@ Known issues:
  4. Some things, particularly egg moves, may still be missing or wrong.
       Please help out and let Rixie or an admin know if you see things you believe to be errors.
       It is difficult to double-check hundreds of Pokemon and all their egg moves.
+ 5. See "In the Works" for more detail.
 
  My suggestion is generally just re-roll until you get something that works.
 
 
 
-Features I'd like to add/fix:
- 1. Depending on how difficult it is, I will probably add genderless Pokemon in. This is low priority though.
- 2. I'd like to be able to use the same type/rarity that was rolled and get more Pokemon of that type/rarity.
- 3. I'd also like to be able to roll the stats (gender, ability, egg moves) of a particular species of Pokemon.
- 4. Fix for Known Issue #4.
+In the Works
+
+Slated for the next update
+1. Be able to use the same type/rarity that was rolled and get more Pokemon of that type/rarity.
+2. Figure out how to use <span> so that I can have the log be ascending instead of descending.
+3. Possibly a button that randomizes breeding? We'll see. That may be a longer-term goal.
+
+Long-term or low priority stuff
+1. Depending on how difficult it is, I will probably add genderless Pokemon in. This is low priority though.
+2. Someday maybe I can double-check all the egg moves in the data... I'm not sure about this though. PM or hit me up in the cbox if you'd like to partake in mind-numbing cross-checking lists and websites.
 
 
 
  Version History
  1.0.1 First Offical Release January 9, 2018
+
+
 
  1.0.2 Bug Fixes! January 10, 2018
  Fixes:
@@ -74,3 +80,27 @@ Features I'd like to add/fix:
 
  New Features:
  1. Not totally a new feature, but I made it easier to generate a lot of Pokemon without reloading the webpage. Basically I moved the "Enter" button to the bottom of the page instead of the type, so you can just keep scrolling down as you generate more stuff.
+
+
+
+ 1.1.0 Randomizing Specific Pokemon! January 12, 2018
+
+ New Features:
+ 1. There's a new button that allows you to randomize the stats of a specific Pokemon.
+
+ Developer Notes:
+ 1. I moved some functions around and made new functions!
+ Basically this allows all the randomization of stats to occur with the call of a single function.
+ Then I made a text field, and an associated new button.
+ Entering words into the text field and then clicking the button "Stats" calls, among other things, the function that randomizes stats of the Pokemon whose name was entered into the text field.
+
+
+
+1.2.0 Randomizing Pokemon from Rarity and Type! January 26, 2018
+
+New Features:
+1. There's a new button that allows you to randomize a Pokemon from a specific Rarity and Type. I am feeling not-creative, so I called it Spec. Pokemon.
+
+Developer Notes:
+1. I moved some functions around and made new functions... again? I think this is going to become rather typical. New functions include spec_go(), type_int_to_string()...
+2. I made more drop-down menus, with their associated new button, so now the user can select type and rarity, and skip the first function which usually randomizes type and rarity for the user based on location and season. Honestly, spec_go() is quite similar to normal go(), just skipping that first step as I mentioned.

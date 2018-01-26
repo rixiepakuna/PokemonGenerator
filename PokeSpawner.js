@@ -1542,6 +1542,7 @@ function randomize_stats(pokemon){
 
 function randomize_poke (type, rarity, never_found) {
     //this function will need to find all the Pokemon with the given type and rarity and then randomly pick one
+    console.log("Now randomizing Pokemon from Type: " + type + "... And Rarity: " + rarity);
     var possible_Pokemon = [];
     Pokemon_array[rarity].forEach(function(element) {
         var forbidden = false;
@@ -1562,13 +1563,17 @@ function randomize_poke (type, rarity, never_found) {
         print("\n");
         return -1;
     }
+    else {
+        console.log("Array built succesfully");
+    }
 
     //print the results, so that we can make sure the program is working as intended
     var poss_pokemon_names = "";
     for (i = 0; i < possible_Pokemon.length; i++){
         poss_pokemon_names += possible_Pokemon[i].name + ". ";
     }
-    print("Possible Pokemon for selected type and rarity: " + poss_pokemon_names);
+    print("Possible Pokemon for selected type and rarity: ");
+    print(poss_pokemon_names);
     return possible_Pokemon[Math.floor(Math.random()*possible_Pokemon.length)];
 }
 
@@ -1611,6 +1616,30 @@ function rarity_to_string(poke_rarity){
     }
 }
 
+function type_int_to_string(poke_type){
+    switch (poke_type){
+        case 0: return "NORMAL";
+        case 1: return "FIGHTING";
+        case 2: return "FLYING";
+        case 3: return "POISON";
+        case 4: return "GROUND";
+        case 5: return "ROCK";
+        case 6: return "BUG";
+        case 7: return "GHOST";
+        case 8: return "STEEL";
+        case 9: return "FIRE";
+        case 10: return "WATER";
+        case 11: return "GRASS";
+        case 12: return "ELECTRIC";
+        case 13: return "PSYCHIC";
+        case 14: return "ICE";
+        case 15: return "DRAGON";
+        case 16: return "DARK";
+        case 17: return "FAIRY";
+        default: return "Cannot change type to string.";
+    }
+}
+
 function randomize_general (location) {
     var type_rarity = Math.random();
     var poke_type;
@@ -1638,7 +1667,7 @@ function randomize_general (location) {
 
     var poke_rarity = randomize_rarity();
     var rarity_string = rarity_to_string(poke_rarity);
-    print_bold("You should spawn a " + poke_type + " with " + rarity_string + " spawn rate.");
+    print_bold("You should spawn a " + poke_type + " type with " + rarity_string + " spawn rate.");
     return [poke_type, poke_rarity];
 }
 
@@ -1657,6 +1686,26 @@ function go(){
     var poke_info = randomize_general(location_array[place_int][time_int]);
 
     var rand_poke = randomize_poke(poke_info[0], poke_info[1], location_array[place_int][time_int].never_found);
+    if (rand_poke == -1){
+        return -1;
+    }
+
+    print_bold("You should spawn a: " + rand_poke.name);
+
+    //now to randomize some stats for the Pokemon
+    randomize_stats(rand_poke);
+}
+
+function spec_go(){
+    var rarity = document.getElementById("select_rarity").value;
+    var rarity_data = (parseInt(rarity, 10) + 1);
+
+    var type = document.getElementById("select_type").value;
+    var type_data = type_int_to_string(parseInt(type, 10));
+
+    print_bold("Spawning a " + type_data + " type with " + rarity_to_string(rarity_data) + " spawn rate.");
+
+    var rand_poke = randomize_poke(type_data, rarity_data, ["NA"]);
     if (rand_poke == -1){
         return -1;
     }
