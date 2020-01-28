@@ -113,7 +113,7 @@ Developer Notes:
 
 1.2.1 Belated Update January 28, 2020
 Fixes:
-1. Added Cryogonal (whoops).
+1. Added Cryogonal (whoops). Also, used copy/paste, regex, and math to ensure that all Pokemon who should be here ARE here. (They are.)
 2. Fixed a spelling error (embarrassing).
 
 Changes:

@@ -11,35 +11,35 @@
             xhr.open('GET', url, true);
             xhr.responseType = 'json';
             xhr.onload = function() {
-              var status = xhr.status;
-              if (status === 200) {
-                callback(null, xhr.response);
-              } else {
-                callback(status, xhr.response);
-              }
+                var status = xhr.status;
+                if (status === 200) {
+                    callback(null, xhr.response);
+                } else {
+                    callback(status, xhr.response);
+                }
             };
             xhr.send();
         };
 
         //TODO: fix the rarity 'num' via N++ regex, change '-' to ' ', change [] to ["No Egg Moves"], fix the sex ratios, and the evolved type if applicable
-        //TODO: some Pokemon missing: Nidoran m and f, Alolan forms, Farfetchd, Mr. Mime, Kangaskhan, Misdreavus, Bouffalant... Relicanth, Bergmite, and Drilbur were also missing but those should be fixed now.
-            //I thoroughly checked the original 150 Pokemon to see if they were missing; I did not do the rest of them.
-            //Azurill gender ratio vs. its evolutions gender ratio
+        //TODO: some Pokemon missing: Nidoran m and f, Alolan forms, Farfetchd, Mr. Mime, Kangaskhan, Misdreavus, Bouffalant... Relicanth, Bergmite, and Drilbur were also missing but those should be fixed now... and Cryogonal, plus we need to add Rotom and Spiritomb
+        //I thoroughly checked the original 150 Pokemon to see if they were missing; I did not do the rest of them.
+        //Azurill gender ratio vs. its evolutions gender ratio
         var pokemon_array = [["Burmy", "Durant", "Kricketot", "Ledyba", "Scatterbug", "Wurmple", "Hoppip", "Pidove", "Pikipek", "Starly", "Wingull", "Zubat", "Foongus", "Bidoof", "Buneary", "Bunnelby", "Dunsparce", "Rattata", "Sentret", "Zigzagoon", "Binacle", "Wishiwashi"],
-            ["Caterpie", "Combee", "Dewpider", "Illumise", "Nincada", "Spinarak", "Surskit", "Volbeat", "Weedle", "Poochyena", "Purrloin", "Rattata (Alolan)", "Stunky", "Emolga", "Mareep", "Minun", "Pachirisu", "Plusle", "Stunfisk", "Azurill", "Cottonee", "Snubbull", "Crabrawler", "Croagunk", "Mankey", "Mienfoo", "Timburr", "Litleo", "Numel", "Pansear", "Ducklett", "Fletchling", "Pidgey", "Spearow", "Taillow", "Phantump", "Pumpkaboo", "Bellsprout", "Budew", "Cherubi", "Deerling", "Fomantis", "Lotad", "Oddish", "Pansage", "Shroomish", "Skiddo", "Diglett", "Drilbur", "Geodude", "Sandshrew", "Wooper", "Vanillite", "Aipom", "Glameow", "Lillipup", "Miltank", "Minccino", "Patrat", "Skitty", "Slakoth", "Whismur", "Yungoos", "Ekans", "Gulpin", "Mareanie", "Corsola", "Alomomola", "Basculin", "Buizel", "Finneon", "Goldeen", "Krabby", "Luvdisc", "Panpour", "Poliwag", "Pyukumuku", "Shellder", "Shellos", "Tympole"],
-            ["Cutiefly", "Dwebble", "Grubbin", "Joltik", "Karrablast", "Paras", "Pineco", "Sewaddle", "Shelmet", "Shuckle", "Skorupi", "Venonat", "Wimpod", "Yanma", "Carvanha", "Houndour", "Murkrow", "Pawniard", "Sableye", "Sandile", "Scraggy", "Sneasel", "Vullaby", "Blitzle", "Chinchou", "Dedenne", "Electrike", "Geodude (Alolan)", "Helioptile", "Shinx", "Togedemaru", "Comfey", "Flabebe", "Igglybuff", "Mawile", "Morelull", "Hawlucha", "Machop", "Makuhita", "Pancham", "Sawk", "Throh", "Chimchar", "Darumaka", "Heatmor", "Magby", "Salandit", "Slugma", "Tepig", "Torchic", "Torkoal", "Chatot", "Delibird", "Drifloon", "Farfetch'd", "Gligar", "Hoothoot", "Oricorio", "Woobat", "Duskull", "Gastly", "Misdreavus", "Sandygast", "Shuppet", "Bounsweet", "Cacnea", "Carnivine", "Chespin", "Maractus", "Petilil", "Seedot", "Snivy", "Sunkern", "Tangela", "Barboach", "Cubone", "Diglett (Alolan)", "Hippopotas", "Mudbray", "Rhyhorn", "Cryogonal ", "Sandshrew (Alolan)", "Snorunt", "Spheal", "Audino", "Eevee", "Furfrou", "Happiny", "Kecleon", "Komala", "Lickitung", "Meowth", "Smeargle", "Spinda", "Stantler", "Teddiursa", "Zangoose", "Nidoran", "Qwilfish", "Seviper", "Tentacool", "Bruxish", "Slowpoke", "Wynaut", "Bonsly", "Nosepass", "Rockruff", "Roggenrola", "Clamperl", "Clauncher", "Corphish", "Feebas", "Froakie", "Magikarp", "Mudkip", "Psyduck", "Remoraid", "Seel", "Squirtle", "Staryu", "Totodile"],
-            ["Heracross", "Larvesta", "Pinsir", "Scyther", "Venipede", "Absol", "Grimer (Alolan)", "Meowth (Alolan)", "Umbreon", "Zorua", "Elekid", "Jolteon", "Magnemite", "Pichu", "Tynamo", "Voltorb", "Cleffa", "Klefki", "Mime Jr.", "Mimikyu", "Spritzee", "Swirlix", "Sylveon", "Meditite", "Passimian", "Riolu", "Stufful", "Tyrogue", "Charmander", "Cyndaquil", "Fennekin", "Flareon", "Growlithe", "Litten", "Litwick", "Ponyta", "Vulpix", "Doduo", "Mantyke", "Minior", "Rowlet", "Rufflet", "Skarmory", "Frillish", "Honedge", "Yamask", "Bulbasaur", "Chikorita", "Exeggcute", "Ferroseed", "Leafeon", "Treecko", "Turtwig", "Baltoy", "Phanpy", "Swinub", "Bergmite", "Cubchoo", "Glaceon", "Smoochum", "Vulpix (Alolan)", "Bouffalant ", "Castform", "Girafarig", "Oranguru", "Tauros", "Grimer", "Koffing", "Skrelp", "Trubbish", "Abra", "Chingling", "Drowzee", "Espeon", "Espurr", "Gothita", "Lunatone", "Munna", "Solosis", "Solrock", "Spoink", "Unown", "Aron", "Onix", "Klink", "Horsea", "Oshawott", "Piplup", "Popplio", "Vaporeon", "Wailmer","Relicanth"],
-            ["Anorith", "Deino", "Inkay", "Axew", "Bagon", "Drampa", "Dratini", "Druddigon", "Gible", "Goomy", "Jangmo-o", "Noibat", "Turtonator", "Tyrunt", "Carbink", "Ralts", "Togepi", "Aerodactyl", "Archen", "Natu", "Sigilyph", "Swablu", "Tropius", "Dhelmise", "Lileep", "Snover", "Golett", "Trapinch", "Amaura", "Lapras", "Ditto", "Kangaskhan ", "Munchlax", "Beldum", "Bronzor", "Elgyem", "Cranidos", "Kabuto", "Larvitar", "Omanyte", "Shieldon", "Tirtouga"]];
+            ["Caterpie", "Combee", "Dewpider", "Illumise", "Nincada", "Spinarak", "Surskit", "Volbeat", "Weedle", "Poochyena", "Purrloin", "Rattata (Alolan)", "Stunky", "Emolga", "Mareep", "Minun", "Pachirisu", "Plusle", "Stunfisk", "Azurill", "Cottonee", "Snubbull", "Crabrawler", "Croagunk", "Mankey", "Mienfoo", "Timburr", "Litleo", "Numel", "Pansear", "Ducklett", "Fletchling", "Pidgey", "Spearow", "Taillow", "Phantump", "Pumpkaboo", "Bellsprout", "Budew", "Cherubi", "Deerling", "Fomantis", "Lotad", "Oddish", "Pansage", "Shroomish", "Skiddo", "Diglett", "`Drilbur`", "Geodude", "Sandshrew", "Wooper", "Vanillite", "Aipom", "Glameow", "Lillipup", "Miltank", "Minccino", "Patrat", "Skitty", "Slakoth", "Whismur", "Yungoos", "Ekans", "Gulpin", "Mareanie", "Corsola", "Alomomola", "Basculin", "Buizel", "Finneon", "Goldeen", "Krabby", "Luvdisc", "Panpour", "Poliwag", "Pyukumuku", "Shellder", "Shellos", "Tympole"],
+            ["Cutiefly", "Dwebble", "Grubbin", "Joltik", "Karrablast", "Paras", "Pineco", "Sewaddle", "Shelmet", "Shuckle", "Skorupi", "Venonat", "Wimpod", "Yanma", "Carvanha", "Houndour", "Murkrow", "Pawniard", "Sableye", "Sandile", "Scraggy", "Sneasel", "Vullaby", "Blitzle", "Chinchou", "Dedenne", "Electrike", "Geodude (Alolan)", "Helioptile", "Shinx", "Togedemaru", "Comfey", "Flabebe", "Igglybuff", "Mawile", "Morelull", "Hawlucha", "Machop", "Makuhita", "Pancham", "Sawk", "Throh", "Chimchar", "Darumaka", "Heatmor", "Magby", "Salandit", "Slugma", "Tepig", "Torchic", "Torkoal", "Chatot", "Delibird", "Drifloon", "Farfetch'd", "Gligar", "Hoothoot", "Oricorio", "Woobat", "Duskull", "Gastly", "Misdreavus", "Sandygast", "Shuppet", "Bounsweet", "Cacnea", "Carnivine", "Chespin", "Maractus", "Petilil", "Seedot", "Snivy", "Sunkern", "Tangela", "Barboach", "Cubone", "Diglett (Alolan)", "Hippopotas", "Mudbray", "Rhyhorn", "Cryogonal", "Sandshrew (Alolan)", "Snorunt", "Spheal", "Audino", "Eevee", "Furfrou", "Happiny", "Kecleon", "Komala", "Lickitung", "Meowth", "Smeargle", "Spinda", "Stantler", "Teddiursa", "Zangoose", "Nidoran", "Qwilfish", "Seviper", "Tentacool", "Bruxish", "Slowpoke", "Wynaut", "Bonsly", "Nosepass", "Rockruff", "Roggenrola", "Clamperl", "Clauncher", "Corphish", "Feebas", "Froakie", "Magikarp", "Mudkip", "Psyduck", "Remoraid", "Seel", "Squirtle", "Staryu", "Totodile"],
+            ["Relicanth", "Heracross", "Larvesta", "Pinsir", "Scyther", "Venipede", "Absol", "Grimer (Alolan)", "Meowth (Alolan)", "Umbreon", "Zorua", "Elekid", "Jolteon", "Magnemite", "Pichu", "Tynamo", "Voltorb", "Cleffa", "Klefki", "Mime Jr.", "Mimikyu", "Spritzee", "Swirlix", "Sylveon", "Meditite", "Passimian", "Riolu", "Stufful", "Tyrogue", "Charmander", "Cyndaquil", "Fennekin", "Flareon", "Growlithe", "Litten", "Litwick", "Ponyta", "Vulpix", "Doduo", "Mantyke", "Minior", "Rowlet", "Rufflet", "Skarmory", "Frillish", "Honedge", "Yamask", "Bulbasaur", "Chikorita", "Exeggcute", "Ferroseed", "Leafeon", "Treecko", "Turtwig", "Baltoy", "Phanpy", "Swinub", "Bergmite", "Cubchoo", "Glaceon", "Smoochum", "Vulpix (Alolan)", "Bouffalant", "Castform", "Girafarig", "Oranguru", "Tauros", "Grimer", "Koffing", "Skrelp", "Trubbish", "Abra", "Chingling", "Drowzee", "Espeon", "Espurr", "Gothita", "Lunatone", "Munna", "Solosis", "Solrock", "Spoink", "Unown", "Aron", "Onix", "Klink", "Horsea", "Oshawott", "Piplup", "Popplio", "Vaporeon", "Wailmer"],
+            ["Rotom", "Spiritomb", "Anorith", "Deino", "Inkay", "Axew", "Bagon", "Drampa", "Dratini", "Druddigon", "Gible", "Goomy", "Jangmo-o", "Noibat", "Turtonator", "Tyrunt", "Carbink", "Ralts", "Togepi", "Aerodactyl", "Archen", "Natu", "Sigilyph", "Swablu", "Tropius", "Dhelmise", "Lileep", "Snover", "Golett", "Trapinch", "Amaura", "Lapras", "Ditto", "Kangaskhan", "Munchlax", "Beldum", "Bronzor", "Elgyem", "Cranidos", "Kabuto", "Larvitar", "Omanyte", "Shieldon", "Tirtouga"]];
         var poke_data_array = [[],[],[],[],[]];
 
         String.prototype.capitalize = function() {
             return this.replace(/(^|\s|-)([a-z])/g,
-                    function (m, p1, p2) {
-                        if (p1 == '-') {
-                            return " " + p2.toUpperCase();
-                        }
-                        return p1 + p2.toUpperCase();
-                    });
+                function (m, p1, p2) {
+                    if (p1 == '-') {
+                        return " " + p2.toUpperCase();
+                    }
+                    return p1 + p2.toUpperCase();
+                });
         };
 
 
@@ -48,9 +48,9 @@
             return new Promise(resolve => setTimeout(resolve, ms));
         }
 
-        async function slow_data() {
-            var i = 1;
-            var j = 200;
+        async function slow_data(i = 0) {
+
+            var j = i+199;
             while (j < 800) {
                 get_data(i, j);
                 await sleep(120000 + 400000);
@@ -59,72 +59,77 @@
             }
         }
 
-        async function get_data(start=1, end=5) {
-          for (var f = start; f < end; f++){
-              await sleep(2000);
-              getJSON('https://pokeapi.co/api/v2/pokemon/' + f + '/',
+        async function get_data(start, end) {
+            for (var f = start; f < end; f++){
+                await sleep(2000);
+                getJSON('https://pokeapi.co/api/v2/pokemon/' + f + '/',
 
-                  async function(err, data) {
-                      if (err !== null) {
-                        alert('Something went wrong: ' + err);
-                      } else {
-                          console.log("Request succeeded");
-                          for (var g = 0; g < pokemon_array.length; g++){
-                              for (var h = 0; h < pokemon_array[g].length; h++){
-                                  if (pokemon_array[g][h].toLowerCase() == data.species.name.toLowerCase()){
-                                      poke_data_array[g].push(data);
-                                  }
-                              }
-                          }
-                      }
-                  });
-          }
+                    async function(err, data) {
+                        if (err !== null) {
+                            alert('Something went wrong: ' + err);
+                        } else {
+                            console.log("Request succeeded");
+                            var placed = false;
+                            for (var g = 0; g < pokemon_array.length; g++){
+                                for (var h = 0; h < pokemon_array[g].length; h++){
+                                    if (pokemon_array[g][h].toLowerCase() == data.species.name.toLowerCase()){
+                                        poke_data_array[g].push(data);
+                                        placed = true;
+                                    }
+                                }
+                            }
+                            if (!placed) {
+                                console.log("Failed to place" + data.species.name.toLowerCase());
+                            }
+                        }
+                    });
+            }
         }
-        
+
         function return_move(data){
-          var move_array = [];
-          for (var i = 0; i < data.moves.length; i++){
-              for (var j = 0; j < data.moves[i].version_group_details.length; j++){
-                  if (data.moves[i].version_group_details[j].version_group.name == "sun-moon"
-                   && data.moves[i].version_group_details[j].move_learn_method.name == "egg"){
-                      move_array.push("\"" + data.moves[i].move.name.toLowerCase().capitalize() + "\"");
-                  }
-              }
-          }
-          return move_array;
+            var move_array = [];
+            for (var i = 0; i < data.moves.length; i++){
+                for (var j = 0; j < data.moves[i].version_group_details.length; j++){
+                    if (data.moves[i].version_group_details[j].version_group.name == "sun-moon"
+                        && data.moves[i].version_group_details[j].move_learn_method.name == "egg"){
+                        move_array.push("\"" + data.moves[i].move.name.toLowerCase().capitalize() + "\"");
+                    }
+                }
+            }
+            return move_array;
         }
-        
+
         function return_abil(data){
-          var abil_array = [];
-          for (var k = 0; k < data.abilities.length; k++){
-              abil_array.push("\"" + data.abilities[k].ability.name.toUpperCase() + "\"");
-          }
-          return abil_array;
+            var abil_array = [];
+            for (var k = 0; k < data.abilities.length; k++){
+                abil_array.push("\"" + data.abilities[k].ability.name.toUpperCase() + "\"");
+            }
+            return abil_array;
         }
 
 
 
         function print_data(){
-          var outputString = "";
-          for(var i = 0; i < poke_data_array.length; i++){
-            for (var j = 0; j < poke_data_array[i].length; j++){
-              var move_array = return_move(poke_data_array[i][j]);
-              var abil_array = return_abil(poke_data_array[i][j]);
+            var outputString = "";
+            for(var i = 0; i < poke_data_array.length; i++){
+                for (var j = 0; j < poke_data_array[i].length; j++){
+                    var move_array = return_move(poke_data_array[i][j]);
+                    var abil_array = return_abil(poke_data_array[i][j]);
 
-              outputString += "new Pokemon(\"" + poke_data_array[i][j].species.name.capitalize() + "\", num, 0.5,\"" + poke_data_array[i][j].types[0].type.name.toUpperCase();
-              if (poke_data_array[i][j].types[1] != undefined){
-                outputString += "\",\"" + poke_data_array[i][j].types[1].type.name.toUpperCase() + "\",";
-              } else {
-                  outputString += "\",\"NONE\",";
-              }
-              outputString += "\"NONE\", \n[" + abil_array + "], \n[" + move_array + "]),\n";
+                    outputString += "new Pokemon(\"" + poke_data_array[i][j].species.name.capitalize() + "\", num, 0.5,\"" + poke_data_array[i][j].types[0].type.name.toUpperCase();
+                    if (poke_data_array[i][j].types[1] != undefined){
+                        outputString += "\",\"" + poke_data_array[i][j].types[1].type.name.toUpperCase() + "\",";
+                    } else {
+                        outputString += "\",\"NONE\",";
+                    }
+                    outputString += "\"NONE\", \n[" + abil_array + "], \n[" + move_array + "]),\n";
+                }
+                outputString += "], \n //rarity " + (i+2) + "\n["
             }
-              outputString += "], \n //rarity " + (i+2) + "\n["
-          }
-          //TODO Output in a better format
-          console.log(outputString);
+            //TODO Output in a better format
+            console.log(outputString);
         }
-        </script>
+    </script>
 </head>
 <body>
 </body>
