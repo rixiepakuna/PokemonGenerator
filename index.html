@@ -25,13 +25,14 @@
     </div>
 </q>
 
-<p>Click the button that says Pokemon, and the program will randomize a Pokemon for you from selected location and season.</p>
+<p>Click the button that says "Pokemon by Location/Season", and the program will randomize a Pokemon for you from selected location and season.</p>
 
 <select id = "select_place">
+    <option value = "-1">Any</option>
     <option value = "0">Western Great Forest</option>
     <option value = "1">Crying Plateau</option>
     <option value = "2">Eastern Great Forest</option>
-    <option value = "3">Dragon's Plateau</option>
+    <option value = "3">Dragon's Peninsula</option>
     <option value = "4">Lion's Plains</option>
     <option value = "5">Cloven Volcano</option>
     <option value = "6">Subterranean River</option>
@@ -45,27 +46,29 @@
 </select>
 
 <select id = "select_season">
+    <option value = "-1">Any</option>
     <option value = "0">Spring</option>
     <option value = "1">Summer</option>
     <option value = "2">Fall</option>
     <option value = "3">Winter</option>
 </select>
 
-<button onclick="go()">Pokemon</button>
+<button onclick="go()">Pokemon by Location/Season</button>
 <br>
 <br>
 <br>
 
-<p>Or generate the stats of a specific species of Pokemon by typing its name in (e.g. Eevee) and then clicking Stats
-<br>It must be spelled correctly and have correct capitals/punctuation (except for "Farfetchd").</p>
+<p>Or generate the stats of a specific species of Pokemon by typing its name in (e.g. "Eevee", "Geodude (Alolan)", etc.) and then clicking this button
+<br>It must be spelled correctly and have correct capitals/punctuation (except for "Farfetchd" and "Nidoran (M)").</p>
 <input id = "spec_poke" type="text">
-<button onclick="stats_go()">Stats</button>
+<button onclick="stats_go()">Stats for Particular Species</button>
 <br>
 <br>
 <br>
 
-<p>Now you can also click the button "Spec. Pokemon", and the program will randomize a Pokemon for you from selected rarity and type.</p>
+<p>Or click the button "Pokemon by Type/Rarity", and the program will randomize a Pokemon for you from selected rarity and type.</p>
 <select id = "select_rarity">
+    <option value = "-1">Any</option>
     <option value = "0">Overpopulated</option>
     <option value = "1">Common</option>
     <option value = "2">Uncommon</option>
@@ -74,6 +77,7 @@
 </select>
 
 <select id = "select_type">
+    <option value = "-1">Any</option>
     <option value = "0">Normal</option>
     <option value = "1">Fighting</option>
     <option value = "2">Flying</option>
@@ -95,14 +99,36 @@
 
 </select>
 
-<button onclick="spec_go()">Spec. Pokemon</button>
+<button onclick="spec_go()">Pokemon by Type/Rarity</button>
+<br>
+<br>
+<br>
+
+
+<p>This is complete, but has not been adequately tested. Please alert me if you find issues or anything breaks.
+    <br>Generate offspring of two Pokemon! Fill out the boxes below. The first two must be the species of the mother and father
+    (or to be more accurate, the possible species of the offspring). You need to type in the name of the first evolutions. Ex: "Spinarak", not "Ariados", even if the parents are already evolved.
+    <br>In the last two boxes, put all moves that the mother and father knows (order does not matter).
+    <br>Like all my text boxes, these are rather picky. Data must be entered as, for example:
+    "Tackle,Growl,Vine Whip,Iron Tail" and the function reacts poorly if any spaces or deviations exist.
+    <br></p>
+<input id = "first_species" type="text">
+<input id = "second_species" type="text">
+<input id = "first_movelist" type="text">
+<input id = "second_movelist" type="text">
+<button onclick="breed()">Breed</button>
+<br>
+<br>
+<br>
+
 
 <p>
     <br>
     Remember!<br>
     - You can always spawn an Overpopulated Pokemon instead of rolling.<br>
-    - Temp mods are not allowed to spawn Endangered Pokemon. If you are a temp mod and you get one of those, I'm afraid you'll need to roll again.<br>
-    - Grass types showing up in the desert must be desert-y ones. Like Cacnea.<br>
+    - Only spawn Pokemon of a rarity you are allowed to spawn. Ex: If you roll an Rare Pokemon, but the adventure you're rolling for isn't allowed to receive Rare or Endangered Pokemon, you'll have to roll again. Don't forget to check if the thing you rolled is a pseudo-dragon! (Charmander, Treecko, Trapinch, Swablu, etc.)<br>
+    - If Gourmet Honey is used, roll as the directions on-site tell you to. These rolls will determine how many Pokemon spawn and whether or not they are the correct type. After that, roll a bunch of Pokemon on the generator for "Any" Rarity and the type of the honey for Type. Make sure the resulting Pokemon are able to spawn in the location being used. Ex: No Ice-types in Western Great Forest!
+    - Grass types showing up in the desert must be desert-y ones. AKA Cacnea, Maractus, Hoppip, Pumpkaboo, or Phantump (it would look more like a spiky, shrubby plant than a tree).<br>
     - Use logic! Skrelp is a Poison type, yes, but it would not show up in Western Great Forest. It needs to live in a large body of water.
 </p>
 

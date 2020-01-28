@@ -5,9 +5,10 @@ Tutorial:
 2. Open index.html with a web browser (I recommend Chrome).
 
 Remember!
- - You can always spawn an Overpopulated Pokemon instead of rolling.
- - Temp mods are not allowed to spawn Endangered Pokemon. If you are a temp mod and you get one of those, I'm afraid you'll need to roll again.
- - Grass types showing up in the desert must be desert-y ones. Like Cacnea.
+    - You can always spawn an Overpopulated Pokemon instead of rolling.
+    - Only spawn Pokemon of a rarity you are allowed to spawn. Ex: If you roll an Endangered Pokemon, but you are a temp mod and not allowed to spawn an Endangered, you'll have to roll again.
+    - Grass types showing up in the desert must be desert-y ones. AKA Cacnea, Maractus, Hoppip, Pumpkaboo, or Phantump (it would look more like a spiky, shrubby plant than a tree).
+    - Use logic! Skrelp is a Poison type, yes, but it would not show up in Western Great Forest. It needs to live in a large body of water.
 
 
 
@@ -32,12 +33,11 @@ Known issues:
 In the Works
 
 Slated for the next update
-1. Be able to use the same type/rarity that was rolled and get more Pokemon of that type/rarity.
-2. Figure out how to use <span> so that I can have the log be ascending instead of descending.
-3. Possibly a button that randomizes breeding? We'll see. That may be a longer-term goal.
+1. Figure out how to use <span> so that I can have the log be ascending instead of descending.
+2. Possibly a button that randomizes breeding? We'll see. That may be a longer-term goal.
 
 Long-term or low priority stuff
-1. Depending on how difficult it is, I will probably add genderless Pokemon in. This is low priority though.
+1. Depending on how difficult it is, I will probably add a tag for genderless Pokemon. This is low priority though. Right now, they will be spawned with a 50/50 chance of being listed as male/female.
 2. Someday maybe I can double-check all the egg moves in the data... I'm not sure about this though. PM or hit me up in the cbox if you'd like to partake in mind-numbing cross-checking lists and websites.
 
 
@@ -97,6 +97,7 @@ Long-term or low priority stuff
 
 
 
+
 1.2.0 Randomizing Pokemon from Rarity and Type! January 26, 2018
 
 New Features:
@@ -105,3 +106,28 @@ New Features:
 Developer Notes:
 1. I moved some functions around and made new functions... again? I think this is going to become rather typical. New functions include spec_go(), type_int_to_string()...
 2. I made more drop-down menus, with their associated new button, so now the user can select type and rarity, and skip the first function which usually randomizes type and rarity for the user based on location and season. Honestly, spec_go() is quite similar to normal go(), just skipping that first step as I mentioned.
+
+
+
+
+
+1.2.1 Belated Update January 28, 2020
+Fixes:
+1. Added Cryogonal (whoops).
+2. Fixed a spelling error (embarrassing).
+
+Changes:
+1. Edited the Reminders to reflect the new system of unmodded and adventure tiers, and mention pseudo-dragons.
+2. Added a note about Gourmet Honey!
+3. I changed some of the buttons, so that they are more self-explanatory in what they actually do. I did not change the related function names, not that anyone cares about that except Flameink.
+4. Added a print-out to include information on what all the Pokemon's types are. (Primarily useful for checking dual-types, and helping in double-checking for Pokemon who are NEVER supposed to show up in a certain location, based on their typing.)
+
+New Features:
+1. Added in two "new" Pokemon.
+2. Added the options "Any" into the various pull-down menus.
+4. I'm experimenting with adding a Breeding function. Right now it works (I think), but is excessively picky about data entry. I'm beginning to work on a way to fix that.
+
+Developer Notes:
+1. This was hard. I broke a lot of things while adding in the "Any" options. I had to go through and fix them.
+2. I re-numbered a bunch of the arrays for location, season, type... I did not re-number rarity, out of stubbornness and also because I don't think it's a good idea. Overpopulated, for now, will remain designation 1, while Endangered will remain designation 5.
+3. Added two hidden, optional features in... Namely, natures and chances to be shiny. Natures are just there to provide optional inspiration for the Pokemon's demeanor, while the shiny chance is just a random number between 1 and 100. If someone has a 1% shiny chance, this number must be 1 in order for the Pokemon to spawn in as a shiny. I'll be honest; I don't expect anyone to use this except for me. But I mean. If you want to know how, just ask in Discord/PM.

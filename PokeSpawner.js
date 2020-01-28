@@ -1,20 +1,20 @@
 //THE DATA
 
 //pokemon object constructor
-var Pokemon = function (name, rarity, fem_chance, type1, type2, type_evolved,
+let Pokemon = function (name, rarity, fem_chance, type1, type2, type_evolved,
                         abilities, egg_moves) {
     this.name = name;
     this.rarity = rarity;
-    this.type1 = type1;
     this.fem_chance = fem_chance;
+    this.type1 = type1;
     this.type2 = type2;
     this.type_evolved = type_evolved;
     this.abilities = abilities;
     this.egg_moves = egg_moves;
 };
 
-var Pokemon_array = [
-    //rarity 0
+let Pokemon_array = [
+    //rarity 0 error
     [
         new Pokemon("Error", 0, 0.5, "ERROR", "ERROR", "ERROR",
             ["ERROR"],
@@ -273,7 +273,7 @@ var Pokemon_array = [
             ["CHLOROPHYLL","INFILTRATOR","PRANKSTER"],
             ["Encore","Beat Up","Memento","Fake Tears","Grass Whistle","Tickle","Natural Gift","Worry Seed","Switcheroo","Captivate"]),
         new Pokemon("Basculin", 2, 0.5,"WATER","NONE","NONE",
-            ["MOLD BREAKER","ADAPTABILITY","RECKLESS"],
+            ["MOLD BREAKER","ADAPTABILITY","RECKLESS/ROCK HEAD"],
             ["Bubble Beam","Agility","Rage","Swift","Whirlpool","Revenge","Muddy Water","Mud Shot","Brine"]),
         new Pokemon("Minccino", 2, 0.75,"NORMAL","NONE","NONE",
             ["SKILL LINK","TECHNICIAN","CUTE CHARM"],
@@ -356,6 +356,9 @@ var Pokemon_array = [
         new Pokemon("Misdreavus", 3, 0.5, "GHOST", "NONE", "NONE",
             ["LEVITATE"],
             ["Curse", "Destiny Bond","Imprison","Me First","Memento","Nasty Plot","Ominous Wind","Screech","Shadow Sneak","Skill Swap","Spite","Sucker Punch","Wonder Room"]),
+        new Pokemon("Cryogonal", 3, 0.5, "ICE", "NONE", "NONE",
+            ["LEVITATE"],
+            ["No Egg Moves"]),
 
         new Pokemon("Squirtle", 3, 0.125,"WATER","NONE","NONE",
             ["RAIN DISH","TORRENT"],
@@ -985,7 +988,13 @@ var Pokemon_array = [
         new Pokemon("Kangaskhan", 5, 1.0, "NORMAL", "NONE", "NONE",
             ["EARLY BIRD", "SCRAPPY", "INNER FOCUS"],
             ["Circle Throw","Counter","Crush Claw","Disable","Double-Edge","Endeavor","Focus Energy","Focus Punch","Foresight","Hammer Arm","Stomp","Trump Card","Uproar"]),
-        
+        new Pokemon("Rotom", 5, 0.5, "ELECTRIC", "GHOST", "NONE",
+            ["LEVITATE"],
+            ["No Egg Moves"]),
+        new Pokemon("Spiritomb", 5, 0.5, "GHOST", "DARK", "NONE",
+            ["PRESSURE", "INFILTRATOR"],
+            ["Captivate","Destiny Bond","Disable","Foul Play","Grudge","Imprison","Nightmare","Pain Split","Shadow Sneak","Smokescreen"]),
+
         new Pokemon("Lapras", 5, 0.5,"ICE","WATER","NONE",
             ["HYDRATION","SHELL ARMOR","WATER ABSORB"],
             ["Horn Drill","Fissure","Curse","Foresight","Sleep Talk","Ancient Power","Future Sight","Whirlpool","Refresh","Tickle","Dragon Dance","Dragon Pulse","Avalanche","Freeze Dry"]),
@@ -1108,12 +1117,15 @@ var Pokemon_array = [
             ["No Egg Moves"]),
         new Pokemon("Jangmo-o", 5, 0.5,"DRAGON","NONE","FIGHTING",
             ["OVERCOAT","SOUNDPROOF","BULLETPROOF"],
-            ["Counter","Reversal","Dragon Breath"])
+            ["Counter","Reversal","Dragon Breath"]),
+        new Pokemon("Spiritomb", 5, 0.5,"GHOST","DARK","NONE",
+            ["PRESSURE","INFILTRATOR"],
+            ["Captivate","Destiny Bond","Disable", "Foul Play","Grudge","Imprison","Nightmare","Pain Split","Shadow Sneak","Smokescreen"])
     ]
 ];
 
 //location/season constructor
-var location_season = function (name, common_types, uncommon_types, rare_types, never_found){
+let location_season = function (name, common_types, uncommon_types, rare_types, never_found){
     this.name = name;
     this.common_types = common_types;
     this.uncommon_types = uncommon_types;
@@ -1121,7 +1133,7 @@ var location_season = function (name, common_types, uncommon_types, rare_types, 
     this.never_found = never_found;
 };
 
-var location_array = [
+let location_array = [
     [//array of values for WGF, in diff seasons
         new location_season("Western Great Forest in Spring",
             ["BUG", "DARK", "FLYING", "GRASS", "GRASS", "POISON"],
@@ -1412,43 +1424,55 @@ var location_array = [
         new location_season("Mud Baths in Spring",
             ["BUG", "FIRE", "GROUND", "POISON", "WATER", "GRASS"],
             ["DARK", "DRAGON", "ELECTRIC", "FLYING", "FAIRY", "NORMAL", "ROCK"],
-            ["FIGHTING", "ICE", "PSYCHIC", "STEEL"],
-            ["GHOST"]),
+            ["FIGHTING", "PSYCHIC", "STEEL", "GHOST"],
+            ["ICE"]),
         new location_season("Mud Baths in Summer",
             ["BUG", "BUG", "FIRE", "FIRE", "ELECTRIC", "GROUND", "POISON", "WATER"],
             ["DARK", "DRAGON", "FLYING", "GRASS", "NORMAL", "ROCK"],
-            ["FAIRY", "FIGHTING", "ICE", "PSYCHIC", "STEEL"],
-            ["GHOST"]),
+            ["FAIRY", "FIGHTING", "PSYCHIC", "STEEL", "GHOST"],
+            ["ICE"]),
         new location_season("Mud Baths in Fall",
             ["BUG", "FIRE", "GROUND", "POISON", "WATER"],
-            ["DARK", "DRAGON", "ELECTRIC", "FLYING", "GRASS", "NORMAL", "ROCK"],
-            ["FAIRY", "FIGHTING", "ICE", "PSYCHIC", "STEEL"],
-            ["GHOST"]),
+            ["DARK", "DRAGON", "ELECTRIC", "FLYING", "GRASS", "NORMAL", "ROCK", "GHOST"],
+            ["FAIRY", "FIGHTING", "PSYCHIC", "STEEL"],
+            ["ICE"]),
         new location_season("Mud Baths in Winter",
             ["GROUND", "POISON", "WATER", "DARK"],
-            ["BUG", "DRAGON", "ELECTRIC", "NORMAL", "ROCK", "FIRE", "ICE"],
-            ["FAIRY", "FIGHTING", "PSYCHIC", "STEEL", "FLYING", "GRASS"],
-            ["GHOST"])
+            ["BUG", "DRAGON", "ELECTRIC", "NORMAL", "ROCK", "FIRE"],
+            ["FAIRY", "FIGHTING", "PSYCHIC", "STEEL", "FLYING", "GRASS", "GHOST"],
+            ["ICE"])
     ]
 ];
+
+let SELECT_PLACE_LAST_OPTION = 13;
+let SELECT_SEASON_LAST_OPTION = 3;
+let SELECT_RARITY_LAST_OPTION = 5;
+let SELECT_TYPE_LAST_OPTION = 17;
+
+//rarity distributions
+let OVERPOP_THRESHOLD = 0.3; //includes 0, does not include 0.3
+let COMMON_THRESHOLD = 0.6; //includes 0.3, does not include 0.6
+let UNCOMMON_THRESHOLD = 0.85; //includes 0.6, does not include 0.85
+let RARE_THRESHOLD = 0.9775; //includes 0.85, does not include 0.9775
+let ENDANGERED_THRESHOLD = 1; //includes 0.9775, does not include 1
 
 //DISPLAYING RESULTS
 
 function print(string){
-    var br = document.createElement("br");
+    let br = document.createElement("br");
 
-    var list_element = document.getElementById("results");
-    var node = document.createTextNode(string);
+    let list_element = document.getElementById("results");
+    let node = document.createTextNode(string);
 
     list_element.appendChild(node);
     list_element.appendChild(br);
 }
 
 function print_bold(string){
-    var br = document.createElement("br");
-    var b = document.createElement("b");
-    var list_element = document.getElementById("results");
-    var node = document.createTextNode(string);
+    let br = document.createElement("br");
+    let b = document.createElement("b");
+    let list_element = document.getElementById("results");
+    let node = document.createTextNode(string);
 
     b.appendChild(node);
     list_element.appendChild(b);
@@ -1458,8 +1482,8 @@ function print_bold(string){
 //RANDOMIZING THE POKEMON’S STATS//
 
 function randomize_sex (poke_fem_chance) {
-    var rand_sex = Math.random();
-    var sex;
+    let rand_sex = Math.random();
+    let sex;
     if (rand_sex < poke_fem_chance){
         sex = "FEMALE";
     }
@@ -1476,11 +1500,10 @@ function randomize_sex (poke_fem_chance) {
 function randomize_x_from_array(x, array){
     if (x > array.length){
         print("There are not enough arguments in the array to pick " + x + " of them.");
-        return "No Egg Moves";
     }
-    var currentIndex = array.length;
-    var temporaryValue;
-    var randomIndex;
+    let currentIndex = array.length;
+    let temporaryValue;
+    let randomIndex;
     //while there remain elements to shuffle...
     while (0 !== currentIndex){
         //pick a remaining element
@@ -1495,8 +1518,8 @@ function randomize_x_from_array(x, array){
 }
 
 function randomize_eggmove_number () {
-    var rand_number = Math.floor(Math.random() * 9) + 1;
-    var eggmove_number;
+    let rand_number = Math.floor(Math.random() * 9) + 1;
+    let eggmove_number;
     if (rand_number <= 3){
         eggmove_number = 0;
     }
@@ -1517,8 +1540,8 @@ function randomize_eggmove_number () {
 }
 
 function randomize_eggmoves(eggmove_array){
-    var eggmove_number = randomize_eggmove_number();
-    var eggmoves = randomize_x_from_array(eggmove_number, eggmove_array);
+    let eggmove_number = randomize_eggmove_number();
+    let eggmoves = randomize_x_from_array(eggmove_number, eggmove_array);
     print("Pokemon should have " + eggmove_number + " egg moves.");
     if (eggmove_number == 0){
         return "None this time";
@@ -1527,25 +1550,72 @@ function randomize_eggmoves(eggmove_array){
     return eggmoves;
 }
 
-function randomize_stats(pokemon){
-    var sex = randomize_sex(pokemon.fem_chance);
-    var abil = randomize_x_from_array(1, pokemon.abilities);
-    var eggmoves = randomize_eggmoves(pokemon.egg_moves);
-
-    print_bold("Sex: "+ sex +", Ability: "+ abil);
-    print_bold("Egg moves: " +eggmoves);
-    print("\n");
+function randomize_nature(){
+    let nature_int = Math.floor(Math.random()*25);
+    switch (nature_int){
+        case 0: return "Hardy";
+        case 1: return "Lonely";
+        case 2: return "Brave";
+        case 3: return "Adamant";
+        case 4: return "Naughty";
+        case 5: return "Bold";
+        case 6: return "Docile";
+        case 7: return "Relaxed";
+        case 8: return "Impish";
+        case 9: return "Lax";
+        case 10: return "Timid";
+        case 11: return "Hasty";
+        case 12: return "Serious";
+        case 13: return "Jolly";
+        case 14: return "Naive";
+        case 15: return "Modest";
+        case 16: return "Mild";
+        case 17: return "Quiet";
+        case 18: return "Bashful";
+        case 19: return "Rash";
+        case 20: return "Calm";
+        case 21: return "Gentle";
+        case 22: return "Sassy";
+        case 23: return "Careful";
+        case 24: return "Quirky";
+        default: return "Could not determine nature";
+    }
 }
 
+function randomize_stats(pokemon){
+    let sex = randomize_sex(pokemon.fem_chance);
+    let abil = randomize_x_from_array(1, pokemon.abilities);
+    let eggmoves = randomize_eggmoves(pokemon.egg_moves);
+    let nature1 = randomize_nature();
+    let nature2 = randomize_nature();
+    let nature3 = randomize_nature();
+
+    print_bold("Sex: "+ sex +", Ability: "+ abil);
+    print_bold("Egg moves: " + eggmoves);
+    print("\n");
+    console.log(pokemon.name + "'s suggested Nature is: " + nature1 + " and/or " + nature2 + ", maybe a bit " + nature3);
+}
+
+function randomize_stats_no_em(pokemon){
+    let sex = randomize_sex(pokemon.fem_chance);
+    let abil = randomize_x_from_array(1, pokemon.abilities);
+    let nature1 = randomize_nature();
+    let nature2 = randomize_nature();
+    let nature3 = randomize_nature();
+
+    print_bold("Sex: "+ sex +", Ability: "+ abil);
+    //print("\n");
+    console.log(pokemon.name + "'s suggested Nature is: " + nature1 + " and/or " + nature2 + ", maybe a bit " + nature3);
+}
 
 //RANDOMIZING POKEMON SPECIES
 
 function randomize_poke (type, rarity, never_found) {
     //this function will need to find all the Pokemon with the given type and rarity and then randomly pick one
     console.log("Now randomizing Pokemon from Type: " + type + "... And Rarity: " + rarity);
-    var possible_Pokemon = [];
+    let possible_Pokemon = [];
     Pokemon_array[rarity].forEach(function(element) {
-        var forbidden = false;
+        let forbidden = false;
         never_found.forEach(function(f_type){
             if (f_type == element.type1 || f_type == element.type2 || f_type == element.type_evolved){
                 forbidden = true;
@@ -1568,7 +1638,7 @@ function randomize_poke (type, rarity, never_found) {
     }
 
     //print the results, so that we can make sure the program is working as intended
-    var poss_pokemon_names = "";
+    let poss_pokemon_names = "";
     for (i = 0; i < possible_Pokemon.length; i++){
         poss_pokemon_names += possible_Pokemon[i].name + ". ";
     }
@@ -1581,22 +1651,22 @@ function randomize_poke (type, rarity, never_found) {
 //RANDOMIZING GENERAL INFO (RARITY AND TYPE)
 
 function randomize_rarity () {
-    var rand_rarity = Math.random();
-    var poke_rarity;
-    if (rand_rarity < 0.29){
+    let rand_rarity = Math.random();
+    let poke_rarity;
+    if (rand_rarity < OVERPOP_THRESHOLD){
         poke_rarity = 1; //overpopulated
     }
-    else if (rand_rarity >= 0.29 && rand_rarity < 0.58){
+    else if (rand_rarity >= OVERPOP_THRESHOLD && rand_rarity < COMMON_THRESHOLD){
         poke_rarity = 2; //common
     }
-    else if (rand_rarity >= 0.58 && rand_rarity < 0.8){
+    else if (rand_rarity >= COMMON_THRESHOLD && rand_rarity < UNCOMMON_THRESHOLD){
         poke_rarity = 3; //uncommon
     }
-    else if (rand_rarity >= 0.8 && rand_rarity < 0.96){
+    else if (rand_rarity >= UNCOMMON_THRESHOLD && rand_rarity < RARE_THRESHOLD){
         poke_rarity = 4; //rare
     }
-    else if (rand_rarity >= 0.96 && rand_rarity < 1) {
-        poke_rarity = 5; //endangered
+    else if (rand_rarity >= RARE_THRESHOLD && rand_rarity < ENDANGERED_THRESHOLD) {
+        poke_rarity = 5; //endangered (threshold should always be 1)
     }
     else {
         print("Something went wrong with choosing the rarity.");
@@ -1605,8 +1675,42 @@ function randomize_rarity () {
     return poke_rarity;
 }
 
+
+function place_int_to_string(int){
+    switch (int){
+        case 0: return "WGF";
+        case 1: return "Crying Plat";
+        case 2: return "EGF";
+        case 3: return "Dragon P";
+        case 4: return "Lion's Plains";
+        case 5: return "Cloven Volcano";
+        case 6: return "Sub River";
+        case 7: return "Rolling Mo";
+        case 8: return "Onix P";
+        case 9: return "Chilling Cl";
+        case 10: return "Desert St";
+        case 11: return "Fairy I";
+        case 12: return "Paradise I";
+        case 13: return "Mud Baths";
+        default: return "Cannot change location to string.";
+    }
+}
+
+function time_int_to_string(int){
+    switch (int){
+        case 0: return "Spring";
+        case 1: return "Summer";
+        case 2: return "Fall";
+        case 3: return "Winter";
+        default: return "Cannot change time to string.";
+    }
+}
+
+
+//fucky rarity
 function rarity_to_string(poke_rarity){
     switch (poke_rarity){
+        case 0: return "ANY";
         case 1: return "OVERPOPULATED";
         case 2: return "COMMON";
         case 3: return "UNCOMMON";
@@ -1641,23 +1745,27 @@ function type_int_to_string(poke_type){
 }
 
 function randomize_general (location) {
-    var type_rarity = Math.random();
-    var poke_type;
+    print("Randomizing for... " + location.name);
+    let type_rarity = Math.random();
+    let poke_type;
     if (type_rarity < 0.6) {
-        //print("Continue with one of the " + location.common_types.length + " COMMON types");
-        var common_type = Math.floor(Math.random() * location.common_types.length);
+        console.log("Continue with one of the " + location.common_types.length + " COMMON types: " +
+        location.common_types);
+        let common_type = Math.floor(Math.random() * location.common_types.length);
         poke_type = location.common_types[common_type];
 
     }
     else if (type_rarity >= 0.6 && type_rarity < 0.85) {
-        //print("Continue with one of the " + location.uncommon_types.length + " UNCOMMON types");
-        var uncommon_type = Math.floor(Math.random() * location.uncommon_types.length);
+        console.log("Continue with one of the " + location.uncommon_types.length + " UNCOMMON types: " +
+            location.uncommon_types);
+        let uncommon_type = Math.floor(Math.random() * location.uncommon_types.length);
         poke_type = location.uncommon_types[uncommon_type];
 
     }
     else if (type_rarity >= 0.85 && type_rarity < 1) {
-        //print("Continue with one of the " + location.rare_types.length + " RARE types");
-        var rare_type = Math.floor(Math.random() * location.rare_types.length);
+        console.log("Continue with one of the " + location.rare_types.length + " RARE types: " +
+            location.rare_types);
+        let rare_type = Math.floor(Math.random() * location.rare_types.length);
         poke_type = location.rare_types[rare_type];
 
     }
@@ -1665,94 +1773,168 @@ function randomize_general (location) {
         print("Something went wrong with choosing the rarity of the type.");
     }
 
-    var poke_rarity = randomize_rarity();
-    var rarity_string = rarity_to_string(poke_rarity);
+    let poke_rarity = randomize_rarity();
+    let rarity_string = rarity_to_string(poke_rarity);
     print_bold("You should spawn a " + poke_type + " type with " + rarity_string + " spawn rate.");
     return [poke_type, poke_rarity];
 }
 
+function print_type_info(poke_object){
+
+    if (poke_object.type2 != "NONE"){
+        print(poke_object.name + " has the following types: " + poke_object.type1 + " and " + poke_object.type2);
+    }
+    else{
+        print(poke_object.name + " has the following type: " + poke_object.type1);
+    }
+
+    if (poke_object.type_evolved != "NONE"){
+        print("If it evolves, it will also have " + poke_object.type_evolved);
+    }
+}
+
+function shiny_chance(){
+    let ran = Math.floor((Math.random()*100));
+
+    print("Shiny? " + (ran+1));
+    if (ran == 0) {
+        print_bold("You may qualify for additional shininess!!! (1% chance)");
+    }
+    else{
+        print("Probably no shiny this time (1% chance)");
+    }
+}
 
 //PUTTING IT TOGETHER
 
 function go(){
-    var place = document.getElementById("select_place").value;
-    console.log("User input: " + place);
-    var place_int = parseInt(place, 10);
+    //get the time and place from user input, or randomize if user input is -1 ("Any")
+    let place = document.getElementById("select_place").value;
+    console.log("User place input: " + place);
+    let place_int = parseInt(place, 10);
+    if (place_int == -1) {
+        place_int = Math.floor(Math.random()*(SELECT_PLACE_LAST_OPTION+1));
+        console.log("Location randomized: " + place_int );
+    } else {
+        console.log("Location is specified: " + place_int);
+    }
+    console.log("place_int to string: " + place_int_to_string(place_int));
 
-    var time = document.getElementById("select_season").value;
-    console.log("User input: " + time);
-    var time_int = parseInt(time, 10);
 
-    var poke_info = randomize_general(location_array[place_int][time_int]);
+    let time = document.getElementById("select_season").value;
+    console.log("User time input: " + time);
+    let time_int = parseInt(time, 10);
+    if (time_int == -1) {
+        time_int = Math.floor(Math.random()*(SELECT_SEASON_LAST_OPTION+1));
+        console.log("Time randomized: " + time_int);
+    } else {
+        console.log("Time is specified: " + time_int);
+    }
+    console.log("time_int to string: " + time_int_to_string(time_int));
 
-    var rand_poke = randomize_poke(poke_info[0], poke_info[1], location_array[place_int][time_int].never_found);
+
+    let poke_info;
+    poke_info = randomize_general(location_array[place_int][time_int]);
+    let rand_poke = randomize_poke(poke_info[0], poke_info[1], location_array[place_int][time_int].never_found);
     if (rand_poke == -1){
         return -1;
     }
 
     print_bold("You should spawn a: " + rand_poke.name);
+    print_type_info(rand_poke);
 
     //now to randomize some stats for the Pokemon
     randomize_stats(rand_poke);
 }
 
-function spec_go(){
-    var rarity = document.getElementById("select_rarity").value;
-    var rarity_data = (parseInt(rarity, 10) + 1);
 
-    var type = document.getElementById("select_type").value;
-    var type_data = type_int_to_string(parseInt(type, 10));
 
-    print_bold("Spawning a " + type_data + " type with " + rarity_to_string(rarity_data) + " spawn rate.");
-
-    var rand_poke = randomize_poke(type_data, rarity_data, ["NA"]);
-    if (rand_poke == -1){
-        return -1;
-    }
-
-    print_bold("You should spawn a: " + rand_poke.name);
-
-    //now to randomize some stats for the Pokemon
-    randomize_stats(rand_poke);
-}
-
-function compare_str_obj(string, object){
-    return string == object.name;
-}
-
+//randomizing stats for given Pokemon species
 function stats_go(string){
     string = document.getElementById("spec_poke").value;
-    var user_string = compare_str_obj.bind(null, string);
-    var poke_object;
-    for (var i = 0; i < Pokemon_array.length; i++){
+    let user_string = compare_str_obj.bind(null, string);
+    let poke_object;
+    for (let i = 0; i < Pokemon_array.length; i++){
         poke_object = Pokemon_array[i].find(user_string);
         if (poke_object != undefined){
             break;
         }
     }
     if (poke_object == undefined){
-        print("Please enter a Pokemon name");
+        print("Please enter a valid Pokemon name");
         print("\n");
     }
     print_bold("Randomizing stats for: " + poke_object.name);
+    print_type_info(poke_object);
+
     randomize_stats(poke_object);
 }
 
+function compare_str_obj(string, object){
+    return string == object.name;
+}
+
+
+
+
+//randomizing species from given rarity and type
+function spec_go(){
+
+    //get the rarity and type from user input, or randomize if user input is -1 ("Any")
+    let rarity = document.getElementById("select_rarity").value;
+    console.log("User rarity input: " + rarity);
+    let rarity_int = parseInt(rarity, 10);
+    if (rarity_int == -1){
+        rarity_int = randomize_rarity();
+        console.log("Rarity randomized: " + rarity_int);
+    } else {
+        console.log("Rarity is specified: " + rarity_int);
+    }
+    console.log("rarity_int: " + rarity_int + " (" + rarity_to_string(rarity_int) + ")");
+
+    let type = document.getElementById("select_type").value;
+    console.log("User type input: " + type);
+    let type_int = parseInt(type, 10);
+    if (type_int == -1){
+        type_int = Math.floor(Math.random()*(SELECT_TYPE_LAST_OPTION+1));
+        console.log("Type randomized: " + type_int);
+    }
+    else {
+        console.log("Type is specified: " + type_int)
+    }
+    console.log("type_int: " + type_int + " (" + type_int_to_string(type_int) + ")");
+
+    print_bold("Spawning a " + type_int_to_string(type_int) + " type with " + rarity_to_string(rarity_int) + " spawn rate.");
+    let rand_poke = randomize_poke(type_int_to_string(type_int), rarity_int, ["NA"]);
+    if (rand_poke == -1){
+        return -1;
+    }
+    print_bold("You should spawn a: " + rand_poke.name);
+    print_type_info(rand_poke);
+
+    //now to randomize some stats for the Pokemon
+    randomize_stats(rand_poke);
+}
+
+
+
+
+
 function test() {
-    var place = document.getElementById("select_place").value;
+    let place = document.getElementById("select_place").value;
     print("User input: " + place);
-    var place_int = parseInt(place, 10);
+    let place_int = parseInt(place, 10);
 
-    var time = document.getElementById("select_season").value;
+    let time = document.getElementById("select_season").value;
     print("User input: " + time);
-    var time_int = parseInt(time, 10);
+    let time_int = parseInt(time, 10);
 
-    var myArray = new Array;
-    for(var i = 0; i < 10 ; i++){
+    let myArray = new Array;
+    for(let i = 0; i < 10 ; i++){
         myArray.push(0);
     }
-    for (var i = 0; i < 10000; i++){
-        var info = randomize_general(location_array[place_int][time_int]);
+    for (let i = 0; i < 10000; i++){
+        let info = randomize_general(location_array[place_int - 1][time_int - 1]);
         myArray[info[1]]++;
     }
     myArray.forEach(function(element){
@@ -1760,3 +1942,274 @@ function test() {
     });
 
 }
+
+
+
+
+
+//CALCULATING NUM OF POSSIBLE EGGMOVES. NOT FOR GENERAL PUBLIC USE.
+
+function factorialize(num) {
+    if (num < 0)
+        return -1;
+    else if (num == 0)
+        return 1;
+    else {
+        return (num * factorialize(num - 1));
+    }
+}
+
+function n_choose_k(n, k){
+    return factorialize(n) / ( factorialize(k) * (factorialize(n-k)) );
+}
+
+let parent_em = 5;
+
+function calc_parent_em(){
+    let p_arr = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+
+    //directly edit the values of r_arr to be the chances of randomly mutating 0, 1, 2, 3 eggmoves
+    let r_arr = [0.20, 0.50, 0.20, 0.10];
+    for (let x = 1; x <= parent_em; x++){
+        print_bold("IF PARENTS HAVE " + x + " EGG MOVE(s)");
+        console.log("BEGIN CALCULATING for " + x + " parent eggmoves");
+        for (let y = 0; y <= x; y++){
+            let z = n_choose_k(x, y);
+            console.log("Calculating " + x + " choose " + y + "... Result: " + z);
+            let percent_chance = z * (Math.pow(0.5,x));
+            console.log("Chance to inherit " + y + " egg move(s) from parents: "
+                + percent_chance + " percent");
+            p_arr[y] = percent_chance;
+        }
+        //= " + p_arr[0] + "*" + r_arr[0] + " = "
+
+
+        // Calculate final probabilities based on arbitrary weights(r_arr) and the real calculated chances of inheriting
+        // a given number of traits
+        let chance_of_0 =    p_arr[0]*r_arr[0];
+
+        let chance_of_1 = ( (p_arr[0]*r_arr[1]) +
+                            (p_arr[1]*r_arr[0]));
+
+        let chance_of_2 = ( (p_arr[0]*r_arr[2]) +
+                            (p_arr[1]*r_arr[1]) +
+                            (p_arr[2]*r_arr[0]));
+
+        let chance_of_3 = ( (p_arr[0]*r_arr[3]) +
+                            (p_arr[1]*r_arr[2]) +
+                            (p_arr[2]*r_arr[1]) +
+                            (p_arr[3]*r_arr[0]));
+
+        print("Chance of 0 EM total: " + chance_of_0.toFixed(2));
+        print("Chance of 1 EM total: " + chance_of_1.toFixed(2));
+        print("Chance of 2 EM total: " + chance_of_2.toFixed(2));
+        print("Chance of 3 EM total: " + chance_of_3.toFixed(2));
+        print("Chance of 4 EM total: " + (1-chance_of_0-chance_of_1-chance_of_2-chance_of_3).toFixed(2));
+    }
+}
+
+
+
+
+
+//BREEDING FUNCTIONS
+
+class parent_obj {
+    constructor(species, inheritable_eggmoves) {
+        this.species = species;
+        this.inheritable_eggmoves = inheritable_eggmoves;
+    }
+}
+
+//function to turn user input into objects??? I'm not sure what to do with this function tbh. right now I'm just working around it by typing breed() into the console
+function get_parents(){
+    //player inputs CSV... program must interpret and turn into objects spec and arr like these 4 lines:
+    let p1_spec = "Mareep";
+    let p1_arr = ["Agility"];
+    let p2_spec = "Chikorita";
+    let p2_arr = ["Agility", "Iron Tail"];
+
+    let parent1 = new parent_obj (p1_spec, p1_arr);
+    let parent2 = new parent_obj (p2_spec, p2_arr);
+    let returned_array = [];
+
+    //set the chance to inherit an egg move from a parent
+    let chance_to_inherit = 0.5;
+
+    for (i = 0; i < p1_arr.length; i++){
+        if (Math.random() <= chance_to_inherit){
+            console.log("Offspring inherits " + p1_arr[i] + " from Parent 1");
+            returned_array.push(p1_arr[i]);
+        }
+    }
+    for (i = 0; i < p2_arr.length; i++){
+        if (Math.random() <= chance_to_inherit){
+            console.log("Offspring inherits " + p2_arr[i] + " from Parent 2");
+            returned_array.push(p2_arr[i]);
+        }
+    }
+    return returned_array;
+}
+
+
+//function for getting offspring's species, abil, sex, and shiny chance!
+function offspring_stats(parent1_species, parent2_species){
+    //determine the offspring's species
+    let string;
+    if (Math.random() < .5){
+        string = parent1_species;
+    }
+    else{
+        string = parent2_species;
+    }
+    print_bold("Offspring species will be: " + string);
+
+    //convert the name into an actual object
+    let species_string = compare_str_obj.bind(null, string);
+    let poke_object;
+    for (let i = 0; i < Pokemon_array.length; i++){
+        poke_object = Pokemon_array[i].find(species_string);
+        if (poke_object != undefined){
+            break;
+        }
+    }
+    if (poke_object == undefined){
+        print("Please enter a Pokemon species");
+        print("\n");
+    }
+
+    print_bold("Randomizing sex and abilities for: " + poke_object.name);
+    randomize_stats_no_em(poke_object);
+
+    shiny_chance();
+
+    return poke_object;
+}
+
+
+
+
+//function for finding randomly mutated eggmoves (contains function for the rest of the stuff)
+function rand_em(offspring_object){
+
+    //variable to store number of randomized egg moves
+    let num_rand_em;
+    //set the threshold to randomly mutate 0 eggmoves, 1, 2, or 3.
+    let rand_chance_arr = [0, 0.2, 0.7, 0.9];
+
+    //this part of function determines how many random egg moves offspring should have
+    let rand_num = Math.random();
+    for (let i = 0; i < rand_chance_arr.length; i++) {
+        if (rand_num >= rand_chance_arr[i]) {
+            num_rand_em = i;
+        }
+    }
+    console.log("Final number of mutated eggmoves: " + num_rand_em);
+
+    //next I need to get access to the species' eggmove array and pull out num_rand_em elements to push into array of moves
+    let random_eggmoves = randomize_x_from_array(num_rand_em, offspring_object.egg_moves);
+    console.log("Randomly mutated eggmoves: " + random_eggmoves);
+    print("The offspring acquires " + num_rand_em + " randomly mutated eggmove(s): " + random_eggmoves);
+    return random_eggmoves;
+}
+
+
+
+function inherit_ems(offspring_object, p1_movelist_arr, p2_movelist_arr){
+    //given the offspring's species (an object) and the parents' movelist arrays
+    //need to figure out and hold onto the moves that also show up in the offspring's species.eggmove array (maybe filter function?)
+    console.log("Possible EMs of species: " + offspring_object.egg_moves);
+
+    let all_parent_moves = p1_movelist_arr.concat(p2_movelist_arr);
+    console.log("Parents moves: " + all_parent_moves);
+
+    //list the possible-to-inherit eggmoves in this array...
+
+    let potential_array = all_parent_moves.filter(function (offspring_object, move) {
+        for (let i = 0; i < offspring_object.egg_moves.length; i++){
+            if (move == offspring_object.egg_moves[i]){
+                return true;
+            }
+        }
+        return false;
+    }.bind(null, offspring_object)
+);
+
+    console.log("Potentially inherited eggmoves: " + potential_array);
+
+    //and the ACTUAL inherited eggmoves in this one...
+    let em_array = [];
+
+    for (let i = 0; i < potential_array.length; i++){
+        if (Math.random() <= 0.5){
+            em_array.push(potential_array[i]);
+        }
+    }
+    print("The offspring acquires the following inherited eggmove(s): " + em_array);
+    return em_array;
+}
+
+
+function breed(parent1_species, parent2_species, parent1_movelist_str, parent2_movelist_str){
+    parent1_species = document.getElementById("first_species").value;
+    parent2_species = document.getElementById("second_species").value;
+    parent1_movelist_str = document.getElementById("first_movelist").value;
+    parent2_movelist_str = document.getElementById("second_movelist").value;
+
+    //TODO: make this function less picky. right now it only works in the format "Move,Move,Move" and acts poorly if any spaces or deviations exist
+    parent1_movelist = parent1_movelist_str.split(",");
+    parent2_movelist = parent2_movelist_str.split(",");
+
+    //get species object first
+    let offspring_species = offspring_stats(parent1_species, parent2_species);
+
+    //now start compiling eggmoves, based on the species
+    let random_eggmoves = rand_em(offspring_species);
+
+    let inherited_eggmoves = inherit_ems(offspring_species, parent1_movelist, parent2_movelist);
+
+    let all_potential_ems = [];
+
+    for (i=0; i < random_eggmoves.length; i++){
+       if (random_eggmoves[i].length > 0){
+            all_potential_ems.push(random_eggmoves[i]);
+        }
+    }
+    for (i=0; i < inherited_eggmoves.length; i++){
+        if (inherited_eggmoves[i] != null){
+            all_potential_ems.push(inherited_eggmoves[i]);
+        }
+    }
+
+    print("All possible eggmoves: " + all_potential_ems);
+    print("Selecting 4 final eggmoves from list of all possible eggmoves...");
+    let final_ems = randomize_x_from_array(4, all_potential_ems);
+    print_bold("Final results: ")
+    console.log(final_ems[0]);
+    for (i=0; i < final_ems.length; i++){
+
+        print("\"" + final_ems[i] + "\",");
+    }
+    print("\n");
+}
+
+
+
+
+//I think this function is broken and replaced with breed()... but I'm scared to delete it anyways.
+// in-progress function that will bring all the information into one object
+function breed_that_poke(){
+
+    //set up the array that holds all the egg moves the offspring will potentially manifest
+    let o_potarr = [];
+
+    //get arrays and append the two functions into o_potarr
+    let parents_array = get_parents();
+    let randomized_array = rand_em("Mareep", "Chikorita");
+
+    //append the things!
+
+    console.log("Full list of potentially manifesting eggmoves: " + o_potarr);
+
+}
+
