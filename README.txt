@@ -1,14 +1,7 @@
 
 Tutorial:
-1. Make sure index.html and PokeSpawner.js are in the same file.
-      Note: crawler.html is unnecessary; it is simply the machine that autofilled out the eggmoves for me. You can delete it if you desire.
+1. All you really need to download are index.html and PokeSpawner.js. Also, make sure index.html and PokeSpawner.js are in the same file.
 2. Open index.html with a web browser (I recommend Chrome).
-
-Remember!
-    - You can always spawn an Overpopulated Pokemon instead of rolling.
-    - Only spawn Pokemon of a rarity you are allowed to spawn. Ex: If you roll an Endangered Pokemon, but you are a temp mod and not allowed to spawn an Endangered, you'll have to roll again.
-    - Grass types showing up in the desert must be desert-y ones. AKA Cacnea, Maractus, Hoppip, Pumpkaboo, or Phantump (it would look more like a spiky, shrubby plant than a tree).
-    - Use logic! Skrelp is a Poison type, yes, but it would not show up in Western Great Forest. It needs to live in a large body of water.
 
 
 
@@ -27,18 +20,6 @@ Known issues:
  5. See "In the Works" for more detail.
 
  My suggestion is generally just re-roll until you get something that works.
-
-
-
-In the Works
-
-Slated for the next update
-1. Figure out how to use <span> so that I can have the log be ascending instead of descending.
-2. Possibly a button that randomizes breeding? We'll see. That may be a longer-term goal.
-
-Long-term or low priority stuff
-1. Depending on how difficult it is, I will probably add a tag for genderless Pokemon. This is low priority though. Right now, they will be spawned with a 50/50 chance of being listed as male/female.
-2. Someday maybe I can double-check all the egg moves in the data... I'm not sure about this though. PM or hit me up in the cbox if you'd like to partake in mind-numbing cross-checking lists and websites.
 
 
 
@@ -131,3 +112,4 @@ Developer Notes:
 1. This was hard. I broke a lot of things while adding in the "Any" options. I had to go through and fix them.
 2. I re-numbered a bunch of the arrays for location, season, type... I did not re-number rarity, out of stubbornness and also because I don't think it's a good idea. Overpopulated, for now, will remain designation 1, while Endangered will remain designation 5.
 3. Added two hidden, optional features in... Namely, natures and chances to be shiny. Natures are just there to provide optional inspiration for the Pokemon's demeanor, while the shiny chance is just a random number between 1 and 100. If someone has a 1% shiny chance, this number must be 1 in order for the Pokemon to spawn in as a shiny. I'll be honest; I don't expect anyone to use this except for me. But I mean. If you want to know how, just ask in Discord/PM.
+
