@@ -106,7 +106,7 @@ Changes:
 New Features:
 1. Added in two "new" Pokemon.
 2. Added the options "Any" into the various pull-down menus.
-4. I'm experimenting with adding a Breeding function. Right now it works (I think), but is excessively picky about data entry. I'm beginning to work on a way to fix that.
+3. I'm experimenting with adding a Breeding function. Right now it works (I think), but is excessively picky about data entry. I'm beginning to work on a way to fix that.
 
 Developer Notes:
 1. This was hard. I broke a lot of things while adding in the "Any" options. I had to go through and fix them.
